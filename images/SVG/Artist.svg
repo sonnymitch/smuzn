@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4050" height="3240" viewBox="0 0 4050 3240">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff799;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        font-size: 58.333px;
+        fill: #5b5b5b;
+        text-anchor: middle;
+        font-family: "Jacquard 12";
+      }
+    </style>
+    <filter id="filter" x="499.781" y="1151.47" width="3030.999" height="793.53" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="6" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-opacity="0.22"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Rettangolo_2" data-name="Rettangolo 2" class="cls-1" d="M509.766,1151.47H3520.79a10,10,0,0,1,10,10v766.6a10,10,0,0,1-10,10H509.766a10,10,0,0,1-10-10v-766.6A10,10,0,0,1,509.766,1151.47Z"/>
+  <text id="Artist" class="cls-2" transform="translate(2050.722 1756.877) scale(13.569)"><tspan x="0">Artist</tspan></text>
+</svg>
