@@ -1,0 +1,372 @@
+<html lang="en">
+
+<head>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149953538-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-149953538-1');
+</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Iosif Mihaescu">
+    <title>SMÜZN + DAVID SONNY MIHAESCU</title>
+    <link href="https://www.smuzn.xyz/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.smuzn.xyz/favicon.ico" type="image/x-icon">
+    <!-- Preload scripts -->
+<link rel="preload" href="https://www.smuzn.xyz/.script/bootstrap.bundle.min.js" as="script">
+<link rel="preload" href="https://www.smuzn.xyz/.script/jquery-3.7.1.slim.min.js" as="script">
+<link rel="preload" href="https://www.smuzn.xyz/.script/jquery-scripts.js" as="script">
+    <!-- Make IE recognize HTML5 tags. -->
+<!--[if IE]>
+<script>/*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/</script>
+<![endif]-->
+    <style>
+
+        /* INIZIO schermata di caricamento */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100dvh;
+            background-color: #FF0054;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader {
+            width: 50vw;
+            height: auto;
+            animation: spin 1.5s linear infinite;
+            transition: scale 0.3s ease;
+        }
+
+        .corner-logo {
+            position: absolute;
+            width: auto;
+            height: 10dvh;
+            margin: calc(1vw + 1dvh);
+            transition: scale 0.3s ease;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* logo che gira al caricamento: */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* FINE schermata di caricamento*/
+
+        /* INIZIO variazioni in base a dimensione viewport: */
+        @media (max-width: 1200px) {
+
+            .corner-logo {
+                position: absolute;
+                width: auto;
+                height: 7dvh;
+                transition: all 0.3s ease;
+            }
+
+            .top-left {
+                top: 0;
+                left: 0;
+            }
+            .top-right {
+                top: 0;
+                right: 0;
+            }
+            .bottom-left {
+                bottom: 0;
+                left: 0;
+            }
+            .bottom-right {
+                bottom: 0;
+                right: 0;
+            }
+
+        }
+
+        @media (max-width: 968px) {
+
+            .loader {
+                width: 80vw;
+                height: auto;
+            }
+
+        }
+        /* FINE variazioni in base a dimensione viewport */
+
+        /*  STILE PRINCIPALE  */
+        body {
+            width: 100vw;
+            font-family: "Aboriginal Serif", serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: var(--bgc);
+            color: var(--text-color) !important;
+            margin: 0;
+            padding: 0;
+            scrollbar-width: thin;
+            scrollbar-color: #FF0054 #f1f1f1;
+            overflow-x: hidden;
+        }
+
+        /* Webkit-based browsers */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF0054;
+            border: 1px solid white;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e6004c; /* Slightly darker shade for hover effect */
+        }
+
+        ::-webkit-scrollbar-button {
+            background: #ddd;
+        }
+
+        ::-webkit-scrollbar-button:hover {
+            background: #bbb;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--SCHERMATA DI CARICAMENTO, nascondi scrollbar -->
+    <script>
+        // Nascondiamo la scrollbar
+        const body = document.body;
+        body.style.overflow = 'hidden';
+    </script>
+    <div id="loading-screen">
+        <img src="https://www.smuzn.xyz/.images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
+        <img src="https://www.smuzn.xyz/.images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
+        <img src="https://www.smuzn.xyz/.images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
+        <img src="https://www.smuzn.xyz/.images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
+        <img src="https://www.smuzn.xyz/.images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
+    </div>
+    <script>
+        //        SCHERMATA DI CARICAMENTO VELOCE
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.opacity = '0';
+            setTimeout(function() {
+                // Nascondiamo lo schermo di caricamento
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    body.style.overflow = '';
+                }, 500);
+            });
+        });
+    </script><!--SCHERMATA DI CARICAMENTO VELOCE-->
+
+    <div class="webpage">
+        <section class="pages">
+            <section class="section1" id="section1">
+                <section class="sub-section1" id="sub-section1">
+                    <section class="box1">
+                        <img src="https://www.smuzn.xyz/.images/JPG/artists/davidmihaescu.jpg" alt="plus" class="image1">
+                        <img src="https://www.smuzn.xyz/.images/SVG/piu.svg" alt="plus" class="plus plus-destra">
+                        <img src="https://www.smuzn.xyz/.images/SVG/menu-smuzn.svg" alt="menu smuzn" class="menu-smuzn1">
+    <!--                    <section class="menu-box1"><button class="menu">menu<br><section class="menu-sub2-box1"> smuzn</section></button></section>-->
+                        <div class="sub1-box1">
+                            <p class="text1"><img src="https://www.smuzn.xyz/.images/SVG/piu.svg" alt="plus" class="plus plus-g-design">GRAPHIC DESIGNER</p>
+                        </div>
+                        <div class="sub2-box1">
+                            <p class="text2">DAVID SONNY<br>MIHAESCU<img src="https://www.smuzn.xyz/.images/SVG/piu.svg" alt="plus" class="plus plus-david"></p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+            <section class="section2" id="section2">
+                <section class="sub-section2" id="sub-section2">
+                    <div class="box2">
+                        <p class="text3">
+                            Lorem ipsum dolor sit amet. Aut iste facere in tempora similique et autem molestiae in provident nihil. Est illum enim et praesentium fuga qui fugiat deleniti sed voluptatum quae. Et nulla assumenda est sequi corporis est officia nulla ut delectus accusantium qui fuga eius. Vel autem illum sed illum repudiandae ut quam mollitia ut voluptas quia!
+
+                            Id sunt reprehenderit et blanditiis quos eum reprehenderit modi eos rerum illum est galisum nesciunt. Eum enim nesciunt est rerum sunt ut fugiat tempora.
+
+                            Est nemo placeat ea voluptates sunt et repellat iusto et repellendus totam aut dolorum quos sed autem molestiae nam dolore illo! Id modi expedita ea numquam rerum sed dolores inventore et quia nobis. Hic beatae enim quo consequatur unde hic illo fugit et blanditiis ducimus ab vitae dolor in aspernatur quia est repudiandae voluptatum.
+                        </p>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </div>
+
+    <script>
+        // Seleziona tutti gli elementi con gli ID specificati
+        const headers = document.querySelectorAll("#menu, #menu3, #menu2");
+
+        // STICKY SCRIPT
+        window.addEventListener('scroll', handleScroll);
+
+        function handleScroll() {
+            headers.forEach(header => {
+                makeSticky(header);
+            });
+        }
+
+        // Funzione per rendere un elemento sticky
+        function makeSticky(header) {
+            const stickyClass = `sticky-${header.id}`;
+            const rect = header.getBoundingClientRect();
+            const headerTop = rect.top;
+
+            if (headerTop <= 0 && headerTop > -rect.height) {
+                header.classList.add(stickyClass);
+            } else {
+                header.classList.remove(stickyClass);
+            }
+        }
+
+        // Esempio di utilizzo (opzionale)
+        headers.forEach(header => {
+            console.log(`Elemento selezionato: ${header.id}`);
+        });
+    </script><!--STICKY SCRIPT PER MENU A FISSAGGIO-->
+    <script>
+        //        TRANSIZIONE DA SFOCATURA
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 1;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script><!--TRANSIZIONE DA SFOCATURA-->
+    <script>
+        // Animazione icona "+" del menu per mobile
+        const plusIcon = document.getElementById('plusIcon');
+        const menu3 = document.getElementById('menu3');
+
+        function toggleMenu() {
+            menu3.classList.toggle('open');
+            updatePlusIcon();
+        }
+
+        function updatePlusIcon() {
+            plusIcon.style.transform = menu3.classList.contains('open') ? 'rotate(45deg)' : '';
+        }
+
+        // Variabile per tenere traccia del tempo di inizio del tocco
+        let touchStartTime;
+
+        // Gestione eventi per desktop e mobile
+        plusIcon.addEventListener('click', toggleMenu);
+
+        plusIcon.addEventListener('touchstart', function(e) {
+            touchStartTime = new Date().getTime();
+        });
+
+        plusIcon.addEventListener('touchend', function(e) {
+            const touchEndTime = new Date().getTime();
+            const touchDuration = touchEndTime - touchStartTime;
+
+            // Se il tocco dura meno di 200ms, consideriamolo un tap
+            if (touchDuration < 200) {
+                e.preventDefault();  // Previene il comportamento di default
+                toggleMenu();
+            }
+        });
+
+        // Aggiorna l'icona quando la pagina viene caricata o ridimensionata
+        window.addEventListener('load', updatePlusIcon);
+        window.addEventListener('resize', updatePlusIcon);
+    </script><!--Animazione icona "+" del menu per mobile-->
+    <script>
+        //        Animazione menu per mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.menu3 a');
+
+            links.forEach(function(link) {
+                link.addEventListener('touchstart', function(e) {
+                    this.classList.add('clicked');
+                });
+
+                link.addEventListener('touchend', function(e) {
+                    const self = this;
+                    setTimeout(function() {
+                        self.classList.remove('clicked');
+                    }, 300);
+                });
+
+                // // Preveniamo il comportamento predefinito del link
+                // link.addEventListener('click', function(e) {
+                //     e.preventDefault();
+                // });
+            });
+        });
+    </script><!--Animazione menu per mobile-->
+    <script>
+        // Cambia sfondo menu dopo lo scroll
+        window.addEventListener('scroll', function() {
+            const elemento = document.querySelector('.container-menu3');
+            const scrollPosition = window.scrollY;
+
+            // Cambia lo stile quando si scrolla oltre 300px
+            if (scrollPosition > 10) {
+                elemento.classList.add('scrolled');
+            } else {
+                elemento.classList.remove('scrolled');
+            }
+        });
+    </script><!--Cambia sfondo menu dopo lo scroll-->
+    <script>
+        window.addEventListener('load', function() {
+            const svgContainer = document.getElementById('central-img-nav2');
+            svgContainer.style.display = 'flex'; // Mostra l'elemento
+            svgContainer.classList.add('opacity-transition'); // Aggiungi la classe per attivare la transizione
+        });
+    </script><!--TRANSIZIONE OPACITÀ-->
+
+    <script src="https://www.smuzn.xyz/.script/bootstrap.bundle.min.js"></script>
+    <script src="https://www.smuzn.xyz/.script/jquery-3.7.1.slim.min.js"></script>
+    <script src="https://www.smuzn.xyz/.script/jquery-scripts.js"></script>
+
+</body>
+</html>
