@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+
 @import url("/bootstrap.css");
-@font-face {font-family:"Aboriginal Serif";src:url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
+@font-face {font-family:"Aboriginal Serif";src:url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
 
 
 .bebas-neue-regular {
@@ -92,23 +87,20 @@ a:visited {
     display: flex;
     flex-direction: column;
     justify-content: normal;
-    min-height: 100svh;
-    max-height: 100svh;
+    min-height: 100dvh;
+    max-height: 100dvh;
 
 }
 
 .section1 {
     display: flex;
     position: relative;
-    align-items: center;
-    justify-content: space-around;
     background: #FF0054;
     transition: all 0.3s ease;
     z-index: 1;
     top: 0;
     max-width: 100%;
     min-width: 100%;
-
 }
 
 .section2 {
@@ -121,12 +113,8 @@ a:visited {
     transition: all 0.3s ease;
     max-width: 100%;
     min-width: 100%;
-    min-height: 40svh;
+    min-height: 40dvh;
     z-index: 2;
-}
-
-.box1 {
-    z-index: 1;
 }
 
 /* INIZIO titolo */
@@ -134,9 +122,9 @@ a:visited {
     position: relative;
     min-width: 80vw;
     max-width: 80vw;
-    min-height: 40svh;
-    max-height: 40svh;
-    top: -2.5svh;
+    min-height: 40dvh;
+    max-height: 40dvh;
+    top: -2.5dvh;
     margin: auto;
     color: white;
     z-index: 1;
@@ -150,7 +138,7 @@ a:visited {
     justify-content: space-around;
     /*background:*/
     /*        linear-gradient(to top,*/
-    /*        rgba(255, 255, 255, 0) calc(1.4svh + 1.4vw),*/
+    /*        rgba(255, 255, 255, 0) calc(1.4dvh + 1.4vw),*/
     /*        rgb(255, 0, 84) 0*/
     /*        );*/
     /*background-size: 100% 150%, 100% 150%;*/
@@ -180,10 +168,10 @@ a:visited {
 }
 
 .nav {
-    left: calc(-0.365svh + -0.365vw);
+    left: calc(-0.365dvh + -0.365vw);
     display: flex;
     position: relative;
-    top: 4svh;
+    top: 4dvh;
     justify-content: center;
     flex-wrap: unset;
     gap: 2vw;
@@ -191,7 +179,7 @@ a:visited {
 }
 
 .sticky-menu .nav {
-    top: calc(-0.05vw + -0.05svh);
+    top: calc(-0.05vw + -0.05dvh);
 }
 
 .nav a {
@@ -201,12 +189,12 @@ a:visited {
     font-family: "Jacquard 12", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: calc(2.91vw + 2.91svh);
-    line-height: calc(2.5vw + 2.5svh);
-    padding: calc(.1vw + .1svh) calc(1.5vw + 1.5svh);
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(2.5vw + 2.5dvh);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
     border-radius: 12px;
     background-color: rgb(255, 247, 153);
-    box-shadow: 0 calc(.25vw + .25svh) 0 0 rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0.19);
+    box-shadow: 0 calc(.25vw + .25dvh) 0 0 rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0.19);
     letter-spacing: -0.03em;
     transition: color 0.3s ease,
     border-color 0.3s ease,
@@ -229,9 +217,9 @@ a:visited {
     font-family: "Jacquard 12", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: calc(2.91vw + 2.91svh);
-    line-height: calc(3vw + 3svh);
-    padding: calc(.1vw + .1svh) calc(1.5vw + 1.5svh);
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(3vw + 3dvh);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
     background-color: rgba(255, 255, 255, 0);
     box-shadow: none;
     letter-spacing: -0.03em;
@@ -291,7 +279,7 @@ a:visited {
 .sticky-menu .nav a .central-img-nav {
 
     display: flex;
-    width: calc(6vw + 6svh);
+    width: calc(6vw + 6dvh);
     height: auto;
     opacity: 1;
     transition: all 0.3s ease;
@@ -309,7 +297,7 @@ a:visited {
 }
 
 .menu .nav a:nth-child(2) {
-    margin-right: calc(-0.63vw + -0.63svh);
+    margin-right: calc(-0.63vw + -0.63dvh);
 }
 
 .sticky-menu .nav a:nth-child(2) {
@@ -318,7 +306,7 @@ a:visited {
 }
 
 .menu .nav a:nth-child(4) {
-    margin-left: calc(-0.63vw + -0.63svh);
+    margin-left: calc(-0.63vw + -0.63dvh);
 }
 
 .sticky-menu .nav a:nth-child(4) {
@@ -335,7 +323,7 @@ a:visited {
     display: none;
     flex-direction: column;
     align-items: start;
-    padding: calc(1svh + 1vw) calc(1svh + 1vw) calc(3svh + 3vw) calc(1svh + 1vw);
+    padding: calc(1dvh + 1vw) calc(1dvh + 1vw) calc(3dvh + 3vw) calc(1dvh + 1vw);
     justify-content: center;
     /*transition: all 0.3s ease;*/
     min-width: 100%;
@@ -351,7 +339,7 @@ a:visited {
     overflow: hidden;
     background:
             linear-gradient(to top,
-            rgba(255, 255, 255, 0) calc(2svh + 2vw),
+            rgba(255, 255, 255, 0) calc(2dvh + 2vw),
             rgb(255, 0, 84) 0
             );
     background-size: 100% 100%, 100% 100%;
@@ -371,7 +359,7 @@ a:visited {
 .container-menu3.scrolled::after {
         content: "";
         position: absolute;
-        bottom: calc(2svh + 2vw);
+        bottom: calc(2dvh + 2vw);
         left: 0;
         right: 0;
         top: 0;
@@ -396,7 +384,7 @@ a:visited {
 /*    bottom: 0;*/
 /*    background:*/
 /*            linear-gradient(to top,*/
-/*            rgba(255, 255, 255, 0) calc(2svh + 2vw),*/
+/*            rgba(255, 255, 255, 0) calc(2dvh + 2vw),*/
 /*            rgb(255, 0, 84) 0*/
 /*            );*/
 /*    background-size: 100% 100%, 100% 100%;*/
@@ -406,7 +394,7 @@ a:visited {
 /*.container-menu3.scrolled::after {*/
 /*    content: "";*/
 /*    position: absolute;*/
-/*    bottom: calc(2svh + 2vw);*/
+/*    bottom: calc(2dvh + 2vw);*/
 /*    left: 0;*/
 /*    right: 0;*/
 /*    top: 0;*/
@@ -419,7 +407,7 @@ a:visited {
     text-align: center;
 }
 .plus-icon {
-    width: calc(10% + 5svh);
+    width: calc(10% + 5dvh);
 
     height: auto;
     cursor: pointer;
@@ -464,7 +452,7 @@ a:visited {
 .menu3 li {
     padding: 2%;
     text-align: center;
-    border-bottom: calc(0.5svh + 0.5vw) dotted rgba(255, 255, 255, 0.29);
+    border-bottom: calc(0.5dvh + 0.5vw) dotted rgba(255, 255, 255, 0.29);
     /*border-bottom: 1px solid #ffffff;*/
     text-decoration: none;
     position: relative;
@@ -478,8 +466,8 @@ a:visited {
     font-family: "Jacquard 12", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: calc(4svh + 4vw);
-    line-height: calc(4svh + 4vw);
+    font-size: calc(4dvh + 4vw);
+    line-height: calc(4dvh + 4vw);
     background-color: rgba(255, 247, 153, 0);
     position: relative;
     z-index: 200;
@@ -490,7 +478,7 @@ a:visited {
 
 .menu3 a.clicked {
 
-    font-size: calc(3.5svh + 3.5vw);
+    font-size: calc(3.5dvh + 3.5vw);
     opacity: 0.8;
     color: var(--button-color);
 
@@ -514,7 +502,7 @@ a:visited {
     z-index: 2;
     overflow: hidden;
     mask-image: linear-gradient(to top,
-    rgba(255, 255, 255, 0) -5svh,
+    rgba(255, 255, 255, 0) -5dvh,
     rgb(255, 0, 84) 0
     );
     background-size: 100% 100%, 100% 100%;
@@ -536,10 +524,10 @@ a:visited {
     left: 0;
     right: 0;
     top: 0;
-    border-radius: calc(0.7svh + 0.7vw);
-    /*border: calc(0.23svh + 0.23vw) solid var(--bgc);*/
-    border: calc(0.23svh + 0.23vw) solid #000000;
-    box-shadow: 0 0 0 calc(2svh + 2vw) #ffffff;
+    border-radius: calc(0.7dvh + 0.7vw);
+    /*border: calc(0.23dvh + 0.23vw) solid var(--bgc);*/
+    border: calc(0.23dvh + 0.23vw) solid #000000;
+    box-shadow: 0 0 0 calc(2dvh + 2vw) #ffffff;
 }
 
 #animated-text-strip .marquee {
@@ -559,17 +547,17 @@ a:visited {
 
 /* Styles for the sake of the demonstration */
 #animated-text-strip{
-    padding: 0 calc(0.4svh + 0.4vw) 0 0;
+    padding: 0 calc(0.4dvh + 0.4vw) 0 0;
 }
 .marquee{
 
-    border-top: calc(3svh + 3vw);
+    border-top: calc(3dvh + 3vw);
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-optical-sizing: auto;
-    line-height: calc(1.9svh + 1.9vw);
-    font-size: calc(3svh + 3vw);
+    line-height: calc(1.9dvh + 1.9vw);
+    font-size: calc(3dvh + 3vw);
     text-transform: uppercase;
     /*color: var(--bgc);*/
     color: var(--bgc);
