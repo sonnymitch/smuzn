@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+
 @import url("/bootstrap.css");
-@font-face {font-family:"Aboriginal Serif";src:url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("https://www.smuzn.xyz/.fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
+@font-face {font-family:"Aboriginal Serif";src:url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
 
 
 .bebas-neue-regular {
@@ -25,7 +20,7 @@
     --secondary-color: #1438c7;
     --accent-color: #FFD700;
     --text-color: rgba(255, 255, 255, 0.83);
-    --bgc: #FF0054;
+    --bgc: #ff0054;
     --button-color: #FFF799FF;
 }
 
@@ -33,6 +28,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: cell !important;
 }
 
 a {
