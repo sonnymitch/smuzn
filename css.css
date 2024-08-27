@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+
 @import url("/bootstrap.css");
-@font-face {font-family:"Aboriginal Serif";src:url(".fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url(".fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url(".fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url(".fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
+@font-face {font-family:"Aboriginal Serif";src:url("fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
 
 
 .bebas-neue-regular {
@@ -25,7 +20,7 @@
     --secondary-color: #1438c7;
     --accent-color: #FFD700;
     --text-color: rgba(255, 255, 255, 0.83);
-    --bgc: #FF0054;
+    --bgc: #ff0054;
     --button-color: #FFF799FF;
 }
 
@@ -33,10 +28,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: cell !important;
 }
 
 a {
     color: rgba(0, 0, 0, 0.58);
+    /*cursor: inherit;*/
 }
 
 a:link {
@@ -191,7 +188,8 @@ a:visited {
 }
 
 .sticky-menu .nav {
-    top: calc(-0.05vw + -0.05dvh);
+    /*top: calc(-0.05vw + -0.05dvh);*/
+    top: 0;
 }
 
 .nav a {
@@ -291,10 +289,12 @@ a:visited {
 .sticky-menu .nav a .central-img-nav {
 
     display: flex;
-    width: calc(6vw + 6dvh);
+    width: calc(5.7vw + 5.7dvh);
     height: auto;
     opacity: 1;
     transition: all 0.3s ease;
+    /*padding-top: 0.2vmin;*/
+    /*padding-bottom: -0.2vmin;*/
 
 }
 /* FINE immagine centrale menu desktop */
@@ -505,7 +505,7 @@ a:visited {
 /* Core functionality */
 #animated-text-strip {
     min-height: auto;
-    max-height: 85%;
+    max-height: calc(53dvh + 53vw);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     display: flex;
@@ -518,6 +518,7 @@ a:visited {
     rgb(255, 0, 84) 0
     );
     background-size: 100% 100%, 100% 100%;
+    margin-bottom: 10vmin;
 }
 
 #animated-text-strip::before {
