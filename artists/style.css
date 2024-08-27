@@ -288,10 +288,12 @@
     background-color: #ffffff;
   }
   .link-artists {
+    top: 0;
     transition: all 0.1s ease-in-out;
   }
   .link-artists:hover {
     transform: scale(1.1);
+    top: 1vmin;
   }
   .artists-window-1 {
     position: relative;
