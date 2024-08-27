@@ -265,6 +265,20 @@
     grid-template-columns: repeat(21, 1fr);
     grid-template-rows: repeat(3, 10vmin);
   }
+  .section4 {
+    z-index: 2;
+    padding-top: 0;
+    margin-top: -1.9vmin;
+    padding-bottom: 10vmin;
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    display: grid;
+    gap: 1vmin;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(3, 10vmin);
+  }
   .artists-windows {
     border: solid 0.5vmin var(--bgc);
     border-radius: 1.7vmin;
