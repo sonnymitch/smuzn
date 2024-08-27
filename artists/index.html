@@ -175,33 +175,33 @@
 
 <body>
 <!--SCHERMATA DI CARICAMENTO, nascondi scrollbar -->
-<!--<script>-->
-<!--    // Nascondiamo la scrollbar-->
-<!--    const body = document.body;-->
-<!--    body.style.overflow = 'hidden';-->
-<!--</script>-->
-<!--<div id="loading-screen">-->
-<!--    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">-->
-<!--    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">-->
-<!--    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">-->
-<!--    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">-->
-<!--    <img src="https://www.smuzn.xyz/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">-->
-<!--</div>-->
-<!--<script>-->
-<!--    //        SCHERMATA DI CARICAMENTO VELOCE-->
-<!--    window.addEventListener('load', function() {-->
-<!--        const loadingScreen = document.getElementById('loading-screen');-->
-<!--        loadingScreen.style.opacity = '0';-->
-<!--        setTimeout(function() {-->
-<!--            // Nascondiamo lo schermo di caricamento-->
-<!--            loadingScreen.style.opacity = '0';-->
-<!--            setTimeout(() => {-->
-<!--                loadingScreen.style.display = 'none';-->
-<!--                body.style.overflow = '';-->
-<!--            }, 500);-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
+<script>
+    // Nascondiamo la scrollbar
+    const body = document.body;
+    body.style.overflow = 'hidden';
+</script>
+<div id="loading-screen">
+    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
+    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
+    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
+    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
+    <img src="https://www.smuzn.xyz/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
+</div>
+<script>
+    //        SCHERMATA DI CARICAMENTO VELOCE
+    window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.opacity = '0';
+        setTimeout(function() {
+            // Nascondiamo lo schermo di caricamento
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                body.style.overflow = '';
+            }, 500);
+        });
+    });
+</script>
 <!--SCHERMATA DI CARICAMENTO VELOCE-->
 <!--SCHERMATA DI CARICAMENTO, scroll fino alla fine senza timer -->
 
