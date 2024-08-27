@@ -20,7 +20,7 @@
     --secondary-color: #1438c7;
     --accent-color: #FFD700;
     --text-color: rgba(255, 255, 255, 0.83);
-    --bgc: #FF0054;
+    --bgc: #ff0054;
     --button-color: #FFF799FF;
 }
 
@@ -88,7 +88,7 @@ body {
 .section2 {
     background-color: #ffffff;
     width: 100vw;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .sub-section1 {
@@ -171,7 +171,6 @@ body {
     white-space: nowrap;
     color: #ffffff;
     z-index: 3;
-    top: 1.5vmin;
     letter-spacing: -0.05em;
     line-height: 15vmin;
     /*margin: 2.5vmin 4.8vmin 2.5vmin 4.8vmin;*/
