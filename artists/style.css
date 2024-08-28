@@ -205,7 +205,8 @@
     font-weight: 400;
     font-style: normal;
     font-size: 8.35vmin;
-    padding: 2vmin 3vmin;
+    padding-block: 0.01vmin;
+    margin-left: 3vmin;
     background-color: rgba(255, 255, 255, 0);
     box-shadow: none;
     letter-spacing: -0.03em;

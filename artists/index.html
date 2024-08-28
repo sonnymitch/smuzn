@@ -372,6 +372,7 @@
         const dropdownMenu = document.querySelector('.dropdown-menu-artists');
         const dropdownLinks = document.querySelectorAll('.dropdown-menu-artists a');
         const box13 = document.querySelector('.box1-3');
+        const box1Links = document.querySelectorAll('.box1 a');
 
         let isText1Hovered = false;
         let isDropdownHovered = false;
@@ -379,9 +380,12 @@
         function applyHoverStyles() {
             dropdownMenu.style.opacity = '1';
             dropdownLinks.forEach(link => {
-                link.style.lineHeight = '8.2vmin';
+                link.style.lineHeight = '8vmin';
             });
             box13.style.marginLeft = 'max(calc(100% - 140vmin), 30vmin)';
+            box1Links.forEach(link => {
+                link.style.paddingBlock = '2.5vmin';
+            });
         }
 
         function removeHoverStyles() {
@@ -390,6 +394,9 @@
                 link.style.lineHeight = '0.01vmin';
             });
             box13.style.marginLeft = '0';
+            box1Links.forEach(link => {
+                link.style.paddingBlock = '0.01vmin';
+            });
         }
 
         function checkHoverState() {
@@ -420,7 +427,7 @@
             checkHoverState();
         });
     });
-</script>
+</script><!--HOVER MENU-->
 <script>
 
     document.addEventListener('DOMContentLoaded', function() {
