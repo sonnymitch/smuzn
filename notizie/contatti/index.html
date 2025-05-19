@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - SMÜZN</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+    .container {
+      width: 90%;
+      max-width: 1140px;
+      margin: 30px auto;
+      background-color: #ffffff;
+      padding: 30px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 8px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+      margin-bottom: 0.75em;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 1em;
+      border-bottom: 2px solid #e9ecef;
+      padding-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin-top: 1.5em;
+    }
+    h3 {
+      font-size: 1.4em;
+      color: #34495e;
+    }
+
+    .contact-intro {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 2.5em;
+      color: #495057;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .contact-form-section, .contact-info-section {
+      padding: 20px;
+      border-radius: 6px;
+      background-color: #fdfdfd; /* Leggermente diverso dal container principale */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* Form Styles */
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #34495e;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+    .contact-form input[type="text"]:focus,
+    .contact-form input[type="email"]:focus,
+    .contact-form input[type="tel"]:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .contact-form button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .form-note {
+      font-size: 0.9em;
+      color: #6c757d;
+      margin-top: 15px;
+    }
+
+    /* Contact Info Styles */
+    .contact-info-list {
+      list-style: none;
+      padding: 0;
+    }
+    .contact-info-list li {
+      margin-bottom: 15px;
+      font-size: 1.05em;
+      display: flex;
+      align-items: center;
+    }
+    .contact-info-list li strong {
+      min-width: 90px; /* Per allineare il testo */
+      display: inline-block;
+      color: #34495e;
+    }
+    .contact-info-list li a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .contact-info-list li a:hover {
+      text-decoration: underline;
+    }
+    .contact-info-list .icon { /* Semplice prefisso testuale come icona */
+      margin-right: 10px;
+      font-weight: bold;
+      color: #007bff;
+      min-width: 20px; /* Spazio per l'icona */
+    }
+
+    /* Map Section */
+    .map-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .map-placeholder {
+      width: 100%;
+      height: 350px;
+      background-color: #e9ecef;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-style: italic;
+      color: #6c757d;
+    }
+    /* In un sito reale, qui ci sarebbe un iframe di Google Maps o simile */
+    /*
+    .map-section iframe {
+        width: 100%;
+        height: 350px;
+        border:0;
+        border-radius: 6px;
+    }
+    */
+
+    /* Social Media Links */
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-block;
+      margin-right: 15px;
+      /* Qui potresti usare icone SVG o un font di icone */
+      text-decoration: none;
+      font-weight: bold;
+      color: #007bff;
+      font-size: 1.1em;
+    }
+    .social-links a:hover {
+      color: #0056b3;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr; /* Stack su schermi piccoli */
+      }
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.6em; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Contattaci</h1>
+  <p class="contact-intro">
+    Siamo qui per aiutarti! Se hai domande, suggerimenti, o hai bisogno di supporto, non esitare a contattarci.
+    Puoi compilare il modulo sottostante o utilizzare uno dei metodi di contatto diretti.
+  </p>
+
+  <div class="contact-grid">
+    <div class="contact-form-section">
+      <h2>Inviaci un Messaggio</h2>
+      <form class="contact-form" action="#" method="POST" onsubmit="alert('Grazie per il tuo messaggio! (Simulazione di invio)'); return false;">
+        <div>
+          <label for="name">Nome Completo:</label>
+          <input type="text" id="name" name="name" placeholder="Mario Rossi" required>
+        </div>
+        <div>
+          <label for="email">Indirizzo Email:</label>
+          <input type="email" id="email" name="email" placeholder="tua@email.com" required>
+        </div>
+        <div>
+          <label for="phone">Numero di Telefono (Opzionale):</label>
+          <input type="tel" id="phone" name="phone" placeholder="+39 333 1234567">
+        </div>
+        <div>
+          <label for="subject">Oggetto:</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Seleziona un argomento...</option>
+            <option value="informazioni">Richiesta Informazioni Generali</option>
+            <option value="supporto">Supporto Tecnico</option>
+            <option value="partnership">Proposta di Collaborazione</option>
+            <option value="feedback">Feedback sul Sito</option>
+            <option value="altro">Altro</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Il Tuo Messaggio:</label>
+          <textarea id="message" name="message" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+        </div>
+        <div>
+          <button type="submit">Invia Messaggio</button>
+        </div>
+        <p class="form-note">Risponderemo alla tua richiesta il prima possibile, solitamente entro 24-48 ore lavorative.</p>
+      </form>
+    </div>
+
+    <div class="contact-info-section">
+      <h2>Informazioni Dirette</h2>
+      <ul class="contact-info-list">
+        <li><span class="icon">📧</span><strong>Email (Info):</strong> <a href="mailto:info@smuzn.xyz">info@smuzn.xyz</a></li>
+        <li><span class="icon">📧</span><strong>Email (Supporto):</strong> <a href="mailto:supporto@smuzn.xyz">supporto@smuzn.xyz</a></li>
+        <li><span class="icon">📞</span><strong>Telefono:</strong> <a href="tel:+39061234567">+39 06 1234567</a> (Lun-Ven, 9:00-18:00)</li>
+        <li><span class="icon">🏢</span><strong>Indirizzo:</strong><br>SMÜZN<br>Via Delle Idee Creative, 42<br>00100 Fantasilandia (RM), Italia</li>
+      </ul>
+
+      <h3>Orari di Apertura Ufficio</h3>
+      <ul class="contact-info-list">
+        <li><span class="icon">🕒</span><strong>Lunedì - Venerdì:</strong> 9:00 - 13:00 / 14:00 - 18:00</li>
+        <li><span class="icon">❌</span><strong>Sabato - Domenica:</strong> Chiuso</li>
+      </ul>
+
+      <h3>Seguici sui Social</h3>
+      <div class="social-links">
+        <a href="https://facebook.com/smuzn" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://twitter.com/smuzn" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        <a href="https://linkedin.com/company/smuzn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://instagram.com/dsmuzn" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

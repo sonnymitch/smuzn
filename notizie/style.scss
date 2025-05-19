@@ -1,0 +1,794 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+/* INIZIO variazioni in base a dimensione viewport: */
+
+/* ************************************ INIZIO VERSIONE MOBILE ************************************ */
+@include media-breakpoint-between(xs, md) {
+
+  .body {
+    overflow: hidden !important;
+  }
+
+  .smuzn-webpage {
+    display: none !important;
+  }
+
+  .pagina-disp-non-compatibile h1 {
+    display: inherit;    font-family: "Bebas Neue", sans-serif;
+    font-size: 10vmin;
+    color: var(--btn);
+    line-height: 1.5;
+    padding: 10vmin;
+    margin-top: 20vmin; /* Spazio dai bottoni */
+    text-align: center;
+
+  }
+
+}
+/* ************************************ FINE VERSIONE MOBILE ************************************ */
+
+/* ************************************ INIZIO VERSIONE TABLET ************************************ */
+@include media-breakpoint-between(md, xl) {
+
+  .body {
+    overflow: hidden !important;
+  }
+  .smuzn-webpage {
+    display: none !important;
+  }
+
+  .pagina-disp-non-compatibile h1 {
+    display: inherit;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 10vmin;
+    color: var(--btn);
+    line-height: 1.5;
+    padding: 10vmin;
+    margin-top: 20vmin; /* Spazio dai bottoni */
+    text-align: center;
+  }
+
+}
+/* ************************************ FINE VERSIONE TABLET ************************************ */
+
+/* ************************************ INIZIO VERSIONE DESKTOP ************************************ */
+@include media-breakpoint-up(xl) {
+
+  .section1 {
+    min-height: 45dvh;
+    width: 100%;
+    position: relative;
+  }
+
+  .title {
+    position: relative;
+    top: calc(0.8dvh + 0.8vw);
+
+  }
+
+  .menu {
+    flex-direction: column;
+    display: flex;
+  }
+  .menu2-container {
+    flex-direction: row;
+    display: none;
+  }
+  .container-menu3 {
+    display: none;
+  }
+
+  /* ****************** INIZIO PRIMA PAGINA VERSIONE DESKTOP ****************** */
+  .box1 a {
+    align-items: start;
+    justify-content: start;
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 8.35vmin;
+    //line-height: calc(5vw + 5dvh);
+    padding-block: 0.01vmin;
+    margin-left: 3vmin;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+    transition: color 0.3s ease,
+    border-color 0.3s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    margin 0.3s ease,
+    padding 0.3s ease,
+    top 0.3s ease,
+    left 0.3s ease,
+    right 0.3s ease,
+    bottom 0.3s ease;
+  }
+  .text1 {
+
+  }
+  .text1:hover {
+    //color: var(--button-color);
+  }
+
+  .container-dropdown-menu-news {
+    position: absolute;
+    margin-left: 12vmin;
+    margin-top: 10vmin;
+  }
+
+  .dropdown-menu-news {
+    opacity: 0;
+    display: flex;
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7vmin;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+    transition: all 0.3s ease;
+
+  }
+
+  .dropdown-menu-news a {
+    line-height: 0.01vmin;
+    align-items: start;
+    justify-content: start;
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 8.35vmin;
+    //line-height: calc(3vw + 3dvh);
+    padding: 1.1vmin 0.1vmin;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-menu-news a:hover {
+    color: var(--button-color);
+  }
+
+  .box1 {
+    width: 100%;
+    padding-left: 10vmin;
+  }
+
+  .box1-2 {
+    position: relative;
+    padding: 0;
+    padding-top: 2vmin;
+    z-index: 3;
+  }
+
+  .box1-3 {
+    margin-left: 0;
+    padding: 0;
+    position: relative;
+    width: 100vmin;
+    transition: all 0.3s ease;
+  }
+
+  .text2 {
+    position: relative;
+    bottom: -11vmin;
+    display: flex;
+    flex-direction: column;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 42vmin;
+    color: #FFFFFF;
+    z-index: 1;
+    letter-spacing: -0.05em;
+    line-height: 40%;
+  }
+
+  .news-plus {
+    position: absolute;
+    width: auto;
+    height: 4.7vmin;
+    margin: 1vmin;
+    top: -3vmin;
+    right: 3vmin;
+    transition: scale 0.3s ease;
+  }
+
+  .section2 {
+    z-index: 2;
+    padding-top: 2vmin;
+    padding-bottom: 0;
+    //min-height: 55dvh;
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    //top: -3px;
+    display: grid;
+    gap: 1vmin;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(3, 10vmin);
+  }
+
+  .section4, .section5 {
+    z-index: 2;
+    padding-top: 0;
+    margin-top: -1.9vmin;
+    padding-bottom: 10vmin;
+    //min-height: 55dvh;
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    //top: -3px;
+    display: grid;
+    gap: 1.4vmin;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(3, 10vmin);
+  }
+
+  .news-windows {
+    border: solid 0.5vmin var(--bgc);
+    border-radius: 1.7vmin;
+    //background-color: #d1f3ff;
+    //padding-block: 15vmin;
+    min-width: 10vmin;
+    //justify-self: center;
+    //align-self: center;
+    background-color: #ffffff;
+  }
+
+  .news-windows a:hover {
+    //transform: scale(1.1);
+  }
+
+  .info-box {
+    position: absolute;
+    background-color: var(--bgc);
+    color: white;
+    padding: 1vmin;
+    border-radius: 1vmin;
+    pointer-events: none;
+    z-index: 1000;
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 5vmin;
+    line-height: 5vmin;
+    min-width: 32vmin;
+    max-height: 16.2vmin;
+    opacity: 0;
+    filter: blur(4px);
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .link-news {
+    top: 0;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .link-news:hover {
+    transform: scale(1.1);
+    top: 1vmin;
+  }
+
+  .news-window-1 {
+    position: relative;
+    grid-column: 2 / 11;
+    grid-row: 1 / 4;
+  }
+  .news-window-2 {
+    position: relative;
+    grid-column: 12 / 21;
+    grid-row: 1 / 4;
+  }
+  //.news-window-3 {
+  //  position: relative;
+  //  grid-column: 10 / 13;
+  //  grid-row: 1 / 4;
+  //}
+  //.news-window-4 {
+  //  position: relative;
+  //  grid-column: 14 / 17;
+  //  grid-row: 1 / 4;
+  //}
+  //.news-window-5 {
+  //  position: relative;
+  //  grid-column: 18 / 21;
+  //  grid-row: 1 / 4;
+  //}
+
+  .news-windows-box {
+    margin: 2vmin;
+  }
+
+  .news-imgs {
+    width: 25.5vmin;
+    height: 22vmin;
+    object-fit: cover;
+    border-radius: 1.3vmin;
+  }
+
+  .news-card-text-box {
+    margin-inline: 2vmin;
+    margin-top: -0.7vmin;
+    //margin-bottom: 1.5vmin;
+  }
+
+  .news-card-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 3vmin;
+    color: #212121;
+    z-index: 1;
+    letter-spacing: -0.05em;
+    line-height: 95%;
+  }
+
+  .text-news-right {
+    position: absolute;
+    left: 25.3vmin;
+    top: 6.4vmin;
+    padding-right: 4vmin;
+    padding-left: 5.5vmin !important;
+    font-size: 6.5vmin;
+  }
+
+  .section4 .text-news-right, .section5 .text-news-right, .section2 .text-news-right  {
+    position: absolute;
+    left: 25.3vmin;
+    top: 6.4vmin;
+    padding-right: 3vmin;
+    padding-left: 5.5vmin !important;
+    font-size: calc(3.5vmax - 1vmin);
+  }
+
+  .text-news-right-fix {
+    top: 4vmin;
+  }
+
+  .text-news-right-subtitle {
+    padding-right: calc(14vmax - 15vmin);
+    line-height: calc(2vmax - 1vmin);
+    font-size: calc(2vmax - 1vmin);
+    letter-spacing: 0.00em;
+  }
+
+  .news-card-plus-top-left {
+    position: absolute;
+    width: auto;
+    height: 4.7vmin;
+    margin: 1vmin;
+    bottom: -3.5vmin;
+    right: -3.5vmin;
+    transition: scale 0.3s ease;
+  }
+
+  .news-card-plus-bottom-right {
+    position: absolute;
+    width: auto;
+    height: 4.7vmin;
+    margin: 1vmin;
+    top: -3.5vmin;
+    left: -3.5vmin;
+    transition: scale 0.3s ease;
+  }
+
+  .section3 {
+    z-index: 2;
+    min-height: 15dvh;
+    width: 100%;
+    position: relative;
+    background-color: #FFFFFF;
+  }
+
+  .section3-2 {
+    z-index: 2;
+    padding-top: 4vmin;
+    min-height: 15dvh;
+    width: 100%;
+    position: relative;
+    background-color: #FFFFFF;
+  }
+
+  .box-year {
+    background-color: var(--bgc);
+    width: 50vmin;
+    height: 8vmin;
+    margin-left: -5vmin;
+    border-radius: 1.5vmin;
+    align-content: center;
+  }
+
+  .year-text {
+    margin-left: 10vmin;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 9vmin;
+    color: #ffffff;
+    z-index: 1;
+    letter-spacing: -0.05em;
+    line-height: 100%;
+  }
+
+  .page5 {
+    min-height: 27dvh;
+    background-color: var(--bgc);
+    position: relative;
+    align-content: start;
+  }
+  .box5 {
+    position: relative;
+    z-index: 1;
+    text-align: start;
+    margin-bottom: -5vmin;
+    margin-top: 2vmin;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .box5-2 {
+    position: relative;
+    z-index: 1;
+    text-align: end;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .box5 a {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(3vw + 3dvh);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+    transition: color 0.3s ease,
+    border-color 0.3s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    margin 0.3s ease,
+    padding 0.3s ease,
+    top 0.3s ease,
+    left 0.3s ease,
+    right 0.3s ease,
+    bottom 0.3s ease;
+  }
+
+  .text4:hover {
+    color: var(--button-color);
+  }
+  .logo-endpage {
+    position: absolute;
+    min-width: auto;
+    min-height: 20dvh;
+    max-height: 20dvh;
+    bottom: -23dvh;
+    right: 0;
+    margin-top: -10vmin;
+    margin-right: 10vmin;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  /* ****************** FINE PRIMA PAGINA VERSIONE DESKTOP ****************** */
+
+  /* ****************** INIZIO POPUP VERSIONE DESKTOP ****************** */
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Nascosto di default, JS lo mostra */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .popup-content {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .popup-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 65px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+
+  .popup-content p {
+    margin-bottom: 15px;
+  }
+
+  .popup-link {
+    color: #FF0054FF;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .popup-link:hover {
+    color: #ff568c;
+
+  }
+
+  .popup-buttons {
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    gap: 15px;
+  }
+
+  .btn {
+    font-family: "Bebas Neue", sans-serif;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-width: 120px;
+  }
+
+  .btn-primary {
+    background-color: #FF0054FF;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #de004b;
+  }
+
+  .btn-secondary {
+    background-color: #FF0054FF;
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background-color: #de004b;
+  }
+
+  .popup-details-text {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 20px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 20px; /* Spazio dai bottoni */
+    text-align: left;
+  }
+
+  .popup-details-text .popup-link {
+    font-weight: normal;
+  }
+
+  /* ****************** FINE POPUP PAGINA VERSIONE DESKTOP ****************** */
+
+  .pagina-disp-non-compatibile {
+    display: none;
+  }
+
+  ///* ****************** INIZIO SECONDA PAGINA VERSIONE DESKTOP ****************** */
+  //.page2 {
+  //  min-height: 150dvh;
+  //  background-color: #ffffff;
+  //  position: relative;
+  //  top: -3px;
+  //  display: grid;
+  //  gap: calc(0.5vw + 0.5dvh);
+  //  grid-template-columns: repeat(21, 1fr);
+  //  grid-template-rows: repeat(21, 5vw);
+  //}
+  //
+  //.animated-vertical-text1 {
+  //  grid-column: 2;
+  //  grid-row: 2 / 18;
+  //}
+  //
+  //// INIZIO SLIDER POLAROID 1
+  //.polaroid1-container {
+  //  grid-column: 5 / 11;
+  //  grid-row: 3 / 8;
+  //  position: relative;
+  //}
+  //
+  //.polaroid1-slider {
+  //
+  //}
+  //
+  //.polaroid1-slider-content {
+  //
+  //}
+  //
+  //#polaroid1-img {
+  //  position: relative;
+  //  z-index: 7;
+  //  pointer-events: none;
+  //}
+  //
+  //.polaroid1-slide-item {
+  //  position: absolute;
+  //  inset: 0;
+  //  margin: 10% auto;
+  //  z-index: 2;
+  //  max-width: 85%;
+  //}
+  //// FINE SLIDER POLAROID 1
+  //
+  //// INIZIO SLIDER CORNICE 1
+  //.cornice1-container {
+  //  grid-column: 12 / 19;
+  //  grid-row: 4 / 10;
+  //  position: relative;
+  //}
+  //
+  //.cornice1-slider {
+  //
+  //}
+  //
+  //.cornice1-slider-content {
+  //
+  //}
+  //
+  //.cornice1-img {
+  //  position: relative;
+  //  z-index: 7;
+  //  pointer-events: none;
+  //}
+  //
+  //.cornice1-slide-item {
+  //  position: absolute;
+  //  inset: 0;
+  //  margin: 18% auto;
+  //  z-index: 2;
+  //  max-width: 65%;
+  //}
+  //// FINE SLIDER CORNICE 1
+  //
+  //// INIZIO cartella easter egg
+  //.cartella1 {
+  //  grid-column: 15 / 17;
+  //  grid-row: 11 / 13;
+  //  position: absolute;
+  //  top: calc(-1dvh + -1vw);
+  //  left: calc(-0.5dvh + -0.5vw);
+  //  padding: 0;
+  //}
+  //
+  //.cartella1 img {
+  //  transition: all 0.1s ease-in-out;
+  //}
+  //.cartella1 a {
+  //  padding: 0;
+  //}
+  //
+  //.cartella1 img:hover {
+  //  transform: scale(1.1);
+  //}
+  //// FINE cartella easter egg
+  //
+  //// INIZIO SLIDER POLAROID 2
+  //.polaroid2-container {
+  //  grid-column: 5 / 11;
+  //  grid-row: 10 / 15;
+  //  position: relative;
+  //  top: calc(-0.6dvh + -0.6vw);
+  //  left: calc(3.6dvh + 3.6vw);
+  //}
+  //
+  //.polaroid2-slider {
+  //
+  //}
+  //
+  //.polaroid2-slider-content {
+  //
+  //}
+  //
+  //#polaroid2-img {
+  //  position: relative;
+  //  z-index: 7;
+  //  pointer-events: none;
+  //}
+  //
+  //.polaroid2-slide-item {
+  //  position: absolute;
+  //  inset: 0;
+  //  margin: 18% auto;
+  //  z-index: 2;
+  //  max-width: 85%;
+  //}
+  //// FINE SLIDER POLAROID 2
+  //
+  //// INIZIO pulsanti delle imaggini
+  //.buttons {
+  //  color: #5b5b5b;
+  //  text-decoration: none;
+  //  font-family: "Jacquard 12", system-ui;
+  //  font-weight: 400;
+  //  font-style: normal;
+  //  font-size: 8.35vmin;
+  //  line-height: calc(2.5vw + 2.5dvh);
+  //  border-radius: 12px;
+  //  background-color: rgb(255, 247, 153);
+  //  box-shadow: 0 calc(.25vw + .25dvh) 0 0 rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0.19);
+  //  letter-spacing: -0.065em;
+  //  border: none;
+  //  transition: all 0.1s ease;
+  //}
+  //
+  //.buttons:hover {
+  //  transform: scale(0.95);
+  //}
+  //.polaroid1-button {
+  //  position: absolute;
+  //  top: calc(-1.3dvh + -1.3vw);
+  //  left: calc(-3dvh + -3vw);
+  //  padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+  //  z-index: 12;
+  //}
+  //.cornice1-button {
+  //  position: absolute;
+  //  top: calc(1.2dvh + 1.2vw);
+  //  left: calc(-1dvh + -1vw);
+  //  padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+  //  z-index: 12;
+  //}
+  //
+  //.polaroid2-button {
+  //  position: absolute;
+  //  top: calc(-1.2dvh + -1.2vw);
+  //  left: calc(-3.5dvh + -3.5vw);
+  //  padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+  //  z-index: 12;
+  //}
+  //
+  ///* ****************** FINE SECONDA PAGINA VERSIONE DESKTOP ****************** */
+
+}
+/* ************************************ FINE VERSIONE DESKTOP ************************************ */
+
+/* FINE variazioni in base a dimensione viewport */

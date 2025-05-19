@@ -1,0 +1,25 @@
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+/* INIZIO variazioni in base a dimensione viewport: */
+
+/* ************************************ INIZIO VERSIONE MOBILE ************************************ */
+@include media-breakpoint-between(xs, md) {
+
+}
+/* ************************************ FINE VERSIONE MOBILE ************************************ */
+
+/* ************************************ INIZIO VERSIONE TABLET ************************************ */
+@include media-breakpoint-between(md, xl) {
+
+}
+/* ************************************ FINE VERSIONE TABLET ************************************ */
+
+/* ************************************ INIZIO VERSIONE DESKTOP ************************************ */
+@include media-breakpoint-up(xl) {
+
+}
+/* ************************************ FINE VERSIONE DESKTOP ************************************ */
+
+/* FINE variazioni in base a dimensione viewport */
