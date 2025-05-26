@@ -182,12 +182,12 @@ body {
     font-weight: 400;
     font-style: normal;
     font-optical-sizing: auto;
-    font-size: 18vmin;
+    font-size: 12vmin;
     white-space: nowrap;
     color: #ffffff;
     z-index: 3;
     letter-spacing: -0.05em;
-    line-height: 14.5vmin;
+    line-height: 11vmin;
     /*bottom: 2.5vmin;*/
     /*margin: 4vmin 4vmin 4vmin 3vmin;*/
 }
@@ -236,7 +236,7 @@ body {
 .image1 {
     position: absolute;
     z-index: 1;
-    width: 43.7vmin;
+    width: 49.7vmin;
     bottom: -12.3vmin;
-    right: 15.6vmin;
+    right:9.6vmin;
 }

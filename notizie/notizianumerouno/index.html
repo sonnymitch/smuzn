@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Iosif Mihaescu">
-    <title>SMÜZN + DAVID SONNY MIHAESCU</title>
+    <title>SMÜZN</title>
     <link href="/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="style.css">
@@ -208,6 +208,37 @@
         <h1 class="pagina-disp-non-compatibile-text">DISPOSITIVO NON COMPATIBILE, ACCEDERE AL SITO DA UN PC</h1>
     </div>
 
+    <!-- Popup Overlay -->
+    <div id="cookiePopupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <!-- Stato Iniziale del Popup -->
+            <div id="initialConsent">
+                <h2 class="popup-title">SITO SOTTOPOSTO A SEQUESTRO</h2>
+                <p class="popup-details-text">
+                    SITO SOTTOPOSTO A SEQUESTRO</a>.
+                </p>
+                <div class="popup-buttons">
+                    <button id="acceptInitial" class="btn btn-primary">OK</button>
+                </div>
+                <p class="popup-details-text">
+                </p>
+            </div>
+
+            <!-- Stato "Rifiutato" del Popup -->
+            <div id="rejectedConsent" style="display: none;">
+                <h2 class="popup-title">ATTENZIONE</h2>
+                <p class="popup-details-text">Non è possibile rifiutare.</p>
+                <p class="popup-details-text">Per continuare la navigazione, è richiesto accettare.</p>
+                <div class="popup-buttons">
+                    <button id="acceptFinal" class="btn btn-primary">ACCETTA</button>
+                </div>
+                <p class="popup-details-text">
+
+                </p>
+            </div>
+        </div>
+    </div>
+
     <div class="webpage">
         <section class="pages">
             <section class="section1" id="section1">
@@ -218,14 +249,15 @@
                 </section>
                 <section class="sub-section1" id="sub-section1">
                     <section class="box1">
-                        <img src="https://www.repstatic.it/content/nazionale/img/2017/09/21/112455709-2babf522-756d-49b1-a0b7-b49522bee5f4.jpg?webp" alt="plus" class="image1">
+                        <img src="https://smuzn.xyz/notizie/IMAGES/meloni.jpg" alt="plus" class="image1">
                         <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="plus" class="plus plus-destra">
     <!--                    <section class="menu-box1"><button class="menu">menu<br><section class="menu-sub2-box1"> smuzn</section></button></section>-->
-                        <div class="sub1-box1">
-                            <p class="text1"><img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="plus" class="plus plus-g-design">Lorem ipsum</p>
-                        </div>
+<!--                        <div class="sub1-box1">-->
+<!--                            <p class="text1"><img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="plus" class="plus plus-g-design">ATTACCHI SENZA PRECEDENTI</p>-->
+<!--                        </div>-->
                         <div class="sub2-box1">
-                            <p class="text2">Lorem ipsum<br>dolor sit<img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="plus" class="plus plus-david"></p>
+                            <p class="text2">ATTACCHI SENZA PRECEDENTI<br> ALLA LIBERTÀ DI <br>STAMPA DA QUANDO<br>
+                                L'ESTREMA DESTRA<br> È AL GOVERNO<img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="plus" class="plus plus-david"></p>
                         </div>
                     </section>
                 </section>
@@ -234,11 +266,32 @@
                 <section class="sub-section2" id="sub-section2">
                     <div class="box2">
                         <p class="text3">
-                            Lorem ipsum dolor sit amet. Aut iste facere in tempora similique et autem molestiae in provident nihil. Est illum enim et praesentium fuga qui fugiat deleniti sed voluptatum quae. Et nulla assumenda est sequi corporis est officia nulla ut delectus accusantium qui fuga eius. Vel autem illum sed illum repudiandae ut quam mollitia ut voluptas quia!
-
-                            Id sunt reprehenderit et blanditiis quos eum reprehenderit modi eos rerum illum est galisum nesciunt. Eum enim nesciunt est rerum sunt ut fugiat tempora.
-
-                            Est nemo placeat ea voluptates sunt et repellat iusto et repellendus totam aut dolorum quos sed autem molestiae nam dolore illo! Id modi expedita ea numquam rerum sed dolores inventore et quia nobis. Hic beatae enim quo consequatur unde hic illo fugit et blanditiis ducimus ab vitae dolor in aspernatur quia est repudiandae voluptatum.
+                            Da quando il governo di coalizione di estrema destra guidato da Giorgia Meloni è entrato in carica nell'ottobre 2022, <a href="#" id="openMemePopupLink" class="trigger-link">la libertà dei media in Italia</a> è stata sottoposta a una pressione crescente, con
+                            attacchi e violazioni senza precedenti della libertà di stampa e dei media, spesso avviati da funzionari pubblici nel tentativo di emarginare e mettere a tacere le voci critiche».
+                            A mettere sempre più a repentaglio il diritto dei cittadini a un'informazione libera e imparziale ci sarebbe anche la situazione della Rai, l'emittente pubblica nazionale, che, sebbene sia sempre stata
+                            caratterizzata da grado di politicizzazione, negli ultimi due anni questa tendenza ha raggiunto un livello senza precedenti, con conseguenti pressioni straordinarie e crescenti casi di autocensura,
+                            scrivono gli autori del rapporto: giornalisti, rappresentati delle istituzioni italiane e europee e membri della società civile che hanno provato a mettersi in contatto con politici e membri del governo
+                            senza ricevere alcuna risposta. Tali rifiuti dimostrano la mancanza di volontà del governo di impegnarsi in discussioni costruttive su sviluppi chiave relativi ai media che in ultima analisi hanno un
+                            impatto sulla qualità della democrazia italiana.
+                            Ad aggravare una situazione già preoccupante c’è anche la potenziale *2.vendita di Agi, una delle principali agenzie di stampa del Paese, a un gruppo di proprietà di un politico del partito della Lega,
+                            un chiaro caso di conflitto di interessi che influenzerebbe negativamente un mercato dei media già fragile e l’aumento del numero di cause legali, utilizzate dai funzionari pubblici e dai membri della
+                            coalizione di governo per mettere a tacere le voci indipendenti e critiche. Tutti insieme, questi elementi indicano una forte intolleranza della coalizione al potere verso qualsiasi forma di critica o
+                            opposizione mediatica, con conseguente ampia contrazione della libertà di espressione e conseguente indebolimento della qualità democratica del paese.
+                            *3.Giorgia Meloni non accetta critiche (appare foto meloni con barra per lasciare un commento/critica che però non funziona) e continua a negare l'evidente occupazione della Rai da parte
+                            della destra. Contraddice le osservazioni della Commissione Europea sullo stato dell'informazione in Italia, specialmente riguardo a 'TeleMeloni', la Rai che lei e il suo governo stanno plasmando a loro
+                            immagine e somiglianza, sacrificando le trasmissioni più indipendenti.
+                            *4.193 sono stati gli incidenti ai giornalisti tra ottobre 2022 e giugno 2024 rispetto ai 75 dei mesi precedenti (appare un pop-up con una frase: non ci sono dati disponibili a riguardo…
+                            quando l’utente andrà poi a chiudere questo pop-up verrà rimandato alla home del sito e non più nell’articolo) e il calo disastroso degli *5.ascolti Rai che nei primi tre mesi del 2024, ha perso
+                            un milione di spettatori nei telegiornali (appare questionario), con cali significativi soprattutto nelle edizioni serali. È la prova del fallimento della politica editoriale imposta dal governo, che utilizza
+                            la Rai come megafono del partito della premier.
+                            Sono tante le testate che sono state oggetto negli ultimi due anni di azioni legali o minacce di querela da parte di figure di alto profilo del governo. Tra i casi più emblematici vi è la *6.querela per
+                            diffamazione contro lo scrittore e giornalista Roberto Saviano, presentata dalla presidente del Consiglio Giorgia Meloni, per le sue critiche rivolte a esponenti governativi. Nel dicembre 2021,
+                            durante una puntata del programma televisivo Piazzapulita (La7), lo scrittore e giornalista Roberto Saviano ha criticato duramente l’allora leader di Fratelli d’Italia, Giorgia Meloni, e il leader della Lega,
+                            Matteo Salvini, per la loro opposizione all’accoglienza dei migranti salvati in mare. Nel suo intervento, Saviano, parlando della *7.morte del piccolo Joseph, un neonato guineano annegato nel
+                            Mediterraneo, disse:
+                            "Vi sarà tornata alla mente tutta la schifezza detta su queste persone. [...] Meloni, Salvini – venite qui! Vergognatevi, bastardi."
+                            A seguito di quelle parole, Meloni ha sporto querela per diffamazione aggravata nel 2022. *8.Il processo è attualmente in corso presso il Tribunale di Roma. L’udienza di rinvio a giudizio si è tenuta
+                            il 20 novembre 2023. Saviano rischia, in caso di condanna, fino a 3 anni di carcere.
                         </p>
                     </div>
                 </section>
@@ -257,6 +310,97 @@
         </section>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const popupOverlay = document.getElementById('cookiePopupOverlay');
+            const initialConsentDiv = document.getElementById('initialConsent');
+            const rejectedConsentDiv = document.getElementById('rejectedConsent');
+
+            const acceptInitialButton = document.getElementById('acceptInitial');
+            const rejectConsentButton = document.getElementById('rejectConsent');
+            const acceptFinalButton = document.getElementById('acceptFinal');
+
+            // --- NUOVO: Selettore per il link che apre il popup ---
+            const openMemePopupButton = document.getElementById('openMemePopupLink');
+
+            // Funzione per mostrare il popup
+            function showPopup() {
+                if (popupOverlay) {
+                    // Assicurati che lo stato iniziale sia visibile e quello "rifiutato" nascosto
+                    initialConsentDiv.style.display = 'block';
+                    rejectedConsentDiv.style.display = 'none';
+                    popupOverlay.style.display = 'flex';
+                }
+            }
+
+            // Funzione per nascondere il popup
+            function hidePopup() {
+                if (popupOverlay) {
+                    popupOverlay.style.display = 'none';
+                }
+            }
+
+            // --- RIMOSSA l'apertura automatica (o con delay) ---
+            // setTimeout(showPopup, popupDelay); // Rimuovi questa riga se presente
+            // showPopup(); // Rimuovi questa riga se presente
+
+            // --- NUOVO: Event Listener per il link che apre il popup ---
+            if (openMemePopupButton) {
+                openMemePopupButton.addEventListener('click', function(event) {
+                    event.preventDefault(); // Previene il comportamento di default del link (es. navigare a #)
+                    showPopup();
+                });
+            }
+
+            // --- Event Listeners per i bottoni del Popup (rimangono invariati) ---
+
+            if (acceptInitialButton) {
+                acceptInitialButton.addEventListener('click', function() {
+                    console.log("Accettato inizialmente!");
+                    hidePopup();
+                    // localStorage.setItem('popupMemeAccepted', 'true');
+                });
+            }
+
+            if (rejectConsentButton) {
+                rejectConsentButton.addEventListener('click', function() {
+                    console.log("Rifiutato! Mostro messaggio alternativo.");
+                    if (initialConsentDiv && rejectedConsentDiv) {
+                        initialConsentDiv.style.display = 'none';
+                        rejectedConsentDiv.style.display = 'block';
+                    }
+                });
+            }
+
+            if (acceptFinalButton) {
+                acceptFinalButton.addEventListener('click', function() {
+                    console.log("Accettato per forza!");
+                    hidePopup();
+                    // localStorage.setItem('popupMemeAccepted', 'true');
+                });
+            }
+
+            // Event Listener per link interni al popup (es. "Cookie Policy")
+            const popupInternalLinks = document.querySelectorAll('#cookiePopupOverlay .popup-link');
+            popupInternalLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    alert(`Link "${this.textContent}" cliccato all'interno del popup! In una vera app, aprirebbe una policy o un pannello.`);
+                    // In un'applicazione reale, potresti voler fare qualcos'altro,
+                    // come aprire una nuova tab o un altro popup modale con la policy.
+                });
+            });
+
+            // --- Logica opzionale per localStorage (rimane commentata o adattala se necessario) ---
+            /*
+            if (localStorage.getItem('popupMemeAccepted') === 'true') {
+                // Non fare nulla per mostrare il popup automaticamente
+            } else {
+                // Non mostrare il popup automaticamente, ma aspetta il click
+            }
+            */
+        });
+    </script>
     <script>
         // Seleziona tutti gli elementi con gli ID specificati
         const headers = document.querySelectorAll("#menu, #menu3, #menu2");
