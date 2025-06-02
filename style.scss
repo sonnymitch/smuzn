@@ -1,0 +1,1225 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+/* INIZIO variazioni in base a dimensione viewport: */
+
+/* ************************************ INIZIO VERSIONE MOBILE ************************************ */
+@include media-breakpoint-between(xs, md) {
+
+  .menu {
+    flex-direction: column;
+    display: none;
+  }
+  .menu2-container {
+    flex-direction: row;
+    display: none;
+  }
+  .container-menu3 {
+    display: flex;
+  }
+  .title {
+    position: relative;
+    top: calc(-5dvh - 5vw);
+
+  }
+  .section1 {
+    min-height: 95vmin;
+    max-height: 95vmin;
+  }
+
+  .section2 {
+    //justify-content: space-evenly;
+    //position: relative;
+    min-height: 95vmin;
+    max-height: 95vmin;
+    //top: 0;
+  }
+
+  .box2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  /* INIZIO sottotitolo */
+  .text1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: calc(5vw + 5dvh);
+    color: #FF0054;
+    z-index: 1;
+    letter-spacing: -0.05em;
+  }
+  /* FINE sottotitolo */
+
+  /* INIZIO immagine centrale menu 2 */
+  .menu2 a:nth-child(3) {
+    display: none;
+  }
+
+  .sticky-menu2 a:nth-child(3) {
+    display: none;
+  }
+
+  .menu2 .nav2 a .central-img-nav2 {
+    display: none;
+  }
+
+  .sticky-menu2 .nav2 a .central-img-nav2 {
+    display: none;
+  }
+  /* FINE immagine centrale menu 2 */
+
+  /* ****************** INIZIO SECONDA PAGINA VERSIONE MOBILE ****************** */
+  .page2 {
+    min-height: auto;
+    background-color: #ffffff;
+    position: relative;
+    top: -3px;
+    display: grid;
+    gap: calc(0.5vw + 0.5dvh);
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21, 5vw);
+  }
+
+  .animated-vertical-text1 {
+    grid-column: 2;
+    grid-row: 2 / 18;
+  }
+
+  // INIZIO SLIDER POLAROID 1
+  .polaroid1-container {
+    grid-column: 5 / 11;
+    grid-row: 3 / 8;
+    position: relative;
+  }
+
+  .polaroid1-slider {
+
+  }
+
+  .polaroid1-slider-content {
+
+  }
+
+  #polaroid1-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+  }
+
+  .polaroid1-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 10% auto;
+    z-index: 2;
+    max-width: 85%;
+  }
+  // FINE SLIDER POLAROID 1
+
+  // INIZIO SLIDER CORNICE 1
+  .cornice1-container {
+    grid-column: 12 / 19;
+    grid-row: 4 / 10;
+    position: relative;
+  }
+
+  .cornice1-slider {
+
+  }
+
+  .cornice1-slider-content {
+
+  }
+
+  .cornice1-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+  }
+
+  .cornice1-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 18% auto;
+    z-index: 2;
+    max-width: 65%;
+  }
+  // FINE SLIDER CORNICE 1
+
+  // INIZIO cartella easter egg
+  .cartella1 {
+    grid-column: 15 / 17;
+    grid-row: 11 / 13;
+    position: absolute;
+    top: calc(-1dvh + -1vw);
+    left: calc(-0.5dvh + -0.5vw);
+    padding: 0;
+  }
+
+  .cartella1 img {
+    transition: all 0.1s ease-in-out;
+  }
+  .cartella1 a {
+    padding: 0;
+  }
+
+  .cartella1 img:hover {
+    transform: scale(1.1);
+  }
+  // FINE cartella easter egg
+
+  // INIZIO SLIDER POLAROID 2
+  .polaroid2-container {
+    grid-column: 5 / 11;
+    grid-row: 10 / 15;
+    position: relative;
+    top: calc(-0.6dvh + -0.6vw);
+    left: calc(3.6dvh + 3.6vw);
+  }
+
+  .polaroid2-slider {
+
+  }
+
+  .polaroid2-slider-content {
+
+  }
+
+  #polaroid2-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+  }
+
+  .polaroid2-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 18% auto;
+    z-index: 2;
+    max-width: 85%;
+  }
+  // FINE SLIDER POLAROID 2
+
+  // INIZIO pulsanti delle imaggini
+  .buttons {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(2.5vw + 2.5dvh);
+    border-radius: 12px;
+    background-color: rgb(255, 247, 153);
+    box-shadow: 0 calc(.25vw + .25dvh) 0 0 rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0.19);
+    letter-spacing: -0.065em;
+    border: none;
+    transition: all 0.1s ease;
+  }
+
+  .buttons:hover {
+    transform: scale(0.95);
+  }
+  .polaroid1-button {
+    position: absolute;
+    top: calc(-1.3dvh + -1.3vw);
+    left: calc(-3dvh + -3vw);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    z-index: 12;
+  }
+  .cornice1-button {
+    position: absolute;
+    top: calc(1.2dvh + 1.2vw);
+    left: calc(-1dvh + -1vw);
+    padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+    z-index: 12;
+  }
+
+  .polaroid2-button {
+    position: absolute;
+    top: calc(-1.2dvh + -1.2vw);
+    left: calc(-3.5dvh + -3.5vw);
+    padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+    z-index: 12;
+  }
+  /* ****************** FINE SECONDA PAGINA VERSIONE MOBILE ****************** */
+
+}
+/* ************************************ FINE VERSIONE MOBILE ************************************ */
+
+/* ************************************ INIZIO VERSIONE TABLET ************************************ */
+@include media-breakpoint-between(md, xl) {
+
+  .title {
+    position: relative;
+    top: calc(2dvh - 0.5vw);
+
+  }
+
+  .menu {
+    flex-direction: column;
+    display: none;
+  }
+
+  .container-menu3 {
+    display: none;
+  }
+
+  .section2 {
+    justify-content: space-evenly;
+    position: relative;
+    min-height: 40dvh;
+    top: 0;
+  }
+
+  .box2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  /* INIZIO sottotitolo */
+  .text1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: calc(5vw + 5dvh);
+    color: #FF0054;
+    z-index: 1;
+    letter-spacing: -0.05em;
+  }
+  /* FINE sottotitolo */
+
+  /* INIZIO menu secondario per versione tablet */
+
+  .menu2-container {
+    flex-direction: row;
+    display: flex;
+    position: sticky;
+    top: -1px;
+    z-index: 8000;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  nav .menu2 {
+
+    display: flex;
+    justify-content: center;
+    background: var(--bgc);
+    min-width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.79);
+  }
+
+  .nav2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: unset;
+    gap: calc(1vw - 1vw);
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  .nav2 a {
+    z-index: 5;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.5vw + 2.5dvh);
+    line-height: calc(3.5vw + 3.5dvh);
+    padding: 1px 20px;
+    background-color: rgba(255, 247, 153, 0);
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    flex-direction: row;
+  }
+
+  .nav2 a:hover {
+    color: #FFF799FF;
+    transform: scale(1.1);
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  /* INIZIO immagine centrale menu 2 */
+  .menu2 a:nth-child(3) {
+    display: flex;
+    top: -100px;
+    padding: 0;
+    transition: all 0.3s ease;
+    z-index: 3;
+  }
+
+  .sticky-menu2 a:nth-child(3) {
+    top: 0;
+    display: flex;
+    transition: all 0.3s ease;
+  }
+
+  .menu2 .nav2 a .central-img-nav2 {
+
+    width: 0;
+    display: none;
+    height: auto;
+    transition: all 0.3s ease;
+
+  }
+
+  .sticky-menu2 .nav2 a .central-img-nav2 {
+
+    display: flex;
+    width: calc(6vw + 6dvh);
+    height: auto;
+    transition: all 0.3s ease;
+
+  }
+  /* FINE immagine centrale menu 2 */
+
+  /* INIZIO attacco e animazione menu 2 a bordo superiore */
+  .sticky-menu2 {
+    position: sticky;
+    background-color: var(--bgc);
+    top: 0;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  .sticky-nav2 a {
+
+    line-height: 3dvh;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+
+  }
+
+  .menu2 .nav2 a:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .sticky-menu2 .nav2 a:nth-child(2) {
+    margin-right: 1.5vw;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  .menu2 .nav2 a:nth-child(4) {
+    margin-left: 0;
+  }
+
+  .sticky-menu2 .nav2 a:nth-child(4) {
+    margin-left: 0.75vw;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  /* FINE e animazione menu 2 a bordo superiore */
+
+  /* FINE menu secondario per versione tablet */
+
+  .section1 {
+    min-height: 50dvh;
+  }
+
+  .section2 {
+    min-height: 45dvh;
+  }
+
+  /* ****************** INIZIO SECONDA PAGINA VERSIONE TABLET ****************** */
+  .page2 {
+    min-height: 100dvh;
+    background-color: #ffffff;
+    position: relative;
+    top: -3px;
+    display: grid;
+    gap: calc(0.5vw + 0.5dvh);
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(16, 5vw);
+  }
+
+  .animated-vertical-text1 {
+    grid-column: 2;
+    grid-row: 2 / 18;
+  }
+
+  // INIZIO SLIDER POLAROID 1
+  .polaroid1-container {
+    grid-column: 5 / 11;
+    grid-row: 3 / 8;
+    position: relative;
+  }
+
+  .polaroid1-slider {
+
+  }
+
+  .polaroid1-slider-content {
+
+  }
+
+  #polaroid1-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+    //opacity: 0.5;
+  }
+
+  .polaroid1-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 25% auto;
+    z-index: 2;
+    width: clamp(30%, 75%, 100%);
+    height: clamp(30%, 65%, 70%);
+  }
+  // FINE SLIDER POLAROID 1
+
+  // INIZIO SLIDER CORNICE 1
+  .info-box {
+    position: absolute;
+    background-color: var(--bgc);
+    color: white;
+    padding: 1vmin;
+    border-radius: 1vmin;
+    pointer-events: none;
+    z-index: 1000;
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 5vmin;
+    line-height: 5vmin;
+    min-width: 32vmin;
+    max-height: 16.2vmin;
+    opacity: 0;
+    filter: blur(4px);
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .cornice1-container {
+    grid-column: 12 / 19;
+    grid-row: 4 / 10;
+    position: relative;
+  }
+
+  .cornice1-slider {
+
+  }
+
+  .cornice1-slider-content {
+    overflow: hidden;
+  }
+
+  .cornice1-slider-content:active {
+    //cursor: grabbing;
+  }
+
+  .cornice1-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+    //opacity: 0.5;
+  }
+
+  .cornice1-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 10% auto;
+    z-index: 0;
+    max-width: 65%;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    object-fit: cover;
+  }
+
+  .cornice1-slide-item.hover {
+
+  }
+
+  .cornice1-slide-item.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .cornice1-slide-item.next {
+    transform: translateX(10%);
+  }
+
+  .cornice1-slide-item.prev {
+    transform: translateX(-15%);
+  }
+
+  .cornice1-mask {
+    position: absolute;
+    top: 10%; /* Regola questi valori per creare la "finestra" desiderata */
+    left: 1.5%;
+    right: 1.5%;
+    bottom: 1.5%;
+    overflow: hidden;
+  }
+  // FINE SLIDER CORNICE 1
+
+  // INIZIO cartella easter egg
+  .cartella1 {
+    grid-column: 15 / 17;
+    grid-row: 11 / 13;
+    position: absolute;
+    top: calc(-1dvh + -1vw);
+    left: calc(-0.5dvh + -0.5vw);
+    padding: 0;
+  }
+
+  .cartella1 img {
+    transition: all 0.1s ease-in-out;
+  }
+  .cartella1 a {
+    padding: 0;
+  }
+
+  .cartella1 img:hover {
+    transform: scale(1.1);
+  }
+  // FINE cartella easter egg
+
+  // INIZIO SLIDER POLAROID 2
+  .polaroid2-container {
+    grid-column: 5 / 11;
+    grid-row: 10 / 15;
+    position: relative;
+    top: calc(-0.6dvh + -0.6vw);
+    left: calc(3.6dvh + 3.6vw);
+  }
+
+  .polaroid2-slider {
+
+  }
+
+  .polaroid2-slider-content {
+
+  }
+
+  #polaroid2-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+  }
+
+  .polaroid2-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 18% auto;
+    z-index: 2;
+    max-width: 85%;
+  }
+  // FINE SLIDER POLAROID 2
+
+  // INIZIO pulsanti delle imaggini
+  .buttons {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(2.5vw + 2.5dvh);
+    border-radius: 12px;
+    background-color: rgb(255, 247, 153);
+    box-shadow: 0 calc(.25vw + .25dvh) 0 0 rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0.19);
+    letter-spacing: -0.065em;
+    border: none;
+    transition: all 0.1s ease;
+  }
+
+  .buttons:hover {
+    transform: scale(0.95);
+  }
+  .polaroid1-button {
+    position: absolute;
+    top: calc(-1.3dvh + -1.3vw);
+    left: calc(-3dvh + -3vw);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    z-index: 12;
+  }
+  .cornice1-button {
+    position: absolute;
+    top: calc(1.2dvh + 1.2vw);
+    left: calc(-1dvh + -1vw);
+    padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+    z-index: 12;
+  }
+
+  .polaroid2-button {
+    position: absolute;
+    top: calc(-1.2dvh + -1.2vw);
+    left: calc(-3.5dvh + -3.5vw);
+    padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+    z-index: 12;
+  }
+
+  /* ****************** FINE SECONDA PAGINA VERSIONE TABLET ****************** */
+
+  /* ****************** INIZIO TERZA PAGINA VERSIONE TABLET ****************** */
+
+  .page3 {
+    min-height: 100dvh;
+    background-color: var(--bgc);
+    position: relative;
+  }
+
+  .box3 {
+    position: relative;
+    min-height: 100vmin;
+    z-index: 1;
+    margin-right: 0.7%;
+    align-content: center;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  .box3-2 {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .text2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: calc(5vw + 5dvh);
+    color: #FFFFFF;
+    z-index: 1;
+    letter-spacing: -0.05em;
+    line-height: 81.9%;
+  }
+
+  /* ****************** FINE TERZA PAGINA VERSIONE TABLET ****************** */
+
+  /* ****************** INIZIO QUARTA PAGINA VERSIONE TABLET ****************** */
+
+  .page4 {
+    min-height: 70dvh;
+    background-color: #FFFFFF;
+    position: relative;
+    align-content: center;
+  }
+  .box4 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .text3 {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(3vw + 3dvh);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+  }
+
+  /* ****************** FINE QUARTA PAGINA VERSIONE TABLET ****************** */
+
+  /* ****************** INIZIO QUINTA PAGINA VERSIONE TABLET ****************** */
+
+  .page5 {
+    min-height: 27dvh;
+    background-color: var(--bgc);
+    position: relative;
+    align-content: start;
+  }
+  .box5 {
+    position: relative;
+    z-index: 1;
+    text-align: start;
+    margin-bottom: -5vmin;
+    margin-top: 2vmin;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .box5-2 {
+    position: relative;
+    z-index: 1;
+    text-align: end;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .box5 a {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(3vw + 3dvh);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+    transition: color 0.3s ease,
+    border-color 0.3s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    margin 0.3s ease,
+    padding 0.3s ease,
+    top 0.3s ease,
+    left 0.3s ease,
+    right 0.3s ease,
+    bottom 0.3s ease;
+  }
+  .text4:hover {
+    color: var(--button-color);
+  }
+  .logo-endpage {
+    position: absolute;
+    min-width: auto;
+    min-height: 20dvh;
+    max-height: 20dvh;
+    bottom: -23dvh;
+    right: 0;
+    margin-top: -10vmin;
+    margin-right: 10vmin;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  /* ****************** FINE QUINTA PAGINA VERSIONE TABLET ****************** */
+
+}
+/* ************************************ FINE VERSIONE TABLET ************************************ */
+
+/* ************************************ INIZIO VERSIONE DESKTOP ************************************ */
+@include media-breakpoint-up(xl) {
+
+  .section1 {
+    min-height: 50dvh;
+  }
+
+  .section2 {
+    min-height: 43dvh;
+  }
+
+  .title {
+    position: relative;
+    top: calc(0.8dvh + 0.8vw);
+  }
+
+  .menu {
+    flex-direction: column;
+    display: flex;
+  }
+  .menu2-container {
+    flex-direction: row;
+    display: none;
+  }
+  .container-menu3 {
+    display: none;
+  }
+
+  /* INIZIO sottotitolo */
+  .text1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: calc(5vw + 5dvh);
+    color: #FF0054;
+    z-index: 1;
+    letter-spacing: -0.05em;
+  }
+  /* FINE sottotitolo */
+
+  /* ****************** INIZIO SECONDA PAGINA VERSIONE DESKTOP ****************** */
+  .page2 {
+    min-height: 100dvh;
+    background-color: #ffffff;
+    position: relative;
+    top: -3px;
+    display: grid;
+    gap: calc(0.5vw + 0.5dvh);
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(16, 5vw);
+  }
+
+  .animated-vertical-text1 {
+    grid-column: 2;
+    grid-row: 2 / 18;
+  }
+
+  // INIZIO SLIDER POLAROID 1
+  .polaroid1-container {
+    grid-column: 5 / 11;
+    grid-row: 3 / 8;
+    position: relative;
+  }
+
+  .polaroid1-slider {
+
+  }
+
+  .polaroid1-slider-content {
+
+  }
+
+  #polaroid1-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+    //opacity: 0.5;
+  }
+
+  .polaroid1-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 25% auto;
+    z-index: 2;
+    width: clamp(30%, 75%, 100%);
+    height: clamp(30%, 65%, 70%);
+  }
+  // FINE SLIDER POLAROID 1
+
+  // INIZIO SLIDER CORNICE 1
+  .info-box {
+    position: absolute;
+    background-color: var(--bgc);
+    color: white;
+    padding: 1vmin;
+    border-radius: 1vmin;
+    pointer-events: none;
+    z-index: 1000;
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 5vmin;
+    line-height: 5vmin;
+    min-width: 32vmin;
+    max-height: 16.2vmin;
+    opacity: 0;
+    filter: blur(4px);
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .cornice1-container {
+    grid-column: 12 / 19;
+    grid-row: 4 / 10;
+    position: relative;
+  }
+
+  .cornice1-slider {
+
+  }
+
+  .cornice1-slider-content {
+    overflow: hidden;
+  }
+
+  .cornice1-slider-content:active {
+    //cursor: grabbing;
+  }
+
+  .cornice1-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+    //opacity: 0.5;
+  }
+
+  .cornice1-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 10% auto;
+    z-index: 0;
+    max-width: 65%;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    object-fit: cover;
+  }
+
+  .cornice1-slide-item.hover {
+
+  }
+
+  .cornice1-slide-item.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .cornice1-slide-item.next {
+    transform: translateX(10%);
+  }
+
+  .cornice1-slide-item.prev {
+    transform: translateX(-15%);
+  }
+
+  .cornice1-mask {
+    position: absolute;
+    top: 10%; /* Regola questi valori per creare la "finestra" desiderata */
+    left: 1.5%;
+    right: 1.5%;
+    bottom: 1.5%;
+    overflow: hidden;
+  }
+  // FINE SLIDER CORNICE 1
+
+  // INIZIO cartella easter egg
+  .cartella1 {
+    grid-column: 15 / 17;
+    grid-row: 11 / 13;
+    position: absolute;
+    top: calc(-1dvh + -1vw);
+    left: calc(-0.5dvh + -0.5vw);
+    padding: 0;
+  }
+
+  .cartella1 img {
+    transition: all 0.1s ease-in-out;
+  }
+  .cartella1 a {
+    padding: 0;
+  }
+
+  .cartella1 img:hover {
+    transform: scale(1.1);
+  }
+  // FINE cartella easter egg
+
+  // INIZIO SLIDER POLAROID 2
+  .polaroid2-container {
+    grid-column: 5 / 11;
+    grid-row: 10 / 15;
+    position: relative;
+    top: calc(-0.6dvh + -0.6vw);
+    left: calc(3.6dvh + 3.6vw);
+  }
+
+  .polaroid2-slider {
+
+  }
+
+  .polaroid2-slider-content {
+
+  }
+
+  #polaroid2-img {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+  }
+
+  .polaroid2-slide-item {
+    position: absolute;
+    inset: 0;
+    margin: 18% auto;
+    z-index: 2;
+    max-width: 85%;
+  }
+  // FINE SLIDER POLAROID 2
+
+  // INIZIO pulsanti delle imaggini
+  .buttons {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(2.5vw + 2.5dvh);
+    border-radius: 12px;
+    background-color: rgb(255, 247, 153);
+    box-shadow: 0 calc(.25vw + .25dvh) 0 0 rgba(0,0,0,0.2), 0 0 0 0 rgba(0,0,0,0.19);
+    letter-spacing: -0.065em;
+    border: none;
+    transition: all 0.1s ease;
+  }
+
+  .buttons:hover {
+    transform: scale(0.95);
+  }
+  .polaroid1-button {
+    position: absolute;
+    top: calc(-1.3dvh + -1.3vw);
+    left: calc(-3dvh + -3vw);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    z-index: 12;
+  }
+  .cornice1-button {
+    position: absolute;
+    top: calc(1.2dvh + 1.2vw);
+    left: calc(-1dvh + -1vw);
+    padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+    z-index: 12;
+  }
+
+  .polaroid2-button {
+    position: absolute;
+    top: calc(-1.2dvh + -1.2vw);
+    left: calc(-3.5dvh + -3.5vw);
+    padding: calc(.1vw + .1dvh) calc(0.9vw + 0.9dvh);
+    z-index: 12;
+  }
+
+  /* ****************** FINE SECONDA PAGINA VERSIONE DESKTOP ****************** */
+
+  /* ****************** INIZIO TERZA PAGINA VERSIONE DESKTOP ****************** */
+
+  .page3 {
+    min-height: 100dvh;
+    background-color: var(--bgc);
+    position: relative;
+  }
+
+  .box3 {
+    position: relative;
+    min-height: 100vmin;
+    z-index: 1;
+    margin-right: 0.7%;
+    align-content: center;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+
+  .box3-2 {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .text2 {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-optical-sizing: auto;
+      font-size: calc(5vw + 5dvh);
+      color: #FFFFFF;
+      z-index: 1;
+      letter-spacing: -0.05em;
+      line-height: 81.9%;
+  }
+
+  /* ****************** FINE TERZA PAGINA VERSIONE DESKTOP ****************** */
+
+  /* ****************** INIZIO QUARTA PAGINA VERSIONE DESKTOP ****************** */
+
+  .page4 {
+    min-height: 70dvh;
+    background-color: #FFFFFF;
+    position: relative;
+    align-content: center;
+  }
+  .box4 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .text3 {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(3vw + 3dvh);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+  }
+
+  /* ****************** FINE QUARTA PAGINA VERSIONE DESKTOP ****************** */
+
+  /* ****************** INIZIO QUINTA PAGINA VERSIONE DESKTOP ****************** */
+
+  .page5 {
+    min-height: 27dvh;
+    background-color: var(--bgc);
+    position: relative;
+    align-content: start;
+  }
+  .box5 {
+    position: relative;
+    z-index: 1;
+    text-align: start;
+    margin-bottom: -5vmin;
+    margin-top: 2vmin;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .box5-2 {
+    position: relative;
+    z-index: 1;
+    text-align: end;
+    transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  }
+  .box5 a {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2.91vw + 2.91dvh);
+    line-height: calc(3vw + 3dvh);
+    padding: calc(.1vw + .1dvh) calc(1.5vw + 1.5dvh);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+    letter-spacing: -0.03em;
+    transition: color 0.3s ease,
+    border-color 0.3s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    margin 0.3s ease,
+    padding 0.3s ease,
+    top 0.3s ease,
+    left 0.3s ease,
+    right 0.3s ease,
+    bottom 0.3s ease;
+  }
+  .text4:hover {
+    color: var(--button-color);
+  }
+  .logo-endpage {
+    position: absolute;
+    min-width: auto;
+    min-height: 20dvh;
+    max-height: 20dvh;
+    bottom: -23dvh;
+    right: 0;
+    margin-top: -10vmin;
+    margin-right: 10vmin;
+    color: white;
+    z-index: 1;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  /* ****************** FINE QUINTA PAGINA VERSIONE DESKTOP ****************** */
+
+}
+/* ************************************ FINE VERSIONE DESKTOP ************************************ */
+
+/* FINE variazioni in base a dimensione viewport */
