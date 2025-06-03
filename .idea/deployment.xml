@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" uploadOnCheckin="9ba49efb-88e1-4080-9ff0-61e9c10fd4b9" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="SMUZN">
         <serverdata>
@@ -10,5 +10,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myUploadOnCheckinName" value="SMUZN" />
   </component>
 </project>

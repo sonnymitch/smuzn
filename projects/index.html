@@ -15,24 +15,30 @@
     <meta name="description" content="">
     <meta name="author" content="Iosif Mihaescu">
     <title>SMÜZN</title>
-    <link href="/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- START Preload scripts -->
+    <link rel="preload" href="/script/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="/script/jquery-3.7.1.slim.min.js" as="script">
+    <link rel="preload" href="/script/jquery-scripts.js" as="script">
+    <link rel="preload" href="/bootstrap.css" as="style">
+    <link rel="preload" href="css.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="/fonts/fonts.css" as="style">
+    <!-- STOP Preload scripts -->
+    <link rel="stylesheet" href="/bootstrap.css"  crossorigin="anonymous">
     <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/fonts/fonts.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <!-- Preload scripts -->
-    <link rel="preload" href="https://www.smuzn.xyz/script/bootstrap.bundle.min.js" as="script">
-    <link rel="preload" href="https://www.smuzn.xyz/script/jquery-3.7.1.slim.min.js" as="script">
-    <link rel="preload" href="https://www.smuzn.xyz/script/jquery-scripts.js" as="script">
     <!-- Make IE recognize HTML5 tags. -->
         <!--[if IE]>
     <script>/*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/</script>
     <![endif]-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Pacifico&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Pacifico&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" crossorigin="anonymous">-->
 
     <style>
 
@@ -191,11 +197,11 @@
     body.style.overflow = 'hidden';
 </script>
 <div id="loading-screen">
-    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
-    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
-    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
-    <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
-    <img src="https://www.smuzn.xyz/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
+    <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
+    <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
+    <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
+    <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
+    <img src="/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
 </div>
 <script>
     //        SCHERMATA DI CARICAMENTO VELOCE

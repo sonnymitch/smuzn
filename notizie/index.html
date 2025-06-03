@@ -15,24 +15,30 @@
     <meta name="description" content="">
     <meta name="author" content="Iosif Mihaescu">
     <title>SMÜZN</title>
-    <link href="/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- START Preload scripts -->
+    <link rel="preload" href="/script/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="/script/jquery-3.7.1.slim.min.js" as="script">
+    <link rel="preload" href="/script/jquery-scripts.js" as="script">
+    <link rel="preload" href="/bootstrap.css" as="style">
+    <link rel="preload" href="css.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="/fonts/fonts.css" as="style">
+    <!-- STOP Preload scripts -->
+    <link rel="stylesheet" href="/bootstrap.css"  crossorigin="anonymous">
     <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/fonts/fonts.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <!-- Preload scripts -->
-    <link rel="preload" href="https://www.smuzn.xyz/script/bootstrap.bundle.min.js" as="script">
-    <link rel="preload" href="https://www.smuzn.xyz/script/jquery-3.7.1.slim.min.js" as="script">
-    <link rel="preload" href="https://www.smuzn.xyz/script/jquery-scripts.js" as="script">
     <!-- Make IE recognize HTML5 tags. -->
         <!--[if IE]>
     <script>/*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/</script>
     <![endif]-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Pacifico&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Pacifico&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" crossorigin="anonymous">-->
 
     <style>
 
@@ -273,11 +279,11 @@
         body.style.overflow = 'hidden';
     </script>
     <div id="loading-screen">
-        <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
-        <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
-        <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
-        <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
-        <img src="https://www.smuzn.xyz/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
+        <img src="/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
     </div>
     <script>
         //        SCHERMATA DI CARICAMENTO VELOCE
@@ -311,14 +317,14 @@
                     I ricavi ottenuti dalla pubblicità personalizzata ci aiutano a supportare il lavoro della nostra
                     redazione che si impegna a fornirti ogni giorno una informazione di qualità. Per questo chiediamo
                     il tuo consenso all'utilizzo di cookie o tecnologie simili per finalità diverse da quelle strettamente
-                    necessarie, come specificato nella <a href="https://www.smuzn.xyz/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>.
+                    necessarie, come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>.
                 </p>
                 <div class="popup-buttons">
                     <button id="acceptInitial" class="btn btn-primary">ACCETTA</button>
                     <button id="rejectConsent" class="btn btn-secondary">RIFIUTA</button>
                 </div>
                 <p class="popup-details-text">
-                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="https://www.smuzn.xyz/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
+                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
                 </p>
             </div>
 
@@ -331,7 +337,7 @@
                     <button id="acceptFinal" class="btn btn-primary">ACCETTA</button>
                 </div>
                 <p class="popup-details-text">
-                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="https://www.smuzn.xyz/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
+                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
                 </p>
             </div>
         </div>
@@ -345,7 +351,7 @@
                 <nav class="container-dropdown-menu-news" id="id-container-dropdown-menu-news">
                     <div class="dropdown-menu-news" id="dropdown-menu-news">
                         <ul>
-                            <li><a href="https://www.smuzn.xyz/zindex2.html">Home</a></li>
+                            <li><a href="/zindex2.html">Home</a></li>
                             <li><a href="#news">Articles</a></li>
                             <li><a href="#projects">Projects</a></li>
                             <li><a href="#events">Events</a></li>
@@ -355,11 +361,11 @@
 
                 <section class="box1">
                     <section class="box1-2">
-                        <a href="https://www.smuzn.xyz/notizie" class="text1 text4">Smüzn</a>
+                        <a href="/notizie" class="text1 text4">Smüzn</a>
                     </section>
 
                     <section class="box1-3">
-                        <img src="https://www.smuzn.xyz/images/SVG/piu.svg" alt="Logo" class="news-plus no-drag">
+                        <img src="/images/SVG/piu.svg" alt="Logo" class="news-plus no-drag">
                         <h1 class="text2">NOTIZIE</h1>
                     </section>
                 </section>
@@ -372,7 +378,7 @@
     <!--                    <a href="#articles">Articles</a>-->
     <!--                    <a href="#news">news</a>-->
     <!--                    <a href="#smuzn" class="central-img-link-nav2" id="central-img-link-nav2">-->
-    <!--                        <img class="central-img-nav2" id="central-img-nav2" src="https://www.smuzn.xyz/images/SVG/smuzn_logo_min.svg" alt="">-->
+    <!--                        <img class="central-img-nav2" id="central-img-nav2" src="/images/SVG/smuzn_logo_min.svg" alt="">-->
     <!--                    </a>-->
     <!--                    <a href="#projects">Projects</a>-->
     <!--                    <a href="#events">Events</a>-->
@@ -385,7 +391,7 @@
     <!--                    <a href="#articles">Articles</a>-->
     <!--                    <a href="https://smuzn.xyz/news/davidmihaescu/">David</a>-->
     <!--                    <a href="#smuzn" class="central-img-link-nav" id="central-img-link-nav">-->
-    <!--                        <img class="central-img-nav" id="central-img-nav" src="https://www.smuzn.xyz/images/SVG/smuzn_logo_min.svg" alt="">-->
+    <!--                        <img class="central-img-nav" id="central-img-nav" src="/images/SVG/smuzn_logo_min.svg" alt="">-->
     <!--                    </a>-->
     <!--                    <a href="#projects">Projects</a>-->
     <!--                    <a href="#events">Events</a>-->
@@ -400,28 +406,28 @@
             </section>
 
             <div class="section2" id="section2">
-                <a href="https://www.smuzn.xyz/notizie/notizianumerouno" class="link-news news-windows news-window-1">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                <a href="/notizie/notizianumerouno" class="link-news news-windows news-window-1">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
                          data-title="DATA TITLE 1"
                          data-news="SUB 1"
                          data-year="SUB 2">
-                        <img src="https://smuzn.xyz/notizie/IMAGES/meloni.jpg" alt="plus" class="news-imgs">
+                        <img src="/notizie/IMAGES/meloni.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
                         <h1 class="news-card-text">ANSA<br>2 ore fa</h1>
                         <h1 class="news-card-text text-news-right">ATTACCHI SENZA PRECEDENTI ALLA LIBERTÀ DI STAMPA DA QUANDO L'ESTREMA DESTRA È AL GOVERNO</p></h1>
                     </section>
                 </a>
-                <a href="https://smuzn.xyz/notizie/notizianumerodue" class="link-news news-windows news-window-2">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                <a href="/notizie/notizianumerodue" class="link-news news-windows news-window-2">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
                              data-title="DATA TITLE 1"
                              data-news="SUB 1"
                              data-year="SUB 2">
-                        <img src="https://smuzn.xyz/notizie/IMAGES/mangione.jpg" alt="plus" class="news-imgs">
+                        <img src="/notizie/IMAGES/mangione.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
                         <h1 class="news-card-text">ANSA<br>5 ore fa</h1>
@@ -439,8 +445,8 @@
 
             <div class="section4" id="section4">
                 <a href="https://dillonfrancismartingarrixfanzonenumberonefansonly.com/" class="link-news news-windows news-window-1">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
                              data-title="DATA TITLE 1"
                              data-news="SUB 1"
@@ -454,8 +460,8 @@
                     </section>
                 </a>
                 <a href="https://aliexpi.com/Fxvc" class="link-news news-windows news-window-2">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
                              data-title="DATA TITLE 1"
                              data-news="SUB 1"
@@ -473,8 +479,8 @@
 
             <div class="section5" id="section5">
                 <a href="https://floatingqrcode.com/" class="link-news news-windows news-window-1">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
                              data-title="DATA TITLE 1"
                              data-news="SUB 1"
@@ -487,14 +493,14 @@
                             <p class="text-news-right-subtitle">Vicino a Bilopillia, nella regione settentrionale di Sumy</p></h1>
                     </section>
                 </a>
-                <a href="https://smuzn.xyz/notizie/notizianumerotre" class="link-news news-windows news-window-2">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="https://www.smuzn.xyz/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                <a href="/notizie/notizianumerotre" class="link-news news-windows news-window-2">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
                              data-title="DATA TITLE 1"
                              data-news="SUB 1"
                              data-year="SUB 2">
-                        <img src="https://smuzn.xyz/notizie/IMAGES/protestecina.jpg" alt="plus" class="news-imgs">
+                        <img src="/notizie/IMAGES/protestecina.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
                         <h1 class="news-card-text">ANSA<br>2 giorni fa</h1>
@@ -505,10 +511,10 @@
 
             <section class="page5">
                 <div class="box5">
-                    <a href="https://www.smuzn.xyz/notizie/contatti" class="text4">clicca qui per i contatti</a>
+                    <a href="/notizie/contatti" class="text4">clicca qui per i contatti</a>
                 </div>
                 <div class="box5-2">
-                    <img class="logo-endpage no-drag" src="https://www.smuzn.xyz/images/SVG/smuzn-endpage.svg" alt="SMÜZN">
+                    <img class="logo-endpage no-drag" src="/images/SVG/smuzn-endpage.svg" alt="SMÜZN">
                 </div>
 
             </section>
@@ -649,9 +655,9 @@
     <!--    });-->
     <!--</script>&lt;!&ndash;HOVER INFO IMMAGINI VERSIONE news TO LEFT&ndash;&gt;-->
 
-    <script src="https://www.smuzn.xyz/script/bootstrap.bundle.min.js"></script>
-    <script src="https://www.smuzn.xyz/script/jquery-3.7.1.slim.min.js"></script>
-    <script src="https://www.smuzn.xyz/script/jquery-scripts.js"></script>
+    <script src="/script/bootstrap.bundle.min.js"></script>
+    <script src="/script/jquery-3.7.1.slim.min.js"></script>
+    <script src="/script/jquery-scripts.js"></script>
 </div>
 </body>
 </html>

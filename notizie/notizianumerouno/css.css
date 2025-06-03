@@ -1,6 +1,6 @@
 
 @import url("/bootstrap.css");
-@font-face {font-family:"Aboriginal Serif";src:url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("https://www.smuzn.xyz/fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
+@font-face {font-family:"Aboriginal Serif";src:url("/fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("/fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("/fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("/fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
 
 
 .bebas-neue-regular {
@@ -183,11 +183,12 @@ body {
     font-style: normal;
     font-optical-sizing: auto;
     font-size: 12vmin;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     color: #ffffff;
     z-index: 3;
     letter-spacing: -0.05em;
     line-height: 11vmin;
+    width: 70vmin;
     /*bottom: 2.5vmin;*/
     /*margin: 4vmin 4vmin 4vmin 3vmin;*/
 }
