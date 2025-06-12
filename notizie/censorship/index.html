@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const link = document.getElementById("okcasella2");
+            if (link) {
+                link.addEventListener("click", function() {
+                    this.textContent = "RISPOSTA ESATTA!";
+                });
+            }
+        });
+    </script><!--QUESTIONARIO CAMBIA TESTO CASELLA-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const openPopupLink = document.getElementById("openPopupLink");
+            const popupOverlay = document.getElementById("PopupOverlay");
+            const pulsanteAccetta = document.getElementById("pulsante-accetta");
+
+            const openPopupLinkGoHome = document.getElementById("openPopupLinkGoHome");
+            const popupOverlay2 = document.getElementById("PopupOverlay2");
+            const pulsanteAccetta2 = document.getElementById("pulsante-accetta2");
+
+            openPopupLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                popupOverlay.style.display = "flex";
+            });
+
+            pulsanteAccetta.addEventListener("click", function() {
+                popupOverlay.style.display = "none";
+            });
+
+            openPopupLinkGoHome.addEventListener("click", function(event) {
+                event.preventDefault();
+                popupOverlay2.style.display = "flex";
+            });
+
+            pulsanteAccetta2.addEventListener("click", function() {
+                window.location.href = "../";
+            });
+        });
+    </script><!--POPUP LINK SCRIPT GO HOME-->
+    <script src="/script/bootstrap.bundle.min.js"></script>
+    <script src="/script/jquery-3.7.1.slim.min.js"></script>
+    <script src="/script/jquery-scripts.js"></script>
+	<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149953538-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149953538-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Iosif Mihaescu">
+    <title>SMÜZN</title>
+    <!-- START Preload scripts -->
+    <link rel="preload" href="/script/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="/script/jquery-3.7.1.slim.min.js" as="script">
+    <link rel="preload" href="/script/jquery-scripts.js" as="script">
+    <link rel="preload" href="/bootstrap.css" as="style">
+    <link rel="preload" href="css.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="../../fonts/fonts.css" as="style">
+    <!-- STOP Preload scripts -->
+    <link rel="stylesheet" href="/bootstrap.css"  crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../fonts/fonts.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Make IE recognize HTML5 tags. -->
+    <!--[if IE]><script>/*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/</script><![endif]-->
+
+    <style>
+
+        /* INIZIO schermata di caricamento */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100dvh;
+            background-color: #FF0054;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader {
+            width: 50vw;
+            height: auto;
+            animation: spin 1.5s linear infinite;
+            transition: scale 0.3s ease;
+        }
+
+        .corner-logo {
+            position: absolute;
+            width: auto;
+            height: 10dvh;
+            margin: calc(1vw + 1dvh);
+            transition: scale 0.3s ease;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* logo che gira al caricamento: */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* FINE schermata di caricamento*/
+
+        /* INIZIO variazioni in base a dimensione viewport: */
+        @media (max-width: 1200px) {
+
+            .corner-logo {
+                position: absolute;
+                width: auto;
+                height: 7dvh;
+                transition: all 0.3s ease;
+            }
+
+            .top-left {
+                top: 0;
+                left: 0;
+            }
+            .top-right {
+                top: 0;
+                right: 0;
+            }
+            .bottom-left {
+                bottom: 0;
+                left: 0;
+            }
+            .bottom-right {
+                bottom: 0;
+                right: 0;
+            }
+
+        }
+
+        @media (max-width: 968px) {
+
+            .loader {
+                width: 80vw;
+                height: auto;
+            }
+
+        }
+        /* FINE variazioni in base a dimensione viewport */
+
+        /* Webkit-based browsers */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF0054;
+            border: 1px solid white;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e6004c; /* Slightly darker shade for hover effect */
+        }
+
+        ::-webkit-scrollbar-button {
+            background: #ddd;
+        }
+
+        ::-webkit-scrollbar-button:hover {
+            background: #bbb;
+        }
+
+        .link-testuale {
+            color: var(--blu) !important;
+            cursor: pointer !important;
+        }
+
+        .link-testuale:hover {
+            color: var(--bgc) !important;
+        }
+
+        .btn, .section-notizie a *, .section-notizie a, .text1, .oggetto-cliccabile, .oggetto-cliccabile-tutto, .oggetto-cliccabile-tutto * {
+            cursor: pointer !important;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<!--PAGINA DI MANCATA COMPATIBILITÀ SCHERMO-->
+<div class="pagina-disp-non-compatibile">
+    <h1 class="pagina-disp-non-compatibile-text">DISPOSITIVO NON COMPATIBILE, ACCEDERE AL SITO DA UN PC</h1>
+</div>
+
+<!--PUBBLICITÀ-->
+<div class="advertisement-left-container advertisement-containers">
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdmYmVnOG1kbHZqeTE5OWk3aTg0OWNwdHNvOTlraHphZDViOWVzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkxrAhRVHygX02rwMi/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <!--COPIA-->
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
+    <!--COPIA-->
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdmYmVnOG1kbHZqeTE5OWk3aTg0OWNwdHNvOTlraHphZDViOWVzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkxrAhRVHygX02rwMi/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+</div>
+<div class="advertisement-right-container advertisement-containers">
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
+    <!--COPIA-->
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdmYmVnOG1kbHZqeTE5OWk3aTg0OWNwdHNvOTlraHphZDViOWVzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkxrAhRVHygX02rwMi/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <!--COPIA-->
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
+</div>
+<!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ-->
+<script>
+    /**
+     * SCRIPT DI SINCRONIZZAZIONE FINALE E ROBUSTO
+     * Utilizza ResizeObserver per reagire in modo preciso e performante
+     * ai cambiamenti di dimensione dell'elemento di origine.
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+        const sourceDiv = document.querySelector('.smuzn-webpage');
+        const targetDivs = document.querySelectorAll('.advertisement-left-container, .advertisement-right-container');
+
+        // Se gli elementi necessari non sono sulla pagina, non fare nulla.
+        if (!sourceDiv || targetDivs.length === 0) {
+            console.error("ResizeObserver: Impossibile trovare l'elemento di origine o di destinazione. Lo script non verrà eseguito.");
+            return;
+        }
+
+        // Crea un'istanza dell'osservatore
+        const observer = new ResizeObserver(entries => {
+            // 'entries' è un array di elementi osservati che hanno cambiato dimensione.
+            // In questo caso, osserviamo solo sourceDiv, quindi ci sarà un solo elemento.
+            const sourceEntry = entries[0];
+
+            // Usiamo contentRect.height per una misurazione stabile dell'area del contenuto.
+            const sourceHeight = sourceEntry.contentRect.height;
+
+            // Applica l'altezza a tutti i div di destinazione
+            targetDivs.forEach(div => {
+                // Applichiamo la stessa logica di box-sizing per coerenza
+                // Se i div target hanno padding/border, questo assicura che l'altezza
+                // del *contenuto* corrisponda, e box-sizing: border-box gestirà il resto.
+                div.style.height = `${sourceHeight}px`;
+            });
+
+            console.log(`Altezza sincronizzata da ResizeObserver: ${sourceHeight}px`);
+        });
+
+        // Inizia a osservare l'elemento di origine
+        observer.observe(sourceDiv);
+
+        // NOTA: Con ResizeObserver, gli listener per 'load' e 'resize' della finestra
+        // non sono più strettamente necessari per questo compito, rendendo il codice
+        // più pulito, efficiente e specifico.
+    });
+</script>
+<!--SINCRONIZZAZIONE ALTEZZA,LARGHEZZA E POSIZIONE PER FIX SPAZIO TESTO ARTICOLO-->
+<script>
+    /**
+     * SCRIPT CHE MISURA UN ELEMENTO E IMPOSTA VARIABILI CSS GLOBALI
+     *
+     * 1. Attende il caricamento completo della pagina (incluse immagini).
+     * 2. Misura le dimensioni di '.immagine-principale-bordo'.
+     * 3. Imposta i valori nelle variabili CSS '--larghezza-copia' e '--altezza-copia'.
+     * 4. Utilizza ResizeObserver per mantenere le variabili aggiornate dinamicamente.
+     */
+    window.addEventListener('load', () => {
+
+        const sourceElement = document.querySelector('.immagine-principale-bordo');
+        const rootElement = document.documentElement; // Corrisponde a :root in CSS
+
+        if (!sourceElement) {
+            console.error("Script Variabili CSS: Impossibile trovare l'elemento sorgente '.immagine-principale-bordo'.");
+            return;
+        }
+
+        // Funzione centrale che esegue la misurazione e imposta le variabili
+        const syncAndSetCssVariables = () => {
+            const sourceRect = sourceElement.getBoundingClientRect();
+
+            // Imposta le proprietà custom sull'elemento root
+            rootElement.style.setProperty('--larghezza-copia', `${sourceRect.width}px`);
+            rootElement.style.setProperty('--altezza-copia', `${sourceRect.height}px`);
+
+            console.log(`Variabili CSS aggiornate: --larghezza-copia=${sourceRect.width}px, --altezza-copia=${sourceRect.height}px`);
+        };
+
+        // Esegui la funzione una prima volta
+        syncAndSetCssVariables();
+
+        // Usa ResizeObserver per mantenere le variabili sincronizzate
+        // quando le dimensioni dell'elemento sorgente cambiano.
+        const resizeObserver = new ResizeObserver(syncAndSetCssVariables);
+        resizeObserver.observe(sourceElement);
+
+        // Come ulteriore garanzia, puoi anche ascoltare il resize della finestra,
+        // anche se ResizeObserver è generalmente sufficiente.
+        // window.addEventListener('resize', syncAndSetCssVariables);
+    });
+</script>
+
+<div class="smuzn-webpage">
+
+    <!--SCHERMATA DI CARICAMENTO, nascondi scrollbar -->
+    <script>
+        // Nascondiamo la scrollbar
+        const body = document.body;
+        body.style.overflow = 'hidden';
+    </script>
+    <div id="loading-screen">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
+        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
+        <img src="/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
+    </div>
+    <script>
+        //        SCHERMATA DI CARICAMENTO VELOCE
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.opacity = '0';
+            setTimeout(function() {
+                // Nascondiamo lo schermo di caricamento
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    body.style.overflow = '';
+                }, 500);
+            });
+        });
+    </script>
+    <!--SCHERMATA DI CARICAMENTO VELOCE-->
+
+    <button id="scrollToTopBtn" title="Torna in cima" class="oggetto-cliccabile"></button>
+
+    <!-- Popup Overlay -->
+    <div id="PopupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <!-- Stato Iniziale del Popup -->
+            <div id="initialConsent">
+                <h2 class="popup-title">Abbiamo rimosso questo contenuto perchè non rispetta le nostre norme/viola le linee guida dello stato Italiano</h2>
+                <div class="popup-buttons">
+                    <button id="pulsante-accetta" class="btn btn-accetta">OK</button>
+                </div>
+                <p class="popup-details-text">
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Secondo Popup Overlay Go HOME-->
+    <div id="PopupOverlay2" class="popup-overlay">
+        <div class="popup-content">
+            <div id="initialConsent2">
+                <h2 class="popup-title">Non ci sono dati disponibili a riguardo…</h2>
+                <div class="popup-buttons">
+                    <button id="pulsante-accetta2" class="btn btn-accetta">chiudi</button>
+                </div>
+                <p class="popup-details-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======== INIZIO STRUTTURA POPUP VIDEO (Corretta) ======== -->
+    <div id="video-modal-overlay" class="video-modal-overlay">
+        <div class="video-modal-container">
+            <!-- Pulsante di chiusura -->
+            <button id="video-modal-close" class="video-modal-close oggetto-cliccabile-tutto" aria-label="Chiudi popup">×</button>
+
+            <!-- Titolo del video -->
+            <h2 id="video-modal-title" class="video-modal-title">Titolo del Video Qui</h2>
+
+            <!-- Wrapper per immagine e pulsante play -->
+            <div class="video-preview-wrapper">
+                <!-- IMMAGINE E PULSANTE ORA SONO FRATELLI, DIRETTAMENTE DENTRO IL WRAPPER -->
+                <img id="video-modal-image" src="" alt="Anteprima video" class="video-preview-image oggetto-cliccabile-tutto">
+                <a id="video-modal-play-link" href="#" target="_blank" rel="noopener noreferrer" class="video-play-button oggetto-cliccabile-tutto" aria-label="Guarda il video">
+                    <!-- Icona Play (triangolo) in SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="white">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ======== FINE STRUTTURA POPUP VIDEO ======== -->
+
+    <!-- ======== INIZIO BARRA DI PROSEGUIMENTO LETTURA ======== -->
+    <div id="reading-progress-bar"></div>
+    <!-- ======== FINE BARRA DI PROSEGUIMENTO LETTURA ======== -->
+
+
+
+    <div class="webpage">
+        <section class="pages">
+            <section class="section1">
+<!--                        <a href="/notizie" class="text1 text4">Smüzn</a>-->
+                <div class="box1">
+                    <div class="box1-2">
+                        <a href="/notizie" class="text1 text4">Smüzn</a>
+                        <div class="item animated-vertical-text1">
+                            <div id="animated-text-strip">
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+<!--            <section class="section3-2" id="section3-2">-->
+<!--                <section class="box-section-name">-->
+<!--                    <h1 class="year-text">Principali</h1>-->
+<!--                </section>-->
+<!--            </section>-->
+
+            <div class="titolo-articolo-box">
+                <h1 class="titolo-articolo">
+                    LOREM IPSUM
+                </h1>
+            </div>
+
+
+
+
+
+
+
+            <div class="linea-separatore"></div>
+
+            <div class="sezione1-articolo sezioni-articolo" id="sezione1-articolo">
+                <div class="immagine-principale-bordo">
+                        <img class="immagine-principale" src="https://www.rai.it/dl/img/2024/12/26/1600x900_1735237515010_logo%20sanremo%202025.jpg">
+                </div>
+                <div class="immagine-principale-bordo-sopra">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                </div>
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+
+                        <p class="testo-articolo">
+                            <span class="spazio-per-testo-fix-foto"></span>
+                            <span class="capital-letter">L</span>orem
+                                ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <span class="oggetti-in-fila">
+                            <a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;     /*object-fit: fill !important;*/" src="https://images.squarespace-cdn.com/content/v1/525073c8e4b078f55072373d/1517526768399-J6GWOSF6JUXLKE22U3HV/coke_change.gif"></a>
+                            <a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;" src="https://cdn.dribbble.com/userupload/14672696/file/original-2e8d4c9aa547c3d34636dfc94717cbdd.gif"></a>
+                            </span>
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="https://www.ansa.it/sito/notizie/topnews/2025/06/12/unicef-80-mila-lavoratori-minorenni-in-italia-nel-2024_62f18962-ba0f-4100-8e35-27bfe3f7e1cf.html" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://www.ansa.it/webimages/news_base/2025/6/12/18be32812d3011da30441d4e87b910bc.webp" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Unicef, 80 mila lavoratori minorenni in Italia nel 2024<span class="text-news-bottom">2 ore fa - ANSA</span></h1>
+                    </section>
+                </a>
+                <a href="https://www.ansa.it/sito/notizie/cultura/2025/06/11/e-morto-brian-wilson-co-fondatore-dei-beach-boys_cf98d350-1463-46bc-9292-715604fd78c9.html" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://www.ansa.it/webimages/news_base/2025/6/11/bcb1b13c0a467baafc956caefaa7342f.webp" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">E' morto Brian Wilson, il frontman dei Beach Boys<span class="text-news-bottom">5 ore fa - ANSA</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione2-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+                        <p class="testo-articolo">
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <span class="oggetti-in-fila">
+                            <a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;     /*object-fit: fill !important;*/" src="https://i.pinimg.com/originals/0b/28/8d/0b288dcaa37b56cd603b59ae7e8b4631.gif"></a>
+                            <a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;" src="https://www.theispot.com/assets/images/source/ezgif1111111111111111111111111111111111111111111.gif"></a>
+                            </span>
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="https://www.ansa.it/sito/notizie/mondo/2025/06/12/israele-lopposizione-non-riesce-a-sciogliere-il-parlamento_b7ff7258-6918-47fb-bfbc-280df3e307d5.html" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://www.ansa.it/webimages/news_base/2025/6/11/f5ef48cb84cbeaf83ebfe2163fc989fe.webp" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Israele: l'opposizione non riesce a sciogliere il Parlamento<span class="text-news-bottom">6 ore fa - ANSA</span></h1>
+                    </section>
+                </a>
+                <a href="https://www.ansa.it/sito/notizie/flash/2025/06/12/-sequestrati-14-centri-medicina-estetica-1160-controlli-_3c2673ac-a372-4e77-81ec-af4559bafd40.html" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://www.ansa.it/webimages/news_base/2025/5/13/01f6fe4dcf8738504cb7b09ce0e1d486.webp" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Sequestrati 14 centri di medicina estetica, 1160 controlli<span class="text-news-bottom">8 ore fa - ANSA</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione3-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box" id="reading-progress-container">
+                        <p class="testo-articolo">
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <span class="oggetti-in-fila">
+                            <a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;     /*object-fit: fill !important;*/" src="https://www.allthingscommunicate.it/assets/media/blog/atc--all-things-communicate-premiata-allo-smart-retail-award-2023-per-il-progetto-issima-pokemon-in-collaborazione-con-levissima/pokemon-card-Influencer.gif"></a>
+                            <a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;" src="https://www.quattroruote.it/news/novita/2017/06/29/fiat_500_anniversario_versione_speciale_per_celebrare_i_60_anni_del_cinquino/_jcr_content/content/article_gif/image.img.gif/1498751935460.gif"></a>
+                            </span>
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 20vmin" class="sezione-notizie-interessanti">
+                <a href="https://www.ansa.it/sito/notizie/mondo/nordamerica/2025/06/11/trump-e-xi-verso-la-pace-sui-dazi-accordo-fatto_93a275a1-b69a-45e3-8507-fba691ac285f.html" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://www.ansa.it/webimages/news_base/2025/6/11/785144a8f958606877188d0d0dd0aa43.webp" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Trump e Xi verso la pace sui dazi: 'Accordo fatto'<span class="text-news-bottom">6 ore fa - ANSA</span></h1>
+                    </section>
+                </a>
+                <a href="https://www.ansa.it/canale_scienza/notizie/spazio_astronomia/2025/06/11/ce-la-luna-piena-piu-a-sud-dei-prossimi-18-anni_2d5ecca9-1413-4974-ab96-36030fb7aec2.html" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://www.ansa.it/webimages/news_base/2025/6/11/6b767c4225dac6d39e2354748c7c11b5.webp" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">La Luna piena più a Sud dei prossimi 18 anni, le foto<span class="text-news-bottom">9 ore fa - ANSA</span></h1>
+                    </section>
+                </a>
+            </div>
+
+
+<!--            <section class="section3" id="section3">-->
+<!--                    <section class="box-section-name">-->
+<!--                        <h1 class="year-text">Dal Mondo</h1>-->
+<!--                    </section>-->
+<!--            </section>-->
+
+            <footer class="footer">
+                <div class="box5">
+                    <a href="/notizie/contatti" class="text4 oggetto-cliccabile">clicca qui per i contatti</a>
+                </div>
+                <div class="box5-2">
+                    <img class="logo-endpage no-drag" src="/images/SVG/smuzn-endpage.svg" alt="SMÜZN">
+                </div>
+
+            </footer>
+        </section>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Il tuo codice per il POPUP VIDEO rimane qui, invariato ---
+        // ...
+
+        // --- LOGICA BARRA DI PROSEGUIMENTO LETTURA (con zona di progressione personalizzata) ---
+
+        // 1. Seleziona gli elementi necessari
+        const articleBox = document.querySelector('.testo-articolo-sub-box');
+        const progressBar = document.getElementById('reading-progress-bar');
+        const footer = document.querySelector('footer'); // L'elemento che definisce la fine
+
+        // Controlliamo che tutti gli elementi esistano per evitare errori
+        if (!articleBox || !progressBar || !footer) {
+            console.warn("Elementi necessari per la barra di progresso non trovati (articleBox, progressBar, o footer).");
+            return;
+        }
+
+        const updateCustomProgressBar = () => {
+            // --- ALLINEAMENTO VISIVO (come prima) ---
+            const articleRect = articleBox.getBoundingClientRect();
+            const articleWidth = articleRect.width;
+            const articleLeftOffset = articleRect.left;
+
+            // --- CALCOLO DELLA ZONA DI PROGRESSIONE ---
+
+            // 1. Il punto finale dello scroll è quando il fondo della finestra tocca la cima del footer.
+            // Usiamo getBoundingClientRect().top + window.scrollY per ottenere la posizione assoluta del footer,
+            // che è più affidabile di offsetTop in layout complessi.
+            const footerPositionTop = footer.getBoundingClientRect().top + window.scrollY;
+            const scrollEndPoint = footerPositionTop - window.innerHeight;
+
+            // 2. La distanza totale da percorrere è semplicemente scrollEndPoint, dato che partiamo da 0.
+            const totalScrollDistance = scrollEndPoint;
+
+            // 3. Calcoliamo la frazione di progresso.
+            let progressFraction = 0;
+            if (totalScrollDistance > 0) {
+                // Calcoliamo la progressione solo se c'è effettivamente spazio per scrollare.
+                progressFraction = window.scrollY / totalScrollDistance;
+            }
+
+            // 4. FONDAMENTALE: Limitiamo il valore tra 0 e 1 (0% - 100%).
+            // Questo garantisce che la barra si fermi esattamente al 100% e non vada oltre.
+            const clampedProgress = Math.max(0, Math.min(progressFraction, 1));
+
+            // --- APPLICAZIONE DEGLI STILI ---
+            const currentBarWidth = articleWidth * clampedProgress;
+
+            progressBar.style.left = `${articleLeftOffset}px`;
+            progressBar.style.width = `${currentBarWidth}px`;
+        };
+
+        // Aggiungiamo gli ascoltatori di eventi
+        window.addEventListener('scroll', updateCustomProgressBar);
+        window.addEventListener('resize', updateCustomProgressBar);
+
+        // Eseguiamo subito per un posizionamento corretto al caricamento
+        updateCustomProgressBar();
+    });
+    </script><!--SCRIPT BARRA DI PROSEGUIMENTO-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- CONFIGURAZIONE POPUP ---
+            const videoData = [
+                {
+                    title: "Mangiamo carne di squalo senza saperlo",
+                    imageUrl: "https://i.ytimg.com/vi/Q2DWcy6skUs/hq720.jpg",
+                    videoUrl: "https://youtu.be/Q2DWcy6skUs?si=iHA6Oy1HzjtMInTB"
+                },
+                {
+                    title: "Computer Quantistici, Spiegazione Animata",
+                    imageUrl: "https://i.ytimg.com/vi/n-i03wnWu9k/hq720.jpg",
+                    videoUrl: "https://youtu.be/n-i03wnWu9k"
+                },
+                {
+                    title: "Perché le buche sulla spiaggia sono così mortali?",
+                    imageUrl: "https://i.ytimg.com/vi/0kQXOTcEB_E/hq720.jpg",
+                    videoUrl: "https://youtu.be/0kQXOTcEB_E"
+                }
+            ];
+            // --------------------
+
+            // Selezione degli elementi del DOM del Popup
+            const overlay = document.getElementById('video-modal-overlay');
+            const modalContainer = document.querySelector('.video-modal-container');
+            const closeButton = document.getElementById('video-modal-close');
+            const modalTitle = document.getElementById('video-modal-title');
+            const modalImage = document.getElementById('video-modal-image');
+            const playLink = document.getElementById('video-modal-play-link');
+
+            let popupTimer;
+
+            // Funzione per generare un ritardo casuale in millisecondi
+            const getRandomDelay = (minSeconds, maxSeconds) => {
+                // PICCOLA CORREZIONE: Moltiplico per 1000 per convertire i secondi in millisecondi
+                return (Math.random() * (maxSeconds - minSeconds) + minSeconds) * 1000;
+            };
+
+            // Funzione per mostrare il popup con un video casuale
+            const showRandomVideoPopup = () => {
+                if (videoData.length === 0) {
+                    console.warn("Nessun video da mostrare nel popup.");
+                    return;
+                }
+                const randomIndex = Math.floor(Math.random() * videoData.length);
+                const video = videoData[randomIndex];
+                modalTitle.textContent = video.title;
+                modalImage.src = video.imageUrl;
+                playLink.href = video.videoUrl;
+                overlay.classList.add('visible');
+            };
+
+            // Funzione per nascondere il popup
+            const hideVideoPopup = () => {
+                overlay.classList.remove('visible');
+                clearTimeout(popupTimer);
+                popupTimer = setTimeout(showRandomVideoPopup, getRandomDelay(10, 20));
+            };
+
+            // --- Event Listeners del Popup ---
+
+            closeButton.addEventListener('click', hideVideoPopup);
+
+            overlay.addEventListener('click', (event) => {
+                if (event.target === overlay) {
+                    hideVideoPopup();
+                }
+            });
+
+            modalContainer.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            // ==========================================================
+            // ===== NUOVA AGGIUNTA: RENDE L'IMMAGINE CLICCABILE ========
+            // ==========================================================
+            // Quando si clicca sull'immagine, simula un click sul link del pulsante play
+            modalImage.addEventListener('click', () => {
+                playLink.click();
+            });
+            // ==========================================================
+
+
+            // Imposta il timer per la prima apparizione del popup
+            popupTimer = setTimeout(showRandomVideoPopup, getRandomDelay(3, 8));
+
+
+            // --- LOGICA BARRA DI PROSEGUIMENTO LETTURA ---
+            // (Il codice per la barra di proseguimento che avevamo fatto prima va qui sotto)
+            const articleBox = document.querySelector('.testo-articolo-sub-box');
+            const progressBar = document.getElementById('reading-progress-bar');
+            const footer = document.querySelector('footer');
+
+            if (!articleBox || !progressBar || !footer) {
+                console.warn("Elementi necessari per la barra di progresso non trovati.");
+                return; // Esce dalla funzione se manca un elemento per evitare errori
+            }
+
+            const updateCustomProgressBar = () => {
+                const articleRect = articleBox.getBoundingClientRect();
+                const articleWidth = articleRect.width;
+                const articleLeftOffset = articleRect.left;
+
+                const footerPositionTop = footer.getBoundingClientRect().top + window.scrollY;
+                const scrollEndPoint = footerPositionTop - window.innerHeight;
+
+                const totalScrollDistance = scrollEndPoint;
+
+                let progressFraction = 0;
+                if (totalScrollDistance > 0) {
+                    progressFraction = window.scrollY / totalScrollDistance;
+                }
+
+                const clampedProgress = Math.max(0, Math.min(progressFraction, 1));
+                const currentBarWidth = articleWidth * clampedProgress;
+
+                progressBar.style.left = `${articleLeftOffset}px`;
+                progressBar.style.width = `${currentBarWidth}px`;
+            };
+
+            window.addEventListener('scroll', updateCustomProgressBar);
+            window.addEventListener('resize', updateCustomProgressBar);
+            updateCustomProgressBar();
+
+        });
+    </script><!--SCRIPT POPUP VIDEO-->
+    <script>
+        // 1. Prendo i riferimenti agli elementi necessari
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        // Selezioniamo il footer in modo generico, senza bisogno di un ID
+        const footer = document.querySelector("footer");
+
+        // 2. Aggiungo l'ascoltatore all'evento di scroll
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        // 3. Definisco la funzione che gestisce tutta la logica
+        function scrollFunction() {
+            // Logica di base per mostrare/nascondere il pulsante
+            const isVisible = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100);
+
+            // Applica l'opacità in base alla visibilità
+            scrollToTopBtn.style.opacity = isVisible ? "1" : "0";
+
+            // --- NUOVA LOGICA PER LA POSIZIONE DINAMICA ---
+
+            // Imposta una posizione di default per il 'bottom'
+            let targetBottom = isVisible ? "3vmin" : "-5vmin";
+
+            // Se il footer esiste sulla pagina, eseguiamo i calcoli
+            if (footer) {
+                // Calcoliamo 5vmin in pixel per poter fare somme corrette
+                const vminInPx = Math.min(window.innerWidth, window.innerHeight) / 100;
+                const gapInPx = 3 * vminInPx;
+
+                // Calcoliamo la distanza tra il fondo della finestra (viewport) e il fondo del documento
+                const distanceToDocBottom = document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
+
+                // La posizione in cui il pulsante deve "fermarsi" (altezza del footer + il gap desiderato)
+                const stopPosition = footer.offsetHeight + gapInPx;
+
+                // Se la finestra è entrata nella "zona del footer"
+                if (distanceToDocBottom < stopPosition) {
+                    // Calcoliamo dinamicamente il nuovo valore di 'bottom'.
+                    // Sarà uguale alla distanza dal fondo del documento, mantenendo il gap.
+                    const newBottomInPx = stopPosition - distanceToDocBottom;
+                    targetBottom = `${newBottomInPx}px`;
+                }
+            }
+
+            // Applica la posizione 'bottom' calcolata
+            scrollToTopBtn.style.bottom = targetBottom;
+        }
+
+        // 4. Logica del click per tornare su (invariata)
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script><!--PULSANTE TORNA IN CIMA-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const section1 = document.querySelector('.section1');
+            const triggerBox = document.querySelector('.titolo-articolo-box');
+            const articleTitleText = document.querySelector('.titolo-articolo').textContent.trim();
+            const marqueeSpans = document.querySelectorAll('.marquee');
+
+            const originalMarqueeHTML = marqueeSpans[0].innerHTML;
+            const originalTextContent = marqueeSpans[0].textContent.trim();
+            const textEndIndex = originalMarqueeHTML.indexOf(originalTextContent) + originalTextContent.length;
+            const nbspSuffix = originalMarqueeHTML.substring(textEndIndex);
+            const newMarqueeHTML = articleTitleText + nbspSuffix;
+
+            const speedFactor = 0.18;
+            const minDuration = 8;
+            let newDuration = Math.max(minDuration, articleTitleText.length * speedFactor);
+            newDuration = Math.round(newDuration * 10) / 10;
+
+            let lastScrollY = window.scrollY;
+            let isHeaderActive = false;
+
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
+                const direction = currentScrollY > lastScrollY ? 'down' : 'up';
+                const triggerBoxRect = triggerBox.getBoundingClientRect();
+
+                if (triggerBoxRect.bottom <= 0) {
+                    if (!isHeaderActive) {
+                        isHeaderActive = true;
+                        section1.classList.add('header-visible');
+
+                        // --- MODIFICA CHIAVE APPLICATA QUI ---
+                        // Applica testo e durata a ogni span .marquee
+                        marqueeSpans.forEach(span => {
+                            span.innerHTML = newMarqueeHTML;
+                            span.style.animationDuration = `${newDuration}s`;
+                        });
+                    }
+
+                    if (direction === 'down') {
+                        section1.style.top = '0.001vmin';
+                    } else {
+                        if (currentScrollY > 0) {
+                            section1.style.top = '-15vmin';
+                        }
+                    }
+
+                } else {
+                    if (isHeaderActive) {
+                        isHeaderActive = false;
+                        section1.classList.remove('header-visible');
+                        section1.style.top = null;
+
+                        // --- MODIFICA CHIAVE APPLICATA QUI ---
+                        // Ripristina testo e durata di ogni span .marquee
+                        marqueeSpans.forEach(span => {
+                            span.innerHTML = originalMarqueeHTML;
+                            // Rimuovendo lo stile inline, il controllo torna al CSS originale
+                            span.style.animationDuration = null;
+                        });
+                    }
+                }
+
+                lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        });
+    </script><!--SCRIPT TENDINA-->
+</div>
+</body>
+</html>

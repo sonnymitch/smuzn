@@ -1,0 +1,58 @@
+
+@import url("/bootstrap.css");
+@font-face {font-family:"Aboriginal Serif";src:url("/fonts/Aboriginal_Serif_REGULAR_939.eot?") format("eot"),url("/fonts/Aboriginal_Serif_REGULAR_939.woff") format("woff"),url("/fonts/Aboriginal_Serif_REGULAR_939.ttf") format("truetype"),url("/fonts/Aboriginal_Serif_REGULAR_939.svg#AboriginalSerif") format("svg");font-weight:normal;font-style:normal;}
+
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.jacquard-12-regular {
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #FF69B4;
+    --secondary-color: #1438c7;
+    --accent-color: #FFD700;
+    --text-color: rgba(255, 255, 255, 0.83);
+    --bgc: #FF0054;
+    --btn: #FFF799FF;
+    --grigio: #5b5b5b;
+    --viola: #8781bc;
+    --nero: #212121;
+    --blu: #2077e8;
+    --0op: rgba(255, 255, 255, 0);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: cell !important;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.58);
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgba(0, 0, 0, 0.58);
+}

@@ -687,7 +687,7 @@
     text-align: center;
     transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
   }
-  .text2 {
+  .titolo {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -782,7 +782,7 @@
     bottom 0.3s ease;
   }
   .text4:hover {
-    color: var(--button-color);
+    color: var(--btn);
   }
   .logo-endpage {
     position: absolute;
@@ -1105,7 +1105,7 @@
       text-align: center;
       transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
   }
-  .text2 {
+  .titolo {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -1200,7 +1200,7 @@
     bottom 0.3s ease;
   }
   .text4:hover {
-    color: var(--button-color);
+    color: var(--btn);
   }
   .logo-endpage {
     position: absolute;

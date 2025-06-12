@@ -1,7 +1,11 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="it">
 
 <head>
-        <!-- Google Analytics -->
+    <script src="/script/bootstrap.bundle.min.js"></script>
+    <script src="/script/jquery-3.7.1.slim.min.js"></script>
+    <script src="/script/jquery-scripts.js"></script>
+	<!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149953538-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,12 +26,12 @@
     <link rel="preload" href="/bootstrap.css" as="style">
     <link rel="preload" href="css.css" as="style">
     <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="/fonts/fonts.css" as="style">
+    <link rel="preload" href="../fonts/fonts.css" as="style">
     <!-- STOP Preload scripts -->
     <link rel="stylesheet" href="/bootstrap.css"  crossorigin="anonymous">
     <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Make IE recognize HTML5 tags. -->
         <!--[if IE]>
@@ -133,23 +137,6 @@
         }
         /* FINE variazioni in base a dimensione viewport */
 
-        /*  STILE PRINCIPALE  */
-        body {
-            width: 100vw;
-            height: 100dvh;
-            font-family: "Aboriginal Serif", serif;
-            font-weight: 400;
-            font-style: normal;
-            background-color: var(--bgc);
-            color: var(--text-color) !important;
-            margin: 0;
-            padding: 0;
-            scrollbar-width: thin;
-            scrollbar-color: #FF0054 #f1f1f1;
-            overflow-x: hidden;
-            cursor: cell;
-        }
-
         /* Webkit-based browsers */
         ::-webkit-scrollbar {
             width: 12px;
@@ -177,6 +164,19 @@
             background: #bbb;
         }
 
+        .link-testuale {
+            color: var(--blu) !important;
+            cursor: pointer !important;
+        }
+
+        .link-testuale:hover {
+            color: var(--bgc) !important;
+        }
+
+        .btn, .section-notizie a *, .section-notizie a, .text1 {
+            cursor: pointer !important;
+        }
+
     </style>
 </head>
 
@@ -186,6 +186,89 @@
 <div class="pagina-disp-non-compatibile">
     <h1 class="pagina-disp-non-compatibile-text">DISPOSITIVO NON COMPATIBILE, ACCEDERE AL SITO DA UN PC</h1>
 </div>
+
+
+<!--PUBBLICITÀ-->
+<div class="advertisement-left-container advertisement-containers">
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdmYmVnOG1kbHZqeTE5OWk3aTg0OWNwdHNvOTlraHphZDViOWVzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkxrAhRVHygX02rwMi/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <!--COPIA-->
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
+
+</div>
+<div class="advertisement-right-container advertisement-containers">
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
+    <!--COPIA-->
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdmYmVnOG1kbHZqeTE5OWk3aTg0OWNwdHNvOTlraHphZDViOWVzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkxrAhRVHygX02rwMi/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+</div>
+<!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ-->
+<script>
+    /**
+     * SCRIPT DI SINCRONIZZAZIONE FINALE E ROBUSTO
+     * Utilizza ResizeObserver per reagire in modo preciso e performante
+     * ai cambiamenti di dimensione dell'elemento di origine.
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+        const sourceDiv = document.querySelector('.smuzn-webpage');
+        const targetDivs = document.querySelectorAll('.advertisement-left-container, .advertisement-right-container');
+
+        // Se gli elementi necessari non sono sulla pagina, non fare nulla.
+        if (!sourceDiv || targetDivs.length === 0) {
+            console.error("ResizeObserver: Impossibile trovare l'elemento di origine o di destinazione. Lo script non verrà eseguito.");
+            return;
+        }
+
+        // Crea un'istanza dell'osservatore
+        const observer = new ResizeObserver(entries => {
+            // 'entries' è un array di elementi osservati che hanno cambiato dimensione.
+            // In questo caso, osserviamo solo sourceDiv, quindi ci sarà un solo elemento.
+            const sourceEntry = entries[0];
+
+            // Usiamo contentRect.height per una misurazione stabile dell'area del contenuto.
+            const sourceHeight = sourceEntry.contentRect.height;
+
+            // Applica l'altezza a tutti i div di destinazione
+            targetDivs.forEach(div => {
+                // Applichiamo la stessa logica di box-sizing per coerenza
+                // Se i div target hanno padding/border, questo assicura che l'altezza
+                // del *contenuto* corrisponda, e box-sizing: border-box gestirà il resto.
+                div.style.height = `${sourceHeight}px`;
+            });
+
+            console.log(`Altezza sincronizzata da ResizeObserver: ${sourceHeight}px`);
+        });
+
+        // Inizia a osservare l'elemento di origine
+        observer.observe(sourceDiv);
+
+        // NOTA: Con ResizeObserver, gli listener per 'load' e 'resize' della finestra
+        // non sono più strettamente necessari per questo compito, rendendo il codice
+        // più pulito, efficiente e specifico.
+    });
+</script>
 
 <div class="smuzn-webpage">
 
@@ -320,8 +403,8 @@
                     necessarie, come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>.
                 </p>
                 <div class="popup-buttons">
-                    <button id="acceptInitial" class="btn btn-primary">ACCETTA</button>
-                    <button id="rejectConsent" class="btn btn-secondary">RIFIUTA</button>
+                    <button id="acceptInitial" class="btn btn-accetta">ACCETTA</button>
+                    <button id="rejectConsent" class="btn btn-rifiuta">RIFIUTA</button>
                 </div>
                 <p class="popup-details-text">
                     Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
@@ -331,10 +414,10 @@
             <!-- Stato "Rifiutato" del Popup -->
             <div id="rejectedConsent" style="display: none;">
                 <h2 class="popup-title">ATTENZIONE</h2>
-                <p class="popup-details-text">Non è possibile rifiutare.</p>
-                <p class="popup-details-text">Per continuare la navigazione, è richiesto accettare.</p>
+                <p class="popup-details-text popup-details-text-special">Non è possibile rifiutare.</p>
+                <p class="popup-details-text popup-details-text-special">Per continuare la navigazione, è richiesto accettare.</p>
                 <div class="popup-buttons">
-                    <button id="acceptFinal" class="btn btn-primary">ACCETTA</button>
+                    <button id="acceptFinal" class="btn btn-accetta">ACCETTA</button>
                 </div>
                 <p class="popup-details-text">
                     Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
@@ -359,17 +442,23 @@
                     </div>
                 </nav>
 
-                <section class="box1">
-                    <section class="box1-2">
+                <div class="box1">
+                    <div class="box1-2">
                         <a href="/notizie" class="text1 text4">Smüzn</a>
-                    </section>
-
-                    <section class="box1-3">
-                        <img src="/images/SVG/piu.svg" alt="Logo" class="news-plus no-drag">
-                        <h1 class="text2">NOTIZIE</h1>
-                    </section>
-                </section>
-
+                        <div class="item animated-vertical-text1">
+                            <div id="animated-text-strip">
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="box1-3 headline-notizie-box">
+                <img src="/images/SVG/piu.svg" alt="Logo" class="news-plus no-drag">
+                <h1 class="titolo">NOTIZIE</h1>
             </section>
 
     <!--        <nav class="menu2-container" id="menu2-container">-->
@@ -400,13 +489,13 @@
     <!--        </nav>-->
 
             <section class="section3-2" id="section3-2">
-                <section class="box-year">
+                <section class="box-section-name">
                     <h1 class="year-text">Principali</h1>
                 </section>
             </section>
 
-            <div class="section2" id="section2">
-                <a href="/notizie/notizianumerouno" class="link-news news-windows news-window-1">
+            <div class="section-notizie">
+                <a href="/notizie/meloni" class="link-news news-windows news-window-1">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
@@ -416,11 +505,11 @@
                         <img src="/notizie/IMAGES/meloni.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="news-card-text">ANSA<br>2 ore fa</h1>
-                        <h1 class="news-card-text text-news-right">ATTACCHI SENZA PRECEDENTI ALLA LIBERTÀ DI STAMPA DA QUANDO L'ESTREMA DESTRA È AL GOVERNO</p></h1>
+                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
+                        <h1 class="text-news-right">ATTACCHI SENZA PRECEDENTI ALLA LIBERTÀ DI STAMPA DA QUANDO L'ESTREMA DESTRA È AL GOVERNO</p></h1>
                     </section>
                 </a>
-                <a href="/notizie/notizianumerodue" class="link-news news-windows news-window-2">
+                <a href="/notizie/luigi" class="link-news news-windows news-window-2">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
@@ -430,20 +519,80 @@
                         <img src="/notizie/IMAGES/mangione.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="news-card-text">ANSA<br>5 ore fa</h1>
-                        <h1 class="news-card-text text-news-right">Le Grandi Corporation Cercano di Controllare la Narrativa su Luigi</h1>
+                        <h1 class="text-news-bottom">ANSA<br>5 ore fa</h1>
+                        <h1 class="text-news-right">Le Grandi Corporation Cercano di Controllare la Narrativa su Luigi</h1>
+                    </section>
+                </a>
+            </div>
+            <div class="section-notizie">
+                <a href="/notizie/sanremo" class="link-news news-windows news-window-1">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://statics.cedscdn.it/photos/MED_HIGH/96/45/8659645_16020843_olly_vince_sanremo.jpg" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
+                        <h1 class="text-news-right">SAN REMO E CENSURA: QUANDO LA MUSICA FA PAURA AL POTERE</p></h1>
+                    </section>
+                </a>
+                <a href="/notizie/immigrazione" class="link-news news-windows news-window-2">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://ilmanifesto.it/cdn-cgi/image/format=auto,width=1200/https://static.ilmanifesto.it/2025/05/11est1-balcone-sindaco-newark-ap.jpg" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">ANSA<br>5 ore fa</h1>
+                        <h1 class="text-news-right">Irruzione per immigrazione a Newark, New Jersey, provoca rabbia tra i funzionari locali</h1>
+                    </section>
+                </a>
+            </div>
+            <div class="section-notizie">
+                <a href="/notizie/library" class="link-news news-windows news-window-1">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://www.uncensoredlibrary.com/version/1678481645376/static/image/making-of.jpg" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
+                        <h1 class="text-news-right">LIBRI PROIBITI DIVENTANO ACCESSIBILI GRAZIE A UNA BIBLIOTECA VIRTUALE SU UN FAMOSO VIDEOGIOCO</p></h1>
+                    </section>
+                </a>
+                <a href="/notizie/notizianumerodue" class="link-news news-windows news-window-2">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="DATA TITLE 1"
+                             data-news="SUB 1"
+                             data-year="SUB 2">
+                        <img src="https://ilmanifesto.it/cdn-cgi/image/format=auto,width=1200/https://static.ilmanifesto.it/2025/05/11est1-balcone-sindaco-newark-ap.jpg" alt="plus" class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">ANSA<br>5 ore fa</h1>
+                        <h1 class="text-news-right">LOREM IPSUM</h1>
                     </section>
                 </a>
             </div>
 
 
             <section class="section3" id="section3">
-                    <section class="box-year">
+                    <section class="box-section-name">
                         <h1 class="year-text">Dal Mondo</h1>
                     </section>
             </section>
 
-            <div class="section4" id="section4">
+            <div class="section-notizie" id="section4">
                 <a href="https://dillonfrancismartingarrixfanzonenumberonefansonly.com/" class="link-news news-windows news-window-1">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
@@ -454,8 +603,8 @@
                         <img src="https://www.ansa.it/webimages/news_base/2025/5/18/c3001ba97d1627fe2f7eb5279485bdd8.webp" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="news-card-text">ANSA<br>2 ore fa</h1>
-                        <h1 class="news-card-text text-news-right">Fbi, attentato in California un atto di terrorismo<br>
+                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
+                        <h1 class="text-news-right">Fbi, attentato in California un atto di terrorismo<br>
                             <p class="text-news-right-subtitle">'Atto intenzionale, clinica presa di mira deliberatamente'</p></h1>
                     </section>
                 </a>
@@ -469,15 +618,15 @@
                         <img src="https://www.ansa.it/webimages/news_base/2025/5/15/405c1585c9dadba6325258224484d62d.webp" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="news-card-text">ANSA<br>6 ore fa</h1>
-                        <h1 class="news-card-text text-news-right">Hamas, '153 morti a Gaza nelle ultime 24 ore'<br>
+                        <h1 class="text-news-bottom">ANSA<br>6 ore fa</h1>
+                        <h1 class="text-news-right">Hamas, '153 morti a Gaza nelle ultime 24 ore'<br>
                             <p class="text-news-right-subtitle">'Dal 7 ottobre 2023 le vittime sono 53.272, i feriti 120.673'</p></h1>
                     </section>
                 </a>
 
             </div>
 
-            <div class="section5" id="section5">
+            <div style="padding-bottom: 30vmin;" class="section-notizie" id="section5">
                 <a href="https://floatingqrcode.com/" class="link-news news-windows news-window-1">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
@@ -488,12 +637,12 @@
                         <img src="https://www.ansa.it/webimages/news_base/2025/4/22/1b5ec3d35a9c5e7686eb605e3a843247.webp" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="news-card-text">ANSA<br>Ieri</h1>
-                        <h1 class="news-card-text text-news-right text-news-right-fix">Kiev, 9 morti in un attacco russo a un minibus in Ucraina<br>
+                        <h1 class="text-news-bottom">ANSA<br>Ieri</h1>
+                        <h1 class="text-news-right text-news-right-fix">Kiev, 9 morti in un attacco russo a un minibus in Ucraina<br>
                             <p class="text-news-right-subtitle">Vicino a Bilopillia, nella regione settentrionale di Sumy</p></h1>
                     </section>
                 </a>
-                <a href="/notizie/notizianumerotre" class="link-news news-windows news-window-2">
+                <a href="/notizie/zerocovid" class="link-news news-windows news-window-2">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
@@ -503,13 +652,13 @@
                         <img src="/notizie/IMAGES/protestecina.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="news-card-text">ANSA<br>2 giorni fa</h1>
-                        <h1 class="news-card-text text-news-right">PROTESTE IN CINA CONTRO LA POLITICA ZERO COVID</h1>
+                        <h1 class="text-news-bottom">ANSA<br>2 giorni fa</h1>
+                        <h1 class="text-news-right">PROTESTE IN CINA CONTRO LA POLITICA ZERO COVID</h1>
                     </section>
                 </a>
             </div>
 
-            <section class="page5">
+            <section class="footer">
                 <div class="box5">
                     <a href="/notizie/contatti" class="text4">clicca qui per i contatti</a>
                 </div>
@@ -521,143 +670,57 @@
         </section>
     </div>
 
-    <!--<script>-->
-    <!--    document.addEventListener('DOMContentLoaded', function() {-->
-    <!--        const text1Element = document.querySelector('.text1');-->
-    <!--        const containerDropdownMenu = document.querySelector('.container-dropdown-menu-news');-->
-    <!--        const dropdownMenu = document.querySelector('.dropdown-menu-news');-->
-    <!--        const dropdownLinks = document.querySelectorAll('.dropdown-menu-news a');-->
-    <!--        const box13 = document.querySelector('.box1-3');-->
-    <!--        const box1Links = document.querySelectorAll('.box1 a');-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-    <!--        let isText1Hovered = false;-->
-    <!--        let isDropdownHovered = false;-->
+            const section1 = document.querySelector('.section1');
+            // 1. Selettore del trigger modificato
+            const triggerBox = document.querySelector('.headline-notizie-box');
 
-    <!--        function applyHoverStyles() {-->
-    <!--            dropdownMenu.style.opacity = '1';-->
-    <!--            dropdownLinks.forEach(link => {-->
-    <!--                link.style.lineHeight = '8vmin';-->
-    <!--            });-->
-    <!--            box13.style.marginLeft = 'max(calc(100% - 140vmin), 30vmin)';-->
-    <!--            box1Links.forEach(link => {-->
-    <!--                link.style.paddingBlock = '2.5vmin';-->
-    <!--            });-->
-    <!--        }-->
+            if (!section1 || !triggerBox) {
+                return;
+            }
 
-    <!--        function removeHoverStyles() {-->
-    <!--            dropdownMenu.style.opacity = '0';-->
-    <!--            dropdownLinks.forEach(link => {-->
-    <!--                link.style.lineHeight = '0.01vmin';-->
-    <!--            });-->
-    <!--            box13.style.marginLeft = '0';-->
-    <!--            box1Links.forEach(link => {-->
-    <!--                link.style.paddingBlock = '0.01vmin';-->
-    <!--            });-->
-    <!--        }-->
+            let lastScrollY = window.scrollY;
+            let isHeaderActive = false;
 
-    <!--        function checkHoverState() {-->
-    <!--            if (isText1Hovered || isDropdownHovered) {-->
-    <!--                applyHoverStyles();-->
-    <!--            } else {-->
-    <!--                removeHoverStyles();-->
-    <!--            }-->
-    <!--        }-->
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
+                const direction = currentScrollY > lastScrollY ? 'down' : 'up';
+                const triggerBoxRect = triggerBox.getBoundingClientRect();
 
-    <!--        text1Element.addEventListener('mouseenter', function() {-->
-    <!--            isText1Hovered = true;-->
-    <!--            checkHoverState();-->
-    <!--        });-->
+                // 2. CONDIZIONE MODIFICATA: si attiva quando il TOP del box tocca il TOP della finestra
+                if (triggerBoxRect.top <= 0) {
 
-    <!--        text1Element.addEventListener('mouseleave', function() {-->
-    <!--            isText1Hovered = false;-->
-    <!--            setTimeout(checkHoverState, 50); // Piccolo ritardo per permettere il passaggio al dropdown-->
-    <!--        });-->
+                    if (!isHeaderActive) {
+                        isHeaderActive = true;
+                        section1.classList.add('header-visible');
+                    }
 
-    <!--        containerDropdownMenu.addEventListener('mouseenter', function() {-->
-    <!--            isDropdownHovered = true;-->
-    <!--            checkHoverState();-->
-    <!--        });-->
+                    if (direction === 'down') {
+                        section1.style.top = '0.001vmin';
+                    } else {
+                        if (currentScrollY > 0) {
+                            section1.style.top = '-15vmin';
+                        }
+                    }
 
-    <!--        containerDropdownMenu.addEventListener('mouseleave', function() {-->
-    <!--            isDropdownHovered = false;-->
-    <!--            checkHoverState();-->
-    <!--        });-->
-    <!--    });-->
-    <!--</script>&lt;!&ndash;HOVER MENU&ndash;&gt;-->
-    <!--<script>-->
+                } else {
+                    // Se il TOP del box è di nuovo visibile, resetta tutto
+                    if (isHeaderActive) {
+                        isHeaderActive = false;
+                        section1.classList.remove('header-visible');
+                        section1.style.top = null;
+                    }
+                }
 
-    <!--    document.addEventListener('DOMContentLoaded', function() {-->
-    <!--        // Attendiamo che la pagina sia completamente caricata e poi aggiungiamo un ritardo di 500 millisecondi-->
-    <!--        window.addEventListener('load', function() {-->
-    <!--            setTimeout(function() {-->
-    <!--                const links = document.querySelectorAll('.news-windows-box-info');-->
-    <!--                const infoBox = document.getElementById('infoBox');-->
-    <!--                links.forEach(link => {-->
-    <!--                    link.addEventListener('mousemove', function(e) {-->
-    <!--                        const image = this.querySelector('.news-imgs');-->
-    <!--                        const containerRect = document.getElementById('section4').getBoundingClientRect();-->
-    <!--                        // Calcola la posizione in percentuale rispetto al container-->
-    <!--                        const xPercent = (e.clientX - containerRect.left) / containerRect.width * 100;-->
-    <!--                        const yPercent = (e.clientY - containerRect.top) / containerRect.height * 100;-->
-    <!--                        infoBox.style.opacity = '1';-->
-    <!--                        infoBox.style.filter = 'blur(0)';-->
-    <!--                        infoBox.style.left = `calc(${xPercent}% + 1%)`;-->
-    <!--                        infoBox.style.top = `calc(${yPercent}% + 5%)`;-->
-    <!--                        infoBox.innerHTML = `-->
-    <!--                        <strong>${this.dataset.title}</strong><br>-->
-    <!--                        DATA1: ${this.dataset.news}<br>-->
-    <!--                        DATA2: ${this.dataset.year}-->
-    <!--                    `;-->
-    <!--                    });-->
-    <!--                    link.addEventListener('mouseleave', function() {-->
-    <!--                        infoBox.style.opacity = '0';-->
-    <!--                        infoBox.style.filter = 'blur(4px)';-->
-    <!--                    });-->
-    <!--                });-->
-    <!--                console.log('Script di hover inizializzato dopo 500 millisecondi dal caricamento completo della pagina.');-->
-    <!--            }, 500); // Ritardo di 500 millisecondi-->
-    <!--        });-->
-    <!--    });-->
-    <!--</script>&lt;!&ndash;HOVER INFO IMMAGINI VERSIONE news&ndash;&gt;-->
-    <!--<script>-->
+                lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+            }
 
-    <!--    document.addEventListener('DOMContentLoaded', function() {-->
-    <!--        // Attendiamo che la pagina sia completamente caricata e poi aggiungiamo un ritardo di 500 millisecondi-->
-    <!--        window.addEventListener('load', function() {-->
-    <!--            setTimeout(function() {-->
-    <!--                const links = document.querySelectorAll('.news-windows-box-info-left');-->
-    <!--                const infoBox = document.getElementById('infoBox');-->
-    <!--                links.forEach(link => {-->
-    <!--                    link.addEventListener('mousemove', function(e) {-->
-    <!--                        const image = this.querySelector('.news-imgs');-->
-    <!--                        const containerRect = document.getElementById('section4').getBoundingClientRect();-->
-    <!--                        // Calcola la posizione in percentuale rispetto al container-->
-    <!--                        const xPercent = (e.clientX - containerRect.left) / containerRect.width * 100;-->
-    <!--                        const yPercent = (e.clientY - containerRect.top) / containerRect.height * 100;-->
-    <!--                        infoBox.style.opacity = '1';-->
-    <!--                        infoBox.style.filter = 'blur(0)';-->
-    <!--                        infoBox.style.left = `calc(${xPercent}% - 17%)`;-->
-    <!--                        infoBox.style.top = `calc(${yPercent}% + 5%)`;-->
-    <!--                        infoBox.innerHTML = `-->
-    <!--                        <strong>${this.dataset.title}</strong><br>-->
-    <!--                        DATA1: ${this.dataset.news}<br>-->
-    <!--                        DATA2: ${this.dataset.year}-->
-    <!--                    `;-->
-    <!--                    });-->
-    <!--                    link.addEventListener('mouseleave', function() {-->
-    <!--                        infoBox.style.opacity = '0';-->
-    <!--                        infoBox.style.filter = 'blur(4px)';-->
-    <!--                    });-->
-    <!--                });-->
-    <!--                console.log('Script di hover inizializzato dopo 500 millisecondi dal caricamento completo della pagina.');-->
-    <!--            }, 500); // Ritardo di 500 millisecondi-->
-    <!--        });-->
-    <!--    });-->
-    <!--</script>&lt;!&ndash;HOVER INFO IMMAGINI VERSIONE news TO LEFT&ndash;&gt;-->
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        });
+    </script><!--SCRIPT TENDINA-->
 
-    <script src="/script/bootstrap.bundle.min.js"></script>
-    <script src="/script/jquery-3.7.1.slim.min.js"></script>
-    <script src="/script/jquery-scripts.js"></script>
 </div>
 </body>
 </html>

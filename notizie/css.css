@@ -21,7 +21,12 @@
     --accent-color: #FFD700;
     --text-color: rgba(255, 255, 255, 0.83);
     --bgc: #FF0054;
-    --button-color: #FFF799FF;
+    --btn: #FFF799FF;
+    --grigio: #5b5b5b;
+    --viola: #8781bc;
+    --nero: #212121;
+    --blu: #2077e8;
+    --0op: rgba(255, 255, 255, 0);
 }
 
 * {
@@ -29,6 +34,12 @@
     margin: 0;
     padding: 0;
     cursor: cell !important;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 a {
@@ -93,31 +104,6 @@ a:visited {
 
 }
 
-.section1 {
-    display: flex;
-    position: relative;
-    background: #FF0054;
-    transition: all 0.3s ease;
-    z-index: 1;
-    top: 0;
-    max-width: 100%;
-    min-width: 100%;
-}
-
-.section2 {
-    display: flex;
-    position: relative;
-    /*display: none;*/
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
-    transition: all 0.3s ease;
-    max-width: 100%;
-    min-width: 100%;
-    min-height: 40dvh;
-    z-index: 2;
-}
-
 /* INIZIO titolo */
 .title {
     position: relative;
@@ -150,18 +136,6 @@ a:visited {
     top: -1px;
     z-index: 8001;
     transition: color 0.3s ease, left 0.3s ease, top 0.3s ease, transform 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-}
-
-.menu {
-    min-width: 100% !important;
-    display: flex;
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    max-height: 100%;
 }
 
 .sticky-menu {
@@ -245,7 +219,7 @@ a:visited {
 
 .sticky-menu .nav a:hover {
     background-color: rgba(255, 255, 255, 0);
-    color: var(--button-color);
+    color: var(--btn);
     transform: scale(1.1);
 }
 
@@ -481,7 +455,7 @@ a:visited {
 
     font-size: calc(3.5dvh + 3.5vw);
     opacity: 0.8;
-    color: var(--button-color);
+    color: var(--btn);
 
 }
 

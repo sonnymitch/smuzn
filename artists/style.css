@@ -248,7 +248,7 @@
     transition: all 0.3s ease;
   }
   .dropdown-menu-artists a:hover {
-    color: var(--button-color);
+    color: var(--btn);
   }
   .box1 {
     width: 100%;
@@ -266,7 +266,7 @@
     width: 100vmin;
     transition: all 0.3s ease;
   }
-  .text2 {
+  .titolo {
     position: relative;
     bottom: -12vmin;
     display: flex;
@@ -438,7 +438,7 @@
     position: relative;
     background-color: #FFFFFF;
   }
-  .box-year {
+  .box-section-name {
     background-color: var(--bgc);
     width: 30vmin;
     height: 8vmin;

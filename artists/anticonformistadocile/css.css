@@ -21,7 +21,7 @@
     --accent-color: #FFD700;
     --text-color: rgba(255, 255, 255, 0.83);
     --bgc: #ff0054;
-    --button-color: #FFF799FF;
+    --btn: #FFF799FF;
 }
 
 * {
@@ -91,7 +91,7 @@ body {
     overflow: hidden;
 }
 
-.sub-section1 {
+.section-image-and-title {
     margin: 0 auto;
     width: 140vmin;
     display: flex;
@@ -176,7 +176,7 @@ body {
     /*margin: 2.5vmin 4.8vmin 2.5vmin 4.8vmin;*/
 }
 
-.text2 {
+.titolo {
     position: relative;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
@@ -233,7 +233,7 @@ body {
     margin: 5vmin;
 }
 
-.image1 {
+.immagine-articolo {
     position: absolute;
     z-index: 1;
     width: 43.7vmin;

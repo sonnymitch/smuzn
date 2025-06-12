@@ -1,6 +1,10 @@
+@charset "UTF-8";
 /* INIZIO variazioni in base a dimensione viewport: */
 /* ************************************ INIZIO VERSIONE MOBILE ************************************ */
 @media (max-width: 767.98px) {
+  body {
+    overflow: hidden !important;
+  }
   .body {
     overflow: hidden !important;
   }
@@ -8,14 +12,21 @@
     display: none !important;
   }
   .pagina-disp-non-compatibile h1 {
+    align-content: center;
+    text-align: center;
     display: inherit;
     font-family: "Bebas Neue", sans-serif;
     font-size: 10vmin;
-    color: var(--btn);
+    color: var(--text-color);
     line-height: 1.5;
-    padding: 10vmin;
-    margin-top: 20vmin; /* Spazio dai bottoni */
-    text-align: center;
+    padding: 10vmin 15vw 10vmin 15vw;
+    background-color: var(--bgc);
+    height: 100vh;
+    width: 100vw;
+    margin-bottom: -1vh;
+  }
+  .advertisement-containers {
+    display: none;
   }
 }
 /* ************************************ FINE VERSIONE MOBILE ************************************ */
@@ -27,24 +38,79 @@
   .smuzn-webpage {
     display: none !important;
   }
+  body {
+    overflow: hidden !important;
+  }
   .pagina-disp-non-compatibile h1 {
+    align-content: center;
+    text-align: center;
     display: inherit;
     font-family: "Bebas Neue", sans-serif;
     font-size: 10vmin;
-    color: var(--btn);
+    color: var(--text-color);
     line-height: 1.5;
-    padding: 10vmin;
-    margin-top: 20vmin; /* Spazio dai bottoni */
-    text-align: center;
+    padding: 10vmin 15vw 10vmin 15vw;
+    background-color: var(--bgc);
+    height: 100vh;
+    width: 100vw;
+    margin-bottom: -1vh;
+  }
+  .advertisement-containers {
+    display: none;
   }
 }
 /* ************************************ FINE VERSIONE TABLET ************************************ */
 /* ************************************ INIZIO VERSIONE DESKTOP ************************************ */
 @media (min-width: 1200px) {
+  .smuzn-webpage {
+    width: 80vw;
+    z-index: 50;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 2vmin 0 2vmin;
+  }
   .section1 {
-    min-height: 45dvh;
+    height: 11.5vmin;
     width: 100%;
+    position: sticky;
+    display: flex;
+    background: #FF0054;
+    transition: all 0.3s ease;
+    z-index: 1;
+    top: -15vmin;
+    max-width: 100%;
+    min-width: 100%;
+    opacity: 1;
+  }
+  .section1.header-visible {
+    z-index: 8888;
+    height: 8.5vmin;
+    border-radius: 0 0 1vmin 1vmin;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 0 0.1vmin 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .section1.header-visible .box1 .box1-2 {
+    border-width: 0 0 0 0;
+    top: -1.6vmin;
+  }
+  .section1.header-visible .box1 {
     position: relative;
+    top: 1.7vmin;
+    scale: 0.8;
+    width: 100%;
+    justify-items: center;
+    display: flex;
+  }
+  .section1.header-visible .box1 .box1-2 .item #animated-text-strip {
+    scale: 0.8;
+    width: 128%;
+    justify-items: center;
+    display: flex;
+  }
+  .section1.header-visible .box1 .box1-2 a {
+    line-height: 1.076;
   }
   .title {
     position: relative;
@@ -53,6 +119,14 @@
   .menu {
     flex-direction: column;
     display: flex;
+    min-width: 100% !important;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
   }
   .menu2-container {
     flex-direction: row;
@@ -65,7 +139,7 @@
   .box1 a {
     align-items: start;
     justify-content: start;
-    color: #5b5b5b;
+    color: var(--nero);
     text-decoration: none;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
@@ -114,28 +188,39 @@
     transition: all 0.3s ease;
   }
   .dropdown-menu-news a:hover {
-    color: var(--button-color);
+    color: var(--btn);
   }
   .box1 {
     width: 100%;
-    padding-left: 10vmin;
+    justify-items: center;
   }
   .box1-2 {
+    margin: -2vmin 0 3vmin 0;
+    border-color: white;
+    border-style: solid;
+    border-width: 2vmin 0 1vmin 0;
     position: relative;
-    padding: 0;
     padding-top: 2vmin;
+    width: 90%;
     z-index: 3;
   }
+  .box1-2 a {
+    line-height: 1;
+  }
   .box1-3 {
+    padding-top: 2vmin;
+    height: 33.5vmin;
+    background-color: var(--bgc);
+    width: 100%;
+    justify-items: center;
     margin-left: 0;
-    padding: 0;
     position: relative;
-    width: 100vmin;
     transition: all 0.3s ease;
   }
-  .text2 {
+  .titolo {
     position: relative;
     bottom: -11vmin;
+    left: calc(35vmin - 25vw);
     display: flex;
     flex-direction: column;
     font-family: "Bebas Neue", sans-serif;
@@ -153,11 +238,11 @@
     width: auto;
     height: 4.7vmin;
     margin: 1vmin;
-    top: -3vmin;
-    right: 3vmin;
+    top: 1vh;
+    right: calc(30vw - 26vmin);
     transition: scale 0.3s ease;
   }
-  .section2 {
+  .section-notizie {
     z-index: 2;
     padding-top: 2vmin;
     padding-bottom: 0;
@@ -169,26 +254,20 @@
     flex-wrap: wrap;
     grid-template-columns: repeat(21, 1fr);
     grid-template-rows: repeat(3, 10vmin);
-  }
-  .section4, .section5 {
-    z-index: 2;
-    padding-top: 0;
-    margin-top: -1.9vmin;
-    padding-bottom: 10vmin;
-    width: 100%;
-    position: relative;
-    background-color: #ffffff;
-    display: grid;
-    gap: 1.4vmin;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(21, 1fr);
-    grid-template-rows: repeat(3, 10vmin);
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40dvh;
   }
   .news-windows {
     border: solid 0.5vmin var(--bgc);
     border-radius: 1.7vmin;
     min-width: 10vmin;
     background-color: #ffffff;
+    container-type: inline-size;
   }
   .info-box {
     position: absolute;
@@ -216,8 +295,7 @@
     transition: all 0.1s ease-in-out;
   }
   .link-news:hover {
-    transform: scale(1.1);
-    top: 1vmin;
+    transform: scale(1.01);
   }
   .news-window-1 {
     position: relative;
@@ -242,7 +320,28 @@
     margin-inline: 2vmin;
     margin-top: -0.7vmin;
   }
-  .news-card-text {
+  .text-news-right {
+    color: #212121;
+    position: absolute;
+    left: 23.3vmin;
+    top: 2vmin;
+    padding-right: 4cqmin;
+    padding-left: 5.5vmin !important;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-size: 6.5cqmin;
+    line-height: 6.9cqmin;
+  }
+  .text-news-right-subtitle {
+    padding-right: 2cqmin;
+    line-height: 5cqmin;
+    font-size: 5cqmin;
+    letter-spacing: 0em;
+    color: var(--bgc);
+  }
+  .text-news-bottom {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -255,31 +354,6 @@
     z-index: 1;
     letter-spacing: -0.05em;
     line-height: 95%;
-  }
-  .text-news-right {
-    position: absolute;
-    left: 25.3vmin;
-    top: 5vmin;
-    padding-right: 4vmin;
-    padding-left: 5.5vmin !important;
-    font-size: 6.5vmin;
-  }
-  .section4 .text-news-right, .section5 .text-news-right, .section2 .text-news-right {
-    position: absolute;
-    left: 25.3vmin;
-    top: 5vmin;
-    padding-right: 3vmin;
-    padding-left: 5.5vmin !important;
-    font-size: calc(3.5vmax - 1vmin);
-  }
-  .text-news-right-fix {
-    top: 4vmin;
-  }
-  .text-news-right-subtitle {
-    padding-right: calc(14vmax - 15vmin);
-    line-height: calc(2vmax - 1vmin);
-    font-size: calc(2vmax - 1vmin);
-    letter-spacing: 0em;
   }
   .news-card-plus-top-left {
     position: absolute;
@@ -300,6 +374,7 @@
     transition: scale 0.3s ease;
   }
   .section3 {
+    margin-bottom: -3vmin;
     z-index: 2;
     min-height: 15dvh;
     width: 100%;
@@ -307,6 +382,7 @@
     background-color: #FFFFFF;
   }
   .section3-2 {
+    border-bottom: 4vmin solid white;
     z-index: 2;
     padding-top: 4vmin;
     min-height: 15dvh;
@@ -314,12 +390,11 @@
     position: relative;
     background-color: #FFFFFF;
   }
-  .box-year {
+  .box-section-name {
     background-color: var(--bgc);
     width: 50vmin;
     height: 8vmin;
-    margin-left: -5vmin;
-    border-radius: 1.5vmin;
+    border-radius: 0 1.5vmin 1.5vmin 0;
     align-content: center;
   }
   .year-text {
@@ -337,15 +412,15 @@
     letter-spacing: -0.05em;
     line-height: 100%;
   }
-  .page5 {
+  .footer {
     min-height: 27dvh;
     background-color: var(--bgc);
     position: relative;
-    align-content: start;
+    align-content: end;
   }
   .box5 {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: start;
     margin-bottom: -5vmin;
     margin-top: 2vmin;
@@ -372,16 +447,12 @@
     transition: color 0.3s ease, border-color 0.3s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease, margin 0.3s ease, padding 0.3s ease, top 0.3s ease, left 0.3s ease, right 0.3s ease, bottom 0.3s ease;
   }
   .text4:hover {
-    color: var(--button-color);
+    color: var(--btn);
   }
   .logo-endpage {
-    position: absolute;
+    position: relative;
     min-width: auto;
-    min-height: 20dvh;
-    max-height: 20dvh;
-    bottom: -23dvh;
-    right: 0;
-    margin-top: -10vmin;
+    height: 20dvh;
     margin-right: 10vmin;
     color: white;
     z-index: 1;
@@ -400,7 +471,7 @@
     display: none; /* Nascosto di default, JS lo mostra */
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 8899;
     padding: 15px;
     box-sizing: border-box;
   }
@@ -452,19 +523,29 @@
     transition: background-color 0.2s ease;
     min-width: 120px;
   }
-  .btn-primary {
+  .btn-accetta {
     background-color: #ff0054;
     color: white;
   }
-  .btn-primary:hover {
+  .btn-accetta:hover {
     background-color: #de004b;
+    color: white;
   }
-  .btn-secondary {
+  .btn-accetta:active {
+    background-color: #8781bc !important;
+    color: white !important;
+  }
+  .btn-rifiuta {
     background-color: #ff0054;
     color: white;
   }
-  .btn-secondary:hover {
+  .btn-rifiuta:hover {
     background-color: #de004b;
+    color: white;
+  }
+  .btn-rifiuta:active {
+    background-color: #8781bc !important;
+    color: white !important;
   }
   .popup-details-text {
     font-family: "Bebas Neue", sans-serif;
@@ -472,17 +553,148 @@
     color: #666;
     line-height: 1.5;
     margin-top: 20px; /* Spazio dai bottoni */
-    text-align: left;
+    text-align: justify;
+  }
+  .popup-details-text-special {
+    text-align: center !important;
+    font-size: 50px;
+    line-height: 1;
+    color: var(--bgc);
   }
   .popup-details-text .popup-link {
     font-weight: normal;
   }
+  /* INIZIO testo animato */
+  /* Core functionality */
+  .animated-vertical-text1 {
+    width: calc(70vw - 30vmin);
+    position: absolute;
+    top: 1.8vh;
+    left: 26vmin;
+  }
+  #animated-text-strip {
+    min-height: auto;
+    max-height: 8vmin;
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    mask-image: linear-gradient(to top, rgba(255, 255, 255, 0) -5dvh, rgb(255, 0, 84) 0);
+    background-size: 100% 100%, 100% 100%;
+    margin-bottom: 10vmin;
+  }
+  #animated-text-strip::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10vmin;
+  }
+  #animated-text-strip::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 0.5vmin 0 0.5vmin;
+    /*border: calc(0.23dvh + 0.23vw) solid var(--bgc);*/
+    box-shadow: 0 0 0 4vmin var(--bgc);
+  }
+  #animated-text-strip .marquee {
+    white-space: nowrap;
+    animation: marquee 7s linear infinite;
+    max-width: none;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+  #animated-text-strip {
+    padding: 0 0 0 0;
+  }
+  .marquee {
+    margin-top: -0.4vmin;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    line-height: 10vmin;
+    font-size: 8vmin;
+    text-transform: uppercase;
+    /*color: var(--bgc);*/
+    color: white;
+  }
+  /* FINE testo animato */
   /* ****************** FINE POPUP PAGINA VERSIONE DESKTOP ****************** */
   .pagina-disp-non-compatibile {
     display: none;
   }
+  /* INIZIO PUBBLICITÀ */
+  .advertisement-containers {
+    display: flex;
+  }
+  .advertisement-left-container {
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .advertisement-right-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .advertisement {
+    cursor: pointer !important;
+    border-radius: 0;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 0 0.5vmin 0;
+    width: 10vw;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+  }
+  /* FINE PUBBLICITÀ */
 }
 /* ************************************ FINE VERSIONE DESKTOP ************************************ */
 /* FINE variazioni in base a dimensione viewport */
+/*  STILE PRINCIPALE  */
+body {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  font-family: "Aboriginal Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(to right, #ff0054, #e22e74, #bc4786, #955689, #745c7d, #745c7d, #745c7d, #745c7d, #955689, #bc4786, #e22e74, #ff0054);
+  color: var(--text-color) !important;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #FF0054 #f1f1f1;
+  overflow-x: hidden;
+  cursor: cell;
+}
 
 /*# sourceMappingURL=style.css.map */
