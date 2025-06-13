@@ -219,7 +219,8 @@
   }
   .titolo {
     position: relative;
-    bottom: -11vmin;
+    bottom: -2vmin;
+    height: 30vmin;
     left: calc(35vmin - 25vw);
     display: flex;
     flex-direction: column;
@@ -231,7 +232,8 @@
     color: #FFFFFF;
     z-index: 1;
     letter-spacing: -0.05em;
-    line-height: 40%;
+    line-height: 35vmin;
+    overflow: hidden;
   }
   .news-plus {
     position: absolute;

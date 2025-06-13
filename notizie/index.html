@@ -224,51 +224,6 @@
     <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
 </div>
-<!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ-->
-<script>
-    /**
-     * SCRIPT DI SINCRONIZZAZIONE FINALE E ROBUSTO
-     * Utilizza ResizeObserver per reagire in modo preciso e performante
-     * ai cambiamenti di dimensione dell'elemento di origine.
-     */
-    document.addEventListener('DOMContentLoaded', () => {
-        const sourceDiv = document.querySelector('.smuzn-webpage');
-        const targetDivs = document.querySelectorAll('.advertisement-left-container, .advertisement-right-container');
-
-        // Se gli elementi necessari non sono sulla pagina, non fare nulla.
-        if (!sourceDiv || targetDivs.length === 0) {
-            console.error("ResizeObserver: Impossibile trovare l'elemento di origine o di destinazione. Lo script non verrà eseguito.");
-            return;
-        }
-
-        // Crea un'istanza dell'osservatore
-        const observer = new ResizeObserver(entries => {
-            // 'entries' è un array di elementi osservati che hanno cambiato dimensione.
-            // In questo caso, osserviamo solo sourceDiv, quindi ci sarà un solo elemento.
-            const sourceEntry = entries[0];
-
-            // Usiamo contentRect.height per una misurazione stabile dell'area del contenuto.
-            const sourceHeight = sourceEntry.contentRect.height;
-
-            // Applica l'altezza a tutti i div di destinazione
-            targetDivs.forEach(div => {
-                // Applichiamo la stessa logica di box-sizing per coerenza
-                // Se i div target hanno padding/border, questo assicura che l'altezza
-                // del *contenuto* corrisponda, e box-sizing: border-box gestirà il resto.
-                div.style.height = `${sourceHeight}px`;
-            });
-
-            console.log(`Altezza sincronizzata da ResizeObserver: ${sourceHeight}px`);
-        });
-
-        // Inizia a osservare l'elemento di origine
-        observer.observe(sourceDiv);
-
-        // NOTA: Con ResizeObserver, gli listener per 'load' e 'resize' della finestra
-        // non sono più strettamente necessari per questo compito, rendendo il codice
-        // più pulito, efficiente e specifico.
-    });
-</script>
 
 <div class="smuzn-webpage">
 
@@ -670,6 +625,179 @@
         </section>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let updateButtonPositions;
+
+            // ===================================================================
+            // FUNZIONE 1: GESTIONE BOTTONI "X" INTERATTIVI
+            // ===================================================================
+            function initializeCloseButtons() {
+                // --- 1. CONFIGURAZIONE DEGLI STILI (MODIFICA QUI) ---
+                const buttonStyles = {
+                    'position': 'absolute',
+                    'display': 'none',
+                    'align-items': 'center',
+                    'justify-content': 'center',
+                    'width': '2vmin',
+                    'height': '2vmin',
+                    'padding-bottom': '0.5vmin',
+                    'font-family': 'Comic Relief, system-ui',
+                    'font-weight': '400',
+                    'font-style': 'normal',
+                    'font-size': '2.25vmin',
+                    'border-radius': '0.5vmin 0 0.5vmin 0',
+                    'user-select': 'none',
+                    'color': 'white',
+                    'background-color': 'var(--bgc)',
+                    'z-index': '5555',
+                    'box-shadow': '0 0 0 0 white',
+                    /*'text-shadow':'-0.2vmin -0.2vmin 0 #ff0054, 0.2vmin -0.2vmin 0 #ff0054, 0.2vmin 0.2vmin 0 #ff0054, -0.2vmin 0.2vmin 0 #ff0054',*/
+                    'opacity': '0', /* qui */
+                    'transition': 'all 0.1s ease-in-out',
+                    'transform': 'translate(-140%, 40%) scale(1)',
+                    'cursor': 'pointer !important',
+                };
+                const buttonHoverStyles = {
+                    'transform': 'translate(-140%, 40%) scale(1.2)',
+                    /*'text-shadow':'-0.3vmin -0.3vmin 0 #ff0054, 0.3vmin -0.3vmin 0 #ff0054, 0.3vmin 0.3vmin 0 #ff0054, -0.3vmin 0.3vmin 0 #ff0054',*/
+                    'box-shadow': '0 0 0 0 var(--bgc)',
+                    /*'font-size': '2.75vmin',*/
+                };
+
+                // --- 2. SETUP E INIEZIONE STILI ---
+                const pagesContainer = document.querySelector('.pages');
+                if (!pagesContainer) return console.warn('CloseButtons: .pages container not found.');
+                if (window.getComputedStyle(pagesContainer).position === 'static') {
+                    pagesContainer.style.position = 'relative';
+                }
+
+                // Funzione helper per iniettare stili dall'oggetto di configurazione
+                (function injectStyles(selector, styles, hoverSelector, hoverStyles) {
+                    const toCss = (obj) => Object.entries(obj).map(([k, v]) => `${k}:${v};`).join('');
+                    const styleEl = document.createElement('style');
+                    styleEl.textContent = `
+                    ${selector} { ${toCss(styles)} }
+                    ${hoverSelector} { ${toCss(hoverStyles)} }
+                `;
+                    document.head.appendChild(styleEl);
+                })('.interactive-close-button', buttonStyles, '.interactive-close-button:hover', buttonHoverStyles);
+
+                // --- 3. LOGICA PRINCIPALE ---
+                const targets = new Map();
+                document.querySelectorAll('a img').forEach(img => {
+                    const anchor = img.closest('a');
+                    if (!anchor || anchor.classList.contains('link-news') || targets.has(anchor)) return;
+                    const button = document.createElement('span');
+                    button.className = 'interactive-close-button';
+                    button.textContent = 'x';
+                    pagesContainer.appendChild(button);
+                    targets.set(anchor, { button });
+                });
+
+                const isIntersecting = (r1, r2) => r1.left<r2.right && r1.right>r2.left && r1.top<r2.bottom && r1.bottom>r2.top;
+
+                const calculateImageVisibleRect = (img) => { /* Funzione helper non modificata */
+                    const imgRect = img.getBoundingClientRect();
+                    if (window.getComputedStyle(img).objectFit !== 'contain' || !img.naturalWidth) return imgRect;
+                    const naturalRatio = img.naturalWidth / img.naturalHeight;
+                    const elementRatio = img.width / img.height;
+                    const r = { ...imgRect.toJSON() };
+                    if (naturalRatio > elementRatio) {
+                        const h = img.width / naturalRatio;
+                        r.top += (img.height - h) / 2; r.height = h;
+                    } else {
+                        const w = img.height * naturalRatio;
+                        r.left += (img.width - w) / 2; r.width = w;
+                    }
+                    r.right = r.left + r.width; r.bottom = r.top + r.height;
+                    return r;
+                };
+
+                updateButtonPositions = () => {
+                    const pagesRect = pagesContainer.getBoundingClientRect();
+                    targets.forEach(({ button }, anchor) => {
+                        if (anchor.style.opacity === '0') return button.style.display = 'none'; /* qui */
+
+                        const croppingContainer = anchor.closest('.advertisement-left-container, .advertisement-right-container');
+                        const img = anchor.querySelector('img');
+                        if (!img) return;
+
+                        const isVisible = !croppingContainer || isIntersecting(img.getBoundingClientRect(), croppingContainer.getBoundingClientRect());
+
+                        if (isVisible) {
+                            button.style.display = 'flex';
+                            const visibleRect = calculateImageVisibleRect(img);
+                            button.style.top = `${visibleRect.top - pagesRect.top}px`;
+                            button.style.left = `${visibleRect.right - pagesRect.left}px`;
+                        } else {
+                            button.style.display = 'none';
+                        }
+                    });
+                };
+
+                let throttleTimer;
+                const throttledUpdate = () => {
+                    if (throttleTimer) return;
+                    throttleTimer = setTimeout(() => { updateButtonPositions(); throttleTimer = null; }, 150);
+                };
+                window.addEventListener('resize', throttledUpdate);
+                window.addEventListener('scroll', throttledUpdate, { passive: true });
+
+                // --- GESTIONE EVENTI (OTTIMIZZATA) ---
+                targets.forEach(({ button }, anchor) => {
+                    let hideTimer;
+                    const handleHover = (e) => {
+                        clearTimeout(hideTimer);
+                        if (e.type === 'mouseenter') {
+                            if (button.style.display !== 'none') button.style.opacity = '1';
+                        } else {
+                            hideTimer = setTimeout(() => { button.style.opacity = '0'; }, 100); /* qui */
+                        }
+                    };
+
+                    [anchor, button].forEach(el => el.addEventListener('mouseenter', handleHover));
+                    [anchor, button].forEach(el => el.addEventListener('mouseleave', handleHover));
+
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault(); e.stopPropagation();
+                        clearTimeout(hideTimer);
+                        anchor.style.opacity = '0'; /* qui */
+                        anchor.style.pointerEvents = 'none';
+                        button.style.display = 'none';
+                        [anchor, button].forEach(el => {
+                            el.removeEventListener('mouseenter', handleHover);
+                            el.removeEventListener('mouseleave', handleHover);
+                        });
+                    }, { once: true }); // Click listener si auto-rimuove dopo il primo click.
+                });
+
+                window.addEventListener('load', updateButtonPositions);
+            }
+
+            // ===================================================================
+            // FUNZIONE 2: SINCRONIZZAZIONE ALTEZZA ANNUNCI (NON MODIFICATA)
+            // ===================================================================
+            function initializeHeightSync() {
+                const sourceDiv = document.querySelector('.smuzn-webpage');
+                const targetDivs = document.querySelectorAll('.advertisement-left-container, .advertisement-right-container');
+                if (!sourceDiv || targetDivs.length === 0) return;
+
+                const observer = new ResizeObserver(entries => {
+                    const sourceHeight = entries[0].contentRect.height;
+                    targetDivs.forEach(div => div.style.height = `${sourceHeight}px`);
+                    if (updateButtonPositions) updateButtonPositions();
+                });
+                observer.observe(sourceDiv);
+            }
+
+            // ===================================================================
+            // ESECUZIONE
+            // ===================================================================
+            initializeCloseButtons();
+            initializeHeightSync();
+        });
+    </script><!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ + AGGIUNTA "X" PER CHIUDERE ADVERT-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
