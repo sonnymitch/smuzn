@@ -384,33 +384,26 @@
 
     <div class="webpage">
         <section class="pages">
-            <section class="section1" is="section1">
-
-                <nav class="container-dropdown-menu-news" id="id-container-dropdown-menu-news">
-                    <div class="dropdown-menu-news" id="dropdown-menu-news">
-                        <ul>
-                            <li><a href="/zindex2.html">Home</a></li>
-                            <li><a href="#news">Articles</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#events">Events</a></li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <div class="box1">
-                    <div class="box1-2">
-                        <a href="/notizie" class="text1 text4">Smüzn</a>
-                        <div class="item animated-vertical-text1">
-                            <div id="animated-text-strip">
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <div class="section1-container">
+                <div class="section1">
+                    <!--                        <a href="/notizie" class="text1 text4">Smüzn</a>-->
+                    <div class="box1">
+                        <div class="box1-2">
+                            <a href="/notizie" class="text1 text4">Smüzn</a>
+                            <div class="item animated-vertical-text1">
+                                <div id="animated-text-strip">
+                                    <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </section>
+            </div>
+            <div class="header-placeholder"></div>
             <section class="box1-3 headline-notizie-box">
                 <img src="/images/SVG/piu.svg" alt="Logo" class="news-plus no-drag">
                 <h1 class="titolo">NOTIZIE</h1>
@@ -801,53 +794,79 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
-            const section1 = document.querySelector('.section1');
-            // 1. Selettore del trigger modificato
+            const section1Container = document.querySelector('.section1-container');
+            const placeholder = document.querySelector('.header-placeholder');
             const triggerBox = document.querySelector('.headline-notizie-box');
 
-            if (!section1 || !triggerBox) {
+            if (!section1Container || !placeholder || !triggerBox) {
+                console.error("Errore: Manca un elemento essenziale.");
                 return;
             }
 
-            let lastScrollY = window.scrollY;
-            let isHeaderActive = false;
+            const containerHeight = section1Container.offsetHeight;
 
-            function handleScroll() {
+            let isHeaderFixed = false;
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            function updateHeaderState() {
                 const currentScrollY = window.scrollY;
                 const direction = currentScrollY > lastScrollY ? 'down' : 'up';
-                const triggerBoxRect = triggerBox.getBoundingClientRect();
+                const triggerRect = triggerBox.getBoundingClientRect();
 
-                // 2. CONDIZIONE MODIFICATA: si attiva quando il TOP del box tocca il TOP della finestra
-                if (triggerBoxRect.top <= 0) {
+                // L'header deve essere attivo quando la CIMA del trigger tocca o supera la CIMA della finestra
+                if (triggerRect.top <= 0) {
 
-                    if (!isHeaderActive) {
-                        isHeaderActive = true;
-                        section1.classList.add('header-visible');
-                    }
+                    // --- LOGICA RISTRUTTURATA (LA SOLUZIONE) ---
 
-                    if (direction === 'down') {
-                        section1.style.top = '0.001vmin';
+                    // Questo blocco viene eseguito SOLO la PRIMA volta per l'attivazione iniziale.
+                    if (!isHeaderFixed) {
+                        isHeaderFixed = true;
+
+                        placeholder.style.display = 'block';
+                        placeholder.style.height = `${containerHeight}px`;
+                        section1Container.classList.add('is-fixed');
+
+                        // Schedula l'animazione di apparizione. Ora questo è l'unico codice
+                        // che imposta 'top: 0' durante la prima attivazione.
+                        setTimeout(() => {
+                            section1Container.style.top = '0';
+                        }, 10);
+
                     } else {
-                        if (currentScrollY > 0) {
-                            section1.style.top = '-15vmin';
+                        // Questo blocco viene eseguito SOLO se l'header è GIÀ attivo.
+                        // Gestisce la comparsa/scomparsa durante gli scroll successivi.
+                        if (direction === 'down') {
+                            section1Container.style.top = '0';
+                        } else {
+                            section1Container.style.top = '-15vmin';
                         }
                     }
 
                 } else {
-                    // Se il TOP del box è di nuovo visibile, resetta tutto
-                    if (isHeaderActive) {
-                        isHeaderActive = false;
-                        section1.classList.remove('header-visible');
-                        section1.style.top = null;
+                    // Se siamo tornati sopra il trigger, disattiva tutto.
+                    if (isHeaderFixed) {
+                        isHeaderFixed = false;
+
+                        placeholder.style.display = 'none';
+                        placeholder.style.height = '0';
+                        section1Container.classList.remove('is-fixed');
+                        section1Container.style.top = null;
                     }
                 }
 
                 lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+                ticking = false;
             }
 
-            window.addEventListener('scroll', handleScroll, { passive: true });
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateHeaderState);
+                    ticking = true;
+                }
+            }, { passive: true });
         });
-    </script><!--SCRIPT TENDINA-->
+    </script><!--SCRIPT TENDINA (VERSIONE PAGINA NOTIZIE)-->
 
 </div>
 </body>

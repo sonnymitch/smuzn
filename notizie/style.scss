@@ -88,38 +88,59 @@
   }
 
 
-  .section1 {
-     height: 11.5vmin;
-     width: 100%;
-     position: sticky;
-     display: flex;
-     background: #FF0054;
-     transition: all 0.3s ease;
-     z-index: 1;
-     top: -15vmin;
-     max-width: 100%;
-     min-width: 100%;
-    opacity: 1;
-   }
+  /* Il placeholder inizia senza dimensioni e invisibile */
+  .header-placeholder {
+    height: 0;
+    display: none; /* Inizia completamente nascosto */
+  }
 
-  .section1.header-visible {
-    z-index: 8888;
+  /* Nuova classe per lo stato "fluttuante" */
+  /* --- CSS FINALE E CORRETTO --- */
+
+  /* 1. IL GUSCIO DI POSIZIONAMENTO (Controlla solo la posizione e lo stato fisso) */
+  .section1-container {
+    /* Nello stato di default, è solo un contenitore statico */
+    position: static;
+    width: 78vw;
+    justify-self: center/* Occupa tutta la larghezza, come faceva prima il tuo .section1 */
+  }
+
+  .section1-container.is-fixed {
+    position: fixed;
+    top: -15vmin; /* Inizia nascosto, lo script lo controlla */
+    left: 0;
+    right: 0;
+    z-index: 8888 !important; /* Il tuo z-index va qui, sul contenitore esterno */
+    transition: top 0.4s ease-out;
+  }
+
+  /* 2. IL TUO .section1 (Ora si occupa solo dell'aspetto e della larghezza interna) */
+  .section1 {
+    margin: 0 auto; /* Metodo infallibile per centrare (usato come fallback) */
+    z-index: 8888 !important;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    background: #FF0054;
+    transition: all 0.3s ease-out;
+  }
+
+  /* Quando l'header è fisso, applichiamo gli stili aggiuntivi a .section1 */
+  .section1-container.is-fixed .section1 {
     height: 8.5vmin;
     border-radius: 0 0 1vmin 1vmin;
     border-color: white;
     border-style: solid;
     border-width: 0 0 0.1vmin 0;
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 
-  .section1.header-visible .box1 .box1-2 {
+  .section1-container.is-fixed .section1 .box1 .box1-2 {
     border-width: 0 0 0 0;
-    top: -1.6vmin;
+    top: 0.4vmin;
   }
 
-  .section1.header-visible .box1 {
-    position: relative;
-    top: 1.7vmin;
+  .section1-container.is-fixed .section1 .box1 {
     scale: 0.8;
     width: 100%;
     justify-items: center;
@@ -127,7 +148,7 @@
     //padding-left: 10vmin;
   }
 
-  .section1.header-visible .box1 .box1-2 .item #animated-text-strip {
+  .section1-container.is-fixed .section1 .box1 .box1-2 .item #animated-text-strip {
     scale: 0.8;
     width: 128%;
     justify-items: center;
@@ -135,7 +156,7 @@
     //padding-left: 10vmin;
   }
 
-  .section1.header-visible .box1 .box1-2 a {
+  .section1-container.is-fixed .section1 .box1 .box1-2 a {
     line-height: 1.076;
   }
 

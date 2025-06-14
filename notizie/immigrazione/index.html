@@ -398,23 +398,26 @@
 
     <div class="webpage">
         <section class="pages">
-            <section class="section1">
-<!--                        <a href="/notizie" class="text1 text4">Smüzn</a>-->
-                <div class="box1">
-                    <div class="box1-2">
-                        <a href="/notizie" class="text1 text4">Smüzn</a>
-                        <div class="item animated-vertical-text1">
-                            <div id="animated-text-strip">
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <div class="section1-container">
+                <div class="section1">
+    <!--                        <a href="/notizie" class="text1 text4">Smüzn</a>-->
+                        <div class="box1">
+                            <div class="box1-2">
+                                <a href="/notizie" class="text1 text4">Smüzn</a>
+                                <div class="item animated-vertical-text1">
+                                    <div id="animated-text-strip">
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
 
+                </div>
+            </div>
+            <div class="header-placeholder"></div>
 
 <!--            <section class="section3-2" id="section3-2">-->
 <!--                <section class="box-section-name">-->
@@ -903,66 +906,66 @@
         });
     </script><!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ + AGGIUNTA "X" PER CHIUDERE ADVERT + SYNC PER PAZIO TESTO-->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
 
-        // --- Il tuo codice per il POPUP VIDEO rimane qui, invariato ---
-        // ...
+            // --- Il tuo codice per il POPUP VIDEO rimane qui, invariato ---
+            // ...
 
-        // --- LOGICA BARRA DI PROSEGUIMENTO LETTURA (con zona di progressione personalizzata) ---
+            // --- LOGICA BARRA DI PROSEGUIMENTO LETTURA (con zona di progressione personalizzata) ---
 
-        // 1. Seleziona gli elementi necessari
-        const articleBox = document.querySelector('.testo-articolo-sub-box');
-        const progressBar = document.getElementById('reading-progress-bar');
-        const footer = document.querySelector('footer'); // L'elemento che definisce la fine
+            // 1. Seleziona gli elementi necessari
+            const articleBox = document.querySelector('.testo-articolo-sub-box');
+            const progressBar = document.getElementById('reading-progress-bar');
+            const footer = document.querySelector('footer'); // L'elemento che definisce la fine
 
-        // Controlliamo che tutti gli elementi esistano per evitare errori
-        if (!articleBox || !progressBar || !footer) {
-            console.warn("Elementi necessari per la barra di progresso non trovati (articleBox, progressBar, o footer).");
-            return;
-        }
-
-        const updateCustomProgressBar = () => {
-            // --- ALLINEAMENTO VISIVO (come prima) ---
-            const articleRect = articleBox.getBoundingClientRect();
-            const articleWidth = articleRect.width;
-            const articleLeftOffset = articleRect.left;
-
-            // --- CALCOLO DELLA ZONA DI PROGRESSIONE ---
-
-            // 1. Il punto finale dello scroll è quando il fondo della finestra tocca la cima del footer.
-            // Usiamo getBoundingClientRect().top + window.scrollY per ottenere la posizione assoluta del footer,
-            // che è più affidabile di offsetTop in layout complessi.
-            const footerPositionTop = footer.getBoundingClientRect().top + window.scrollY;
-            const scrollEndPoint = footerPositionTop - window.innerHeight;
-
-            // 2. La distanza totale da percorrere è semplicemente scrollEndPoint, dato che partiamo da 0.
-            const totalScrollDistance = scrollEndPoint;
-
-            // 3. Calcoliamo la frazione di progresso.
-            let progressFraction = 0;
-            if (totalScrollDistance > 0) {
-                // Calcoliamo la progressione solo se c'è effettivamente spazio per scrollare.
-                progressFraction = window.scrollY / totalScrollDistance;
+            // Controlliamo che tutti gli elementi esistano per evitare errori
+            if (!articleBox || !progressBar || !footer) {
+                console.warn("Elementi necessari per la barra di progresso non trovati (articleBox, progressBar, o footer).");
+                return;
             }
 
-            // 4. FONDAMENTALE: Limitiamo il valore tra 0 e 1 (0% - 100%).
-            // Questo garantisce che la barra si fermi esattamente al 100% e non vada oltre.
-            const clampedProgress = Math.max(0, Math.min(progressFraction, 1));
+            const updateCustomProgressBar = () => {
+                // --- ALLINEAMENTO VISIVO (come prima) ---
+                const articleRect = articleBox.getBoundingClientRect();
+                const articleWidth = articleRect.width;
+                const articleLeftOffset = articleRect.left;
 
-            // --- APPLICAZIONE DEGLI STILI ---
-            const currentBarWidth = articleWidth * clampedProgress;
+                // --- CALCOLO DELLA ZONA DI PROGRESSIONE ---
 
-            progressBar.style.left = `${articleLeftOffset}px`;
-            progressBar.style.width = `${currentBarWidth}px`;
-        };
+                // 1. Il punto finale dello scroll è quando il fondo della finestra tocca la cima del footer.
+                // Usiamo getBoundingClientRect().top + window.scrollY per ottenere la posizione assoluta del footer,
+                // che è più affidabile di offsetTop in layout complessi.
+                const footerPositionTop = footer.getBoundingClientRect().top + window.scrollY;
+                const scrollEndPoint = footerPositionTop - window.innerHeight;
 
-        // Aggiungiamo gli ascoltatori di eventi
-        window.addEventListener('scroll', updateCustomProgressBar);
-        window.addEventListener('resize', updateCustomProgressBar);
+                // 2. La distanza totale da percorrere è semplicemente scrollEndPoint, dato che partiamo da 0.
+                const totalScrollDistance = scrollEndPoint;
 
-        // Eseguiamo subito per un posizionamento corretto al caricamento
-        updateCustomProgressBar();
-    });
+                // 3. Calcoliamo la frazione di progresso.
+                let progressFraction = 0;
+                if (totalScrollDistance > 0) {
+                    // Calcoliamo la progressione solo se c'è effettivamente spazio per scrollare.
+                    progressFraction = window.scrollY / totalScrollDistance;
+                }
+
+                // 4. FONDAMENTALE: Limitiamo il valore tra 0 e 1 (0% - 100%).
+                // Questo garantisce che la barra si fermi esattamente al 100% e non vada oltre.
+                const clampedProgress = Math.max(0, Math.min(progressFraction, 1));
+
+                // --- APPLICAZIONE DEGLI STILI ---
+                const currentBarWidth = articleWidth * clampedProgress;
+
+                progressBar.style.left = `${articleLeftOffset}px`;
+                progressBar.style.width = `${currentBarWidth}px`;
+            };
+
+            // Aggiungiamo gli ascoltatori di eventi
+            window.addEventListener('scroll', updateCustomProgressBar);
+            window.addEventListener('resize', updateCustomProgressBar);
+
+            // Eseguiamo subito per un posizionamento corretto al caricamento
+            updateCustomProgressBar();
+        });
     </script><!--SCRIPT BARRA DI PROSEGUIMENTO-->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1151,13 +1154,19 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
-            const section1 = document.querySelector('.section1');
+            // --- SETUP DEGLI ELEMENTI DI LAYOUT ---
+            const section1Container = document.querySelector('.section1-container');
+            const placeholder = document.querySelector('.header-placeholder');
             const triggerBox = document.querySelector('.titolo-articolo-box');
+
+            if (!section1Container || !placeholder || !triggerBox) return;
+
+            // --- SETUP DEL TESTO E ANIMAZIONE (La tua logica re-integrata) ---
             const articleTitleText = document.querySelector('.titolo-articolo').textContent.trim();
             const marqueeSpans = document.querySelectorAll('.marquee');
 
-            const originalMarqueeHTML = marqueeSpans[0].innerHTML;
-            const originalTextContent = marqueeSpans[0].textContent.trim();
+            const originalMarqueeHTML = marqueeSpans.length > 0 ? marqueeSpans[0].innerHTML : '';
+            const originalTextContent = marqueeSpans.length > 0 ? marqueeSpans[0].textContent.trim() : '';
             const textEndIndex = originalMarqueeHTML.indexOf(originalTextContent) + originalTextContent.length;
             const nbspSuffix = originalMarqueeHTML.substring(textEndIndex);
             const newMarqueeHTML = articleTitleText + nbspSuffix;
@@ -1166,56 +1175,80 @@
             const minDuration = 8;
             let newDuration = Math.max(minDuration, articleTitleText.length * speedFactor);
             newDuration = Math.round(newDuration * 10) / 10;
+            // ---------------------------------------------------------------------
 
+            // --- CALCOLI DI LAYOUT FATTI UNA SOLA VOLTA ---
+            const containerHeight = section1Container.offsetHeight;
+            const activationPoint = triggerBox.offsetTop;
+
+            // --- GESTIONE DELLO STATO E DELLO SCROLL (OTTIMIZZATO) ---
+            let isHeaderFixed = false;
             let lastScrollY = window.scrollY;
-            let isHeaderActive = false;
+            let ticking = false;
 
-            function handleScroll() {
+            function updateHeaderState() {
                 const currentScrollY = window.scrollY;
                 const direction = currentScrollY > lastScrollY ? 'down' : 'up';
-                const triggerBoxRect = triggerBox.getBoundingClientRect();
 
-                if (triggerBoxRect.bottom <= 0) {
-                    if (!isHeaderActive) {
-                        isHeaderActive = true;
-                        section1.classList.add('header-visible');
+                // --- SEZIONE DI ATTIVAZIONE ---
+                if (currentScrollY >= activationPoint) {
+                    if (!isHeaderFixed) {
+                        isHeaderFixed = true;
 
-                        // --- MODIFICA CHIAVE APPLICATA QUI ---
-                        // Applica testo e durata a ogni span .marquee
+                        placeholder.style.display = 'block';
+                        placeholder.style.height = `${containerHeight}px`;
+                        section1Container.classList.add('is-fixed');
+
+                        // --- AGGIORNA IL CONTENUTO (La tua logica inserita qui) ---
                         marqueeSpans.forEach(span => {
                             span.innerHTML = newMarqueeHTML;
                             span.style.animationDuration = `${newDuration}s`;
                         });
-                    }
+                        // -----------------------------------------------------------
 
-                    if (direction === 'down') {
-                        section1.style.top = '0.001vmin';
+                        // Gestisce la transizione di apparizione
+                        setTimeout(() => {
+                            section1Container.style.top = '0';
+                        }, 10);
                     } else {
-                        if (currentScrollY > 0) {
-                            section1.style.top = '-15vmin';
+                        // Gestisci comparsa/scomparsa se già attivo
+                        if (direction === 'down') {
+                            section1Container.style.top = '0';
+                        } else if (currentScrollY > activationPoint) {
+                            section1Container.style.top = '-15vmin';
                         }
                     }
 
+                    // --- SEZIONE DI DISATTIVAZIONE ---
                 } else {
-                    if (isHeaderActive) {
-                        isHeaderActive = false;
-                        section1.classList.remove('header-visible');
-                        section1.style.top = null;
+                    if (isHeaderFixed) {
+                        isHeaderFixed = false;
 
-                        // --- MODIFICA CHIAVE APPLICATA QUI ---
-                        // Ripristina testo e durata di ogni span .marquee
+                        placeholder.style.display = 'none';
+                        placeholder.style.height = '0';
+                        section1Container.classList.remove('is-fixed');
+                        section1Container.style.top = null;
+
+                        // --- RIPRISTINA IL CONTENUTO (La tua logica inserita qui) ---
                         marqueeSpans.forEach(span => {
                             span.innerHTML = originalMarqueeHTML;
-                            // Rimuovendo lo stile inline, il controllo torna al CSS originale
                             span.style.animationDuration = null;
                         });
+                        // -------------------------------------------------------------
                     }
                 }
 
                 lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+                ticking = false;
             }
 
-            window.addEventListener('scroll', handleScroll, { passive: true });
+            // --- EVENT LISTENER OTTIMIZZATO ---
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateHeaderState);
+                    ticking = true;
+                }
+            }, { passive: true });
         });
     </script><!--SCRIPT TENDINA-->
 </div>
