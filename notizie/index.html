@@ -173,7 +173,7 @@
             color: var(--bgc) !important;
         }
 
-        .btn, .section-notizie a *, .section-notizie a, .text1 {
+        .btn, .section-notizie a *, .section-notizie a, .text1, .oggetto-cliccabile, .oggetto-cliccabile-tutto, .oggetto-cliccabile-tutto * {
             cursor: pointer !important;
         }
 
@@ -181,6 +181,36 @@
 </head>
 
 <body>
+
+<!--SCHERMATA DI CARICAMENTO, nascondi scrollbar -->
+<script>
+	// Nascondiamo la scrollbar
+	const body = document.body;
+	body.style.overflow = 'hidden';
+</script>
+<div id="loading-screen">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
+	<img src="/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
+</div>
+<script>
+	//        SCHERMATA DI CARICAMENTO VELOCE
+	window.addEventListener('load', function() {
+		const loadingScreen = document.getElementById('loading-screen');
+		loadingScreen.style.opacity = '0';
+		setTimeout(function() {
+			// Nascondiamo lo schermo di caricamento
+			loadingScreen.style.opacity = '0';
+			setTimeout(() => {
+				loadingScreen.style.display = 'none';
+				body.style.overflow = '';
+			}, 500);
+		});
+	});
+</script>
+<!--SCHERMATA DI CARICAMENTO VELOCE-->
 
 <!--PAGINA DI MANCATA COMPATIBILITÀ SCHERMO-->
 <div class="pagina-disp-non-compatibile">
@@ -190,6 +220,7 @@
 
 <!--PUBBLICITÀ-->
 <div class="advertisement-left-container advertisement-containers">
+    <!-- Questo elenco serve da modello. Lo script prende i GIF da qui. -->
     <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
@@ -197,33 +228,19 @@
     <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
     <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
-    <!--COPIA-->
     <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
-    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
     <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
+</div>
 
-</div>
 <div class="advertisement-right-container advertisement-containers">
-    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
-    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
-    <!--COPIA-->
-    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdmYmVnOG1kbHZqeTE5OWk3aTg0OWNwdHNvOTlraHphZDViOWVzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkxrAhRVHygX02rwMi/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
-    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
-    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <!-- Anche questo è un modello. Può essere identico a quello di sinistra. -->
 </div>
+
+
 
 <div class="smuzn-webpage">
 
@@ -310,35 +327,7 @@
         });
     </script>
 
-    <!--SCHERMATA DI CARICAMENTO, nascondi scrollbar -->
-    <script>
-        // Nascondiamo la scrollbar
-        const body = document.body;
-        body.style.overflow = 'hidden';
-    </script>
-    <div id="loading-screen">
-        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
-        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
-        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
-        <img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
-        <img src="/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
-    </div>
-    <script>
-        //        SCHERMATA DI CARICAMENTO VELOCE
-        window.addEventListener('load', function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            loadingScreen.style.opacity = '0';
-            setTimeout(function() {
-                // Nascondiamo lo schermo di caricamento
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                    body.style.overflow = '';
-                }, 500);
-            });
-        });
-    </script>
-    <!--SCHERMATA DI CARICAMENTO VELOCE-->
+
     <!--SCHERMATA DI CARICAMENTO, scroll fino alla fine senza timer -->
 
 
@@ -355,14 +344,14 @@
                     I ricavi ottenuti dalla pubblicità personalizzata ci aiutano a supportare il lavoro della nostra
                     redazione che si impegna a fornirti ogni giorno una informazione di qualità. Per questo chiediamo
                     il tuo consenso all'utilizzo di cookie o tecnologie simili per finalità diverse da quelle strettamente
-                    necessarie, come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>.
+                    necessarie, come specificato nella <a href="/notizie/cookiepolicy" class="popup-link oggetto-cliccabile oggetto-cliccabile-tutto">Cookie Policy</a>.
                 </p>
                 <div class="popup-buttons">
                     <button id="acceptInitial" class="btn btn-accetta">ACCETTA</button>
                     <button id="rejectConsent" class="btn btn-rifiuta">RIFIUTA</button>
                 </div>
                 <p class="popup-details-text">
-                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
+                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link oggetto-cliccabile oggetto-cliccabile-tutto">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
                 </p>
             </div>
 
@@ -375,7 +364,7 @@
                     <button id="acceptFinal" class="btn btn-accetta">ACCETTA</button>
                 </div>
                 <p class="popup-details-text">
-                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
+                    Cliccando su Accetta, autorizzi l'utilizzo di cookie e tecnologie simili come specificato nella <a href="/notizie/cookiepolicy" class="popup-link oggetto-cliccabile oggetto-cliccabile-tutto">Cookie Policy</a>. Ricorda che il tuo consenso ci aiuta a mantenere attivi i server e a mostrarti contenuti sempre freschi!
                 </p>
             </div>
         </div>
@@ -453,7 +442,7 @@
                         <img src="/notizie/IMAGES/meloni.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
+                        <h1 class="text-news-bottom">SMÜZN<br>2 ore fa</h1>
                         <h1 class="text-news-right">ATTACCHI SENZA PRECEDENTI ALLA LIBERTÀ DI STAMPA DA QUANDO L'ESTREMA DESTRA È AL GOVERNO</p></h1>
                     </section>
                 </a>
@@ -467,7 +456,7 @@
                         <img src="/notizie/IMAGES/mangione.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>5 ore fa</h1>
+                        <h1 class="text-news-bottom">SMÜZN<br>5 ore fa</h1>
                         <h1 class="text-news-right">Le Grandi Corporation Cercano di Controllare la Narrativa su Luigi</h1>
                     </section>
                 </a>
@@ -483,7 +472,7 @@
                         <img src="https://statics.cedscdn.it/photos/MED_HIGH/96/45/8659645_16020843_olly_vince_sanremo.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
+                        <h1 class="text-news-bottom">SMÜZN<br>9 ore fa</h1>
                         <h1 class="text-news-right">SAN REMO E CENSURA: QUANDO LA MUSICA FA PAURA AL POTERE</p></h1>
                     </section>
                 </a>
@@ -497,7 +486,7 @@
                         <img src="https://ilmanifesto.it/cdn-cgi/image/format=auto,width=1200/https://static.ilmanifesto.it/2025/05/11est1-balcone-sindaco-newark-ap.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>5 ore fa</h1>
+                        <h1 class="text-news-bottom">SMÜZN<br>14 ore fa</h1>
                         <h1 class="text-news-right">Irruzione per immigrazione a Newark, New Jersey, provoca rabbia tra i funzionari locali</h1>
                     </section>
                 </a>
@@ -513,24 +502,24 @@
                         <img src="https://www.uncensoredlibrary.com/version/1678481645376/static/image/making-of.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
+                        <h1 class="text-news-bottom">SMÜZN<br>1 giorno fa</h1>
                         <h1 class="text-news-right">LIBRI PROIBITI DIVENTANO ACCESSIBILI GRAZIE A UNA BIBLIOTECA VIRTUALE SU UN FAMOSO VIDEOGIOCO</p></h1>
                     </section>
                 </a>
-                <!--<a href="/notizie/notizianumerodue" class="link-news news-windows news-window-2">
+                <a href="/notizie/censorship" class="link-news news-windows news-window-2">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
                              data-title="DATA TITLE 1"
                              data-news="SUB 1"
                              data-year="SUB 2">
-                        <img src="https://ilmanifesto.it/cdn-cgi/image/format=auto,width=1200/https://static.ilmanifesto.it/2025/05/11est1-balcone-sindaco-newark-ap.jpg" alt="plus" class="news-imgs">
+                        <img src="https://surfshark.com/wp-content/uploads/2021/12/Social_media_censorship_hero-1024x501.png" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>5 ore fa</h1>
-                        <h1 class="text-news-right">LOREM IPSUM</h1>
+                        <h1 class="text-news-bottom">SMÜZN<br>2 giorni fa</h1>
+                        <h1 class="text-news-right">Benvenuti nella nuova era della censura digitale globale</h1>
                     </section>
-                </a>-->
+                </a>
             </div>
 
 
@@ -541,53 +530,49 @@
             </section>
 
             <div class="section-notizie" id="section4">
-                <a href="https://dillonfrancismartingarrixfanzonenumberonefansonly.com/" class="link-news news-windows news-window-1">
-                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                <a href="#" class="link-news news-windows news-window-1 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
-                             data-title="DATA TITLE 1"
-                             data-news="SUB 1"
-                             data-year="SUB 2">
-                        <img src="https://www.ansa.it/webimages/news_base/2025/5/18/c3001ba97d1627fe2f7eb5279485bdd8.webp" alt="plus" class="news-imgs">
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>2 ore fa</h1>
-                        <h1 class="text-news-right">Fbi, attentato in California un atto di terrorismo<br>
-                            <p class="text-news-right-subtitle">'Atto intenzionale, clinica presa di mira deliberatamente'</p></h1>
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
                     </section>
                 </a>
-                <a href="https://aliexpi.com/Fxvc" class="link-news news-windows news-window-2">
-                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                <a href="#" class="link-news news-windows news-window-2 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
-                             data-title="DATA TITLE 1"
-                             data-news="SUB 1"
-                             data-year="SUB 2">
-                        <img src="https://www.ansa.it/webimages/news_base/2025/5/15/405c1585c9dadba6325258224484d62d.webp" alt="plus" class="news-imgs">
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>6 ore fa</h1>
-                        <h1 class="text-news-right">Hamas, '153 morti a Gaza nelle ultime 24 ore'<br>
-                            <p class="text-news-right-subtitle">'Dal 7 ottobre 2023 le vittime sono 53.272, i feriti 120.673'</p></h1>
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
                     </section>
                 </a>
-
             </div>
 
-            <div style="padding-bottom: 30vmin;" class="section-notizie" id="section5">
-                <a href="https://floatingqrcode.com/" class="link-news news-windows news-window-1">
-                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
-                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+            <div class="section-notizie" id="section5">
+                <a href="#" class="link-news news-windows news-window-1 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
                     <section class="news-windows-box news-windows-box-info"
-                             data-title="DATA TITLE 1"
-                             data-news="SUB 1"
-                             data-year="SUB 2">
-                        <img src="https://www.ansa.it/webimages/news_base/2025/4/22/1b5ec3d35a9c5e7686eb605e3a843247.webp" alt="plus" class="news-imgs">
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>Ieri</h1>
-                        <h1 class="text-news-right text-news-right-fix">Kiev, 9 morti in un attacco russo a un minibus in Ucraina<br>
-                            <p class="text-news-right-subtitle">Vicino a Bilopillia, nella regione settentrionale di Sumy</p></h1>
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
                     </section>
                 </a>
                 <a href="/notizie/zerocovid" class="link-news news-windows news-window-2">
@@ -600,10 +585,138 @@
                         <img src="/notizie/IMAGES/protestecina.jpg" alt="plus" class="news-imgs">
                     </section>
                     <section class="news-card-text-box">
-                        <h1 class="text-news-bottom">ANSA<br>2 giorni fa</h1>
+                        <h1 class="text-news-bottom">SMÜZN<br>2 giorni fa</h1>
                         <h1 class="text-news-right">PROTESTE IN CINA CONTRO LA POLITICA ZERO COVID</h1>
                     </section>
                 </a>
+            </div>
+
+            <div class="section-notizie">
+                <a href="#" class="link-news news-windows news-window-1 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="section-notizie">
+                <a href="#" class="link-news news-windows news-window-1 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="section-notizie">
+                <a href="#" class="link-news news-windows news-window-1 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="section-notizie">
+                <a href="#" class="link-news news-windows news-window-1 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 random-news">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..." data-news="" data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-bottom">Loading...<br>...</h1>
+                        <h1 class="text-news-right text-news-right-fix">Loading title...
+                            <p class="text-news-right-subtitle">Loading description...</p>
+                        </h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="carica-altre-notizie">
+                <a href="#" class="carica-altre-notizie-testo-bottone" id="carica-altre-notizie-testo-bottone">Carica altre notizie...</a>
             </div>
 
             <section class="footer">
@@ -620,67 +733,447 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Variabili di Configurazione ---
+            const rssFeedUrl = 'https://www.ilsole24ore.com/rss/mondo--europa.xml';
+            const proxyUrl = 'https://api.allorigins.win/raw?url=';
+            const fullUrl = `${proxyUrl}${encodeURIComponent(rssFeedUrl)}`;
+            const placeholderImage = 'https://via.placeholder.com/400x200.png?text=No+Image';
+            const sourceName = 'Il Sole 24 Ore';
+            const maxTitleLength = 115;
+            const maxWordLength = 13;
+            const maxDescriptionLength = 0;
+
+            // --- Elementi del DOM ---
+            const loadMoreButton = document.getElementById('carica-altre-notizie-testo-bottone');
+            const loadMoreContainer = document.querySelector('.carica-altre-notizie');
+
+            // --- Stato dell'Applicazione ---
+            let allNewsItems = [];      // Conterrà tutte le notizie caricate dal feed
+            let nextNewsIndex = 0;      // Indice per tener traccia della prossima notizia da mostrare
+
+            // --- Blocco HTML da Aggiungere (come da tua richiesta) ---
+            const newsBlockHtml = `
+    <div class="section-notizie">
+        <a href="#" class="link-news news-windows news-window-1 random-news">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+            <section class="news-windows-box news-windows-box-info" data-title="Loading..." data-news="" data-year="">
+                <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+            </section>
+            <section class="news-card-text-box">
+                <h1 class="text-news-bottom">Loading...<br>...</h1>
+                <h1 class="text-news-right text-news-right-fix">Loading title...
+                    <p class="text-news-right-subtitle">Loading description...</p>
+                </h1>
+            </section>
+        </a>
+        <a href="#" class="link-news news-windows news-window-2 random-news">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+            <section class="news-windows-box news-windows-box-info" data-title="Loading..." data-news="" data-year="">
+                <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+            </section>
+            <section class="news-card-text-box">
+                <h1 class="text-news-bottom">Loading...<br>...</h1>
+                <h1 class="text-news-right text-news-right-fix">Loading title...
+                    <p class="text-news-right-subtitle">Loading description...</p>
+                </h1>
+            </section>
+        </a>
+    </div>
+<div class="section-notizie">
+        <a href="#" class="link-news news-windows news-window-1 random-news">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+            <section class="news-windows-box news-windows-box-info" data-title="Loading..." data-news="" data-year="">
+                <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+            </section>
+            <section class="news-card-text-box">
+                <h1 class="text-news-bottom">Loading...<br>...</h1>
+                <h1 class="text-news-right text-news-right-fix">Loading title...
+                    <p class="text-news-right-subtitle">Loading description...</p>
+                </h1>
+            </section>
+        </a>
+        <a href="#" class="link-news news-windows news-window-2 random-news">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+            <section class="news-windows-box news-windows-box-info" data-title="Loading..." data-news="" data-year="">
+                <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+            </section>
+            <section class="news-card-text-box">
+                <h1 class="text-news-bottom">Loading...<br>...</h1>
+                <h1 class="text-news-right text-news-right-fix">Loading title...
+                    <p class="text-news-right-subtitle">Loading description...</p>
+                </h1>
+            </section>
+        </a>
+    </div>
+<div class="section-notizie">
+        <a href="#" class="link-news news-windows news-window-1 random-news">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+            <section class="news-windows-box news-windows-box-info" data-title="Loading..." data-news="" data-year="">
+                <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+            </section>
+            <section class="news-card-text-box">
+                <h1 class="text-news-bottom">Loading...<br>...</h1>
+                <h1 class="text-news-right text-news-right-fix">Loading title...
+                    <p class="text-news-right-subtitle">Loading description...</p>
+                </h1>
+            </section>
+        </a>
+        <a href="#" class="link-news news-windows news-window-2 random-news">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+            <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+            <section class="news-windows-box news-windows-box-info" data-title="Loading..." data-news="" data-year="">
+                <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+            </section>
+            <section class="news-card-text-box">
+                <h1 class="text-news-bottom">Loading...<br>...</h1>
+                <h1 class="text-news-right text-news-right-fix">Loading title...
+                    <p class="text-news-right-subtitle">Loading description...</p>
+                </h1>
+            </section>
+        </a>
+    </div>`;
+
+            // --- Funzioni di Utilità (invariate) ---
+            function breakLongWords(text, maxLength, breakChar = '-') { /* ... */ }
+            function truncateText(text, maxLength) { /* ... */ }
+            function shuffleArray(array) { /* ... */ }
+            function formatRelativeTime(dateString) { /* ... */ }
+            // (Ho compattato le funzioni di utilità per leggibilità, ma il codice è lo stesso)
+            breakLongWords=t=>(t.split(" ").map(t=>{if(t.length<=13)return t;const e=[];for(let r=0;r<t.length;r+=13)e.push(t.substring(r,r+13));return e.join("-")})).join(" ");truncateText=(t,e)=>{if(!t||t.length<=e)return t;return t.slice(0,e).trim()+"..."};shuffleArray=t=>{for(let e=t.length-1;e>0;e--){const r=Math.floor(Math.random()*(e+1));[t[e],t[r]]=[t[r],t[e]]}};formatRelativeTime=t=>{const e=new Date(t),r=new Date,a=Math.round((r-e)/1e3),n=Math.round(a/60),o=Math.round(n/60),s=Math.round(o/24);return a<60?"Poco fa":n<60?`${n} min fa`:o<24?`${o} or${o>1?"e":"a"} fa`:`${s} giorn${s>1?"i":"o"} fa`};
+
+
+            /**
+             * Popola uno specifico slot di notizie con i dati.
+             * @param {HTMLElement} slot - L'elemento <a> da popolare.
+             * @param {object} newsItem - L'oggetto contenente i dati della notizia.
+             */
+            function populateSingleNewsSlot(slot, newsItem) {
+                slot.href = newsItem.link;
+                slot.querySelector('.news-imgs').src = newsItem.imageUrl;
+                slot.classList.add('is-populated'); // Aggiunge una classe per marcare come popolato
+                const infoBox = slot.querySelector('.news-windows-box-info');
+                if (infoBox) {
+                    infoBox.setAttribute('data-title', newsItem.title);
+                    infoBox.setAttribute('data-news', newsItem.description);
+                    infoBox.setAttribute('data-year', String(newsItem.year));
+                }
+                const textBox = slot.querySelector('.news-card-text-box');
+                textBox.innerHTML = '';
+                const sourceDateElement = document.createElement('h1');
+                sourceDateElement.className = 'text-news-bottom';
+                sourceDateElement.innerHTML = `${sourceName}<br>${formatRelativeTime(newsItem.pubDate)}`;
+                const titleElement = document.createElement('h1');
+                titleElement.className = 'text-news-right text-news-right-fix';
+                const processedTitle = truncateText(breakLongWords(newsItem.title, maxWordLength), maxTitleLength);
+                titleElement.appendChild(document.createTextNode(processedTitle));
+                const subtitleElement = document.createElement('p');
+                subtitleElement.className = 'text-news-right-subtitle';
+                subtitleElement.textContent = truncateText(newsItem.description, maxDescriptionLength);
+                titleElement.appendChild(subtitleElement);
+                textBox.appendChild(sourceDateElement);
+                textBox.appendChild(titleElement);
+            }
+
+            /**
+             * Trova tutti gli slot di notizie non ancora popolati e li riempie
+             * con i dati disponibili.
+             */
+            function populateAvailableNewsSlots() {
+                // Seleziona solo gli slot che non hanno la classe 'is-populated'
+                const newsSlots = document.querySelectorAll('.link-news.random-news:not(.is-populated)');
+
+                newsSlots.forEach(slot => {
+                    // Controlla se ci sono ancora notizie da mostrare
+                    if (nextNewsIndex < allNewsItems.length) {
+                        const newsItem = allNewsItems[nextNewsIndex];
+                        populateSingleNewsSlot(slot, newsItem);
+                        nextNewsIndex++; // Passa alla notizia successiva per il prossimo slot
+                    } else {
+                        // Se le notizie sono finite, nascondi gli slot vuoti
+                        slot.style.display = 'none';
+                    }
+                });
+
+                // Se abbiamo mostrato tutte le notizie, nascondiamo il pulsante "Carica altre"
+                if (nextNewsIndex >= allNewsItems.length) {
+                    if (loadMoreContainer) {
+                        loadMoreContainer.style.display = 'none';
+                    }
+                }
+            }
+
+            /**
+             * Funzione principale che carica i dati dal feed RSS
+             * e avvia il primo popolamento.
+             */
+            async function initializeNews() {
+                try {
+                    const response = await fetch(fullUrl);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const xmlText = await response.text();
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+                    if (xmlDoc.querySelector("parsererror")) throw new Error("Error parsing XML");
+
+                    const items = xmlDoc.querySelectorAll('item');
+                    allNewsItems = Array.from(items).map(item => ({
+                        title: item.querySelector('title')?.textContent.trim() || 'No Title',
+                        link: item.querySelector('link')?.textContent || '#',
+                        pubDate: item.querySelector('pubDate')?.textContent || '',
+                        // description: item.querySelector('description')?.textContent.trim() || '',
+                        imageUrl: item.querySelector('enclosure')?.getAttribute('url') || placeholderImage,
+                        year: item.querySelector('pubDate')?.textContent ? new Date(item.querySelector('pubDate').textContent).getFullYear() : ''
+                    }));
+
+                    shuffleArray(allNewsItems); // Mescola le notizie per un ordine casuale
+
+                    // Popola le notizie presenti inizialmente nella pagina
+                    populateAvailableNewsSlots();
+
+                } catch (error) {
+                    console.error("Failed to load news feed:", error);
+                    if (loadMoreContainer) loadMoreContainer.style.display = 'none'; // Nascondi il bottone se il caricamento fallisce
+                }
+            }
+
+            // --- Gestione del Click ---
+            if (loadMoreButton && loadMoreContainer) {
+                loadMoreButton.addEventListener('click', function(event) {
+                    event.preventDefault(); // Previene il comportamento di default del link
+
+                    // 1. Inserisce il nuovo blocco HTML prima del contenitore del pulsante
+                    loadMoreContainer.insertAdjacentHTML('beforebegin', newsBlockHtml);
+
+                    // 2. Chiama la funzione di popolamento, che troverà e riempirà i nuovi slot
+                    populateAvailableNewsSlots();
+                });
+            }
+
+            // --- Avvio ---
+            initializeNews();
+        });
+    </script><!--SCRIPT NOTIZIE RANDOMIZZATE + AGGIUNTA NOTIZIE DA PULSANTE-->
+    <script>
+        window.addEventListener('load', () => {
+
+            // ===================================================================
+            // 1. LOGICA DI GENERAZIONE ANNUNCI RANDOM (DAL PRIMO SCRIPT)
+            // ===================================================================
+
+            // --- Configuration ---
+            const GIF_HEIGHT = 150;
+            const MIN_DISTANCE = 5;
+
+            // --- Main Logic ---
+            const leftContainer = document.querySelector('.advertisement-left-container');
+            const rightContainer = document.querySelector('.advertisement-right-container');
+            const webpageContainer = document.querySelector('.smuzn-webpage');
+
+            if (!webpageContainer || !leftContainer || !rightContainer) {
+                console.error("Uno dei contenitori necessari (.smuzn-webpage, .advertisement-left-container, .advertisement-right-container) non è stato trovato.");
+                return;
+            }
+
+            const masterGifList = getUniqueGifsFromDOM('.advertisement-left-container a');
+
+            if (masterGifList.length === 0) {
+                console.error("Nessuna GIF trovata in '.advertisement-left-container'. Script interrotto.");
+                return;
+            }
+
+            if (masterGifList.length <= MIN_DISTANCE) {
+                console.warn(`Attenzione: Il numero di GIF uniche (${masterGifList.length}) non è maggiore della distanza minima (${MIN_DISTANCE}).`);
+            }
+
+            const pageHeight = webpageContainer.offsetHeight;
+            const gifsNeeded = Math.ceil(pageHeight / GIF_HEIGHT);
+            const leftGifs = generateRandomizedGifList(masterGifList, gifsNeeded, MIN_DISTANCE);
+            const rightGifs = generateRandomizedGifList(masterGifList, gifsNeeded, MIN_DISTANCE);
+
+            populateContainer(leftContainer, leftGifs);
+            populateContainer(rightContainer, rightGifs);
+
+
+            // ===================================================================
+            // 2. LOGICA "X" E SYNC ALTEZZA (DAL SECONDO SCRIPT, MODIFICATA)
+            // ===================================================================
+
             let updateButtonPositions;
+            initializeCloseButtons();
+            initializeHeightSync();
+
 
             // ===================================================================
-            // FUNZIONE 1: GESTIONE BOTTONI "X" INTERATTIVI
+            // FUNZIONI HELPER (da entrambi gli script, con nuove aggiunte)
             // ===================================================================
+
+            function getUniqueGifsFromDOM(selector) {
+                const sourceElements = document.querySelectorAll(selector);
+                const uniqueGifs = new Map();
+                sourceElements.forEach(el => {
+                    const img = el.querySelector('img');
+                    if (img && img.src && !uniqueGifs.has(img.src)) {
+                        uniqueGifs.set(img.src, { src: img.src, style: img.getAttribute('style') });
+                    }
+                });
+                return Array.from(uniqueGifs.values());
+            }
+
+            function generateRandomizedGifList(sourceList, count, minDistance) {
+                const resultList = [];
+                const recentSources = [];
+                for (let i = 0; i < count; i++) {
+                    let availableGifs = sourceList.filter(gif => !recentSources.includes(gif.src));
+                    if (availableGifs.length === 0) availableGifs = sourceList;
+                    const randomIndex = Math.floor(Math.random() * availableGifs.length);
+                    const chosenGif = availableGifs[randomIndex];
+                    resultList.push(chosenGif);
+                    recentSources.push(chosenGif.src);
+                    if (recentSources.length > minDistance) recentSources.shift();
+                }
+                return resultList;
+            }
+
+            function populateContainer(container, gifList) {
+                container.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+                gifList.forEach(gifData => {
+                    const link = document.createElement('a');
+                    link.href = "";
+                    const img = document.createElement('img');
+                    img.className = 'advertisement';
+                    img.src = gifData.src;
+                    if (gifData.style) img.setAttribute('style', gifData.style);
+                    link.appendChild(img);
+                    fragment.appendChild(link);
+                });
+                container.appendChild(fragment);
+            }
+
+            // NUOVA LOGICA: Funzione per creare e posizionare i duplicati
+            /**
+             * Crea tra 2 e 4 duplicati di un annuncio e li posiziona random nel viewport.
+             * @param {HTMLElement} originalAnchor - L'elemento <a> dell'annuncio da clonare.
+             * @param {HTMLElement} pagesContainer - Il contenitore a cui aggiungere i cloni.
+             */
+            function createAndPlaceDuplicates(originalAnchor, pagesContainer) {
+                const numDuplicates = Math.floor(Math.random() * 3) + 2; // Genera un numero da 2 a 4
+                const originalRect = originalAnchor.getBoundingClientRect(); // Ottiene le dimensioni dell'annuncio
+                const pagesRect = pagesContainer.getBoundingClientRect();
+
+                // Calcola l'area massima in cui posizionare l'angolo in alto a sinistra del clone
+                // per evitare che esca dal viewport.
+                const maxX = window.innerWidth - originalRect.width;
+                const maxY = window.innerHeight - originalRect.height;
+
+                for (let i = 0; i < numDuplicates; i++) {
+                    // 1. Clona l'annuncio
+                    const clone = originalAnchor.cloneNode(true);
+                    clone.style.opacity = '1';
+                    clone.style.pointerEvents = 'auto';
+                    clone.style.position = 'absolute'; // Fondamentale per il posizionamento
+                    clone.style.zIndex = '5550'; // Sopra tutto il resto
+                    clone.style.border = '0.01vmin solid #f8f8f8';
+
+                    // 2. Calcola una posizione casuale DENTRO il viewport
+                    // Assicura che le coordinate non siano negative se l'annuncio è più grande del viewport
+                    const randomX = Math.max(0, Math.random() * maxX);
+                    const randomY = Math.max(0, Math.random() * maxY);
+
+                    // 3. Posiziona il clone in modo assoluto rispetto al contenitore '.pages'
+                    // Si sottrae l'offset del container per allineare le coordinate del viewport
+                    // con il sistema di coordinate del container.
+                    clone.style.left = `${randomX - pagesRect.left}px`;
+                    clone.style.top = `${randomY - pagesRect.top}px`;
+
+                    pagesContainer.appendChild(clone);
+
+                    // 4. Crea un nuovo bottone "x" per il clone
+                    const newButton = document.createElement('span');
+                    newButton.className = 'interactive-close-button';
+                    newButton.textContent = 'x';
+                    pagesContainer.appendChild(newButton);
+
+                    // 5. Posiziona il nuovo bottone sull'angolo del clone e lo rende visibile
+                    const newCloneRect = clone.getBoundingClientRect();
+                    newButton.style.display = 'flex';
+                    newButton.style.opacity = '1';
+                    newButton.style.top = `${newCloneRect.top - pagesRect.top}px`;
+                    newButton.style.left = `${newCloneRect.right - pagesRect.left}px`;
+
+                    // 6. Applica la logica interattiva (inclusa la duplicazione) al nuovo clone
+                    attachInteractiveEvents(clone, newButton, pagesContainer);
+                }
+            }
+
+            // NUOVA LOGICA: Funzione per legare gli eventi (resa riutilizzabile)
+            /**
+             * Applica gli eventi di hover e click a una coppia annuncio-bottone.
+             * @param {HTMLElement} anchor - L'elemento <a> dell'annuncio.
+             * @param {HTMLElement} button - Il bottone <span> "x".
+             * @param {HTMLElement} pagesContainer - Il contenitore principale.
+             */
+            function attachInteractiveEvents(anchor, button, pagesContainer) {
+                let hideTimer;
+                const handleHover = (e) => {
+                    clearTimeout(hideTimer);
+                    if (e.type === 'mouseenter') {
+                        if (button.style.display !== 'none') button.style.opacity = '1';
+                    } else {
+                        hideTimer = setTimeout(() => { button.style.opacity = '0'; }, 100);
+                    }
+                };
+
+                [anchor, button].forEach(el => el.addEventListener('mouseenter', handleHover));
+                [anchor, button].forEach(el => el.addEventListener('mouseleave', handleHover));
+
+                // La funzione di click ora chiama la duplicazione
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Nasconde l'annuncio e il bottone cliccati
+                    anchor.style.opacity = '0';
+                    anchor.style.pointerEvents = 'none';
+                    button.style.display = 'none';
+
+                    // Rimuove gli event listener per evitare doppie attivazioni
+                    [anchor, button].forEach(el => {
+                        el.removeEventListener('mouseenter', handleHover);
+                        el.removeEventListener('mouseleave', handleHover);
+                    });
+
+                    // Attiva la duplicazione!
+                    createAndPlaceDuplicates(anchor, pagesContainer);
+
+                }, { once: true }); // Manteniamo 'once' per evitare click multipli sullo stesso bottone
+            }
+
             function initializeCloseButtons() {
-                // --- 1. CONFIGURAZIONE DEGLI STILI (MODIFICA QUI) ---
-                const buttonStyles = {
-                    'position': 'absolute',
-                    'display': 'none',
-                    'align-items': 'center',
-                    'justify-content': 'center',
-                    'width': '2vmin',
-                    'height': '2vmin',
-                    'padding-bottom': '0.5vmin',
-                    'font-family': 'Comic Relief, system-ui',
-                    'font-weight': '400',
-                    'font-style': 'normal',
-                    'font-size': '2.25vmin',
-                    'border-radius': '0.5vmin 0 0.5vmin 0',
-                    'user-select': 'none',
-                    'color': 'white',
-                    'background-color': 'var(--bgc)',
-                    'z-index': '5555',
-                    'box-shadow': '0 0 0 0 white',
-                    /*'text-shadow':'-0.2vmin -0.2vmin 0 #ff0054, 0.2vmin -0.2vmin 0 #ff0054, 0.2vmin 0.2vmin 0 #ff0054, -0.2vmin 0.2vmin 0 #ff0054',*/
-                    'opacity': '0', /* qui */
-                    'transition': 'all 0.1s ease-in-out',
-                    'transform': 'translate(-140%, 40%) scale(1)',
-                    'cursor': 'pointer !important',
-                };
-                const buttonHoverStyles = {
-                    'transform': 'translate(-140%, 40%) scale(1.2)',
-                    /*'text-shadow':'-0.3vmin -0.3vmin 0 #ff0054, 0.3vmin -0.3vmin 0 #ff0054, 0.3vmin 0.3vmin 0 #ff0054, -0.3vmin 0.3vmin 0 #ff0054',*/
-                    'box-shadow': '0 0 0 0 var(--bgc)',
-                    /*'font-size': '2.75vmin',*/
-                };
-
-                // --- 2. SETUP E INIEZIONE STILI ---
+                const buttonStyles = { 'position': 'absolute', 'display': 'none', 'align-items': 'center', 'justify-content': 'center', 'width': '2vmin', 'height': '2vmin', 'padding-bottom': '0.5vmin', 'font-family': 'Comic Relief, system-ui', 'font-weight': '400', 'font-style': 'normal', 'font-size': '2.25vmin', 'border-radius': '0.5vmin 0 0.5vmin 0', 'user-select': 'none', 'color': 'white', 'background-color': 'var(--bgc)', 'z-index': '5555', 'box-shadow': '0 0 0 0 white', 'opacity': '0', 'transition': 'all 0.1s ease-in-out', 'transform': 'translate(-140%, 40%) scale(1)', 'cursor': 'pointer !important', };
+                const buttonHoverStyles = { 'transform': 'translate(-140%, 40%) scale(1.2)', 'box-shadow': '0 0 0 0 var(--bgc)', };
                 const pagesContainer = document.querySelector('.pages');
                 if (!pagesContainer) return console.warn('CloseButtons: .pages container not found.');
                 if (window.getComputedStyle(pagesContainer).position === 'static') {
                     pagesContainer.style.position = 'relative';
                 }
-
-                // Funzione helper per iniettare stili dall'oggetto di configurazione
                 (function injectStyles(selector, styles, hoverSelector, hoverStyles) {
                     const toCss = (obj) => Object.entries(obj).map(([k, v]) => `${k}:${v};`).join('');
                     const styleEl = document.createElement('style');
-                    styleEl.textContent = `
-                    ${selector} { ${toCss(styles)} }
-                    ${hoverSelector} { ${toCss(hoverStyles)} }
-                `;
+                    styleEl.textContent = `${selector} { ${toCss(styles)} } ${hoverSelector} { ${toCss(hoverStyles)} }`;
                     document.head.appendChild(styleEl);
                 })('.interactive-close-button', buttonStyles, '.interactive-close-button:hover', buttonHoverStyles);
 
-                // --- 3. LOGICA PRINCIPALE ---
                 const targets = new Map();
-                document.querySelectorAll('a img').forEach(img => {
-                    const anchor = img.closest('a');
-                    if (!anchor || anchor.classList.contains('link-news') || targets.has(anchor)) return;
+                // Trova solo gli annunci iniziali nelle colonne laterali
+                document.querySelectorAll('.advertisement-left-container a, .advertisement-right-container a').forEach(anchor => {
+                    const img = anchor.querySelector('img');
+                    if (!img || anchor.classList.contains('link-news') || targets.has(anchor)) return;
                     const button = document.createElement('span');
                     button.className = 'interactive-close-button';
                     button.textContent = 'x';
@@ -688,36 +1181,19 @@
                     targets.set(anchor, { button });
                 });
 
-                const isIntersecting = (r1, r2) => r1.left<r2.right && r1.right>r2.left && r1.top<r2.bottom && r1.bottom>r2.top;
-
-                const calculateImageVisibleRect = (img) => { /* Funzione helper non modificata */
-                    const imgRect = img.getBoundingClientRect();
-                    if (window.getComputedStyle(img).objectFit !== 'contain' || !img.naturalWidth) return imgRect;
-                    const naturalRatio = img.naturalWidth / img.naturalHeight;
-                    const elementRatio = img.width / img.height;
-                    const r = { ...imgRect.toJSON() };
-                    if (naturalRatio > elementRatio) {
-                        const h = img.width / naturalRatio;
-                        r.top += (img.height - h) / 2; r.height = h;
-                    } else {
-                        const w = img.height * naturalRatio;
-                        r.left += (img.width - w) / 2; r.width = w;
-                    }
-                    r.right = r.left + r.width; r.bottom = r.top + r.height;
-                    return r;
+                const isIntersecting = (r1, r2) => r1.left < r2.right && r1.right > r2.left && r1.top < r2.bottom && r1.bottom > r2.top;
+                const calculateImageVisibleRect = (img) => {
+                    const imgRect = img.getBoundingClientRect(); if (window.getComputedStyle(img).objectFit !== 'contain' || !img.naturalWidth) return imgRect; const naturalRatio = img.naturalWidth / img.naturalHeight; const elementRatio = img.width / img.height; const r = { ...imgRect.toJSON() }; if (naturalRatio > elementRatio) { const h = img.width / naturalRatio; r.top += (img.height - h) / 2; r.height = h; } else { const w = img.height * naturalRatio; r.left += (img.width - w) / 2; r.width = w; } r.right = r.left + r.width; r.bottom = r.top + r.height; return r;
                 };
 
                 updateButtonPositions = () => {
                     const pagesRect = pagesContainer.getBoundingClientRect();
                     targets.forEach(({ button }, anchor) => {
-                        if (anchor.style.opacity === '0') return button.style.display = 'none'; /* qui */
-
+                        if (anchor.style.opacity === '0') return button.style.display = 'none';
                         const croppingContainer = anchor.closest('.advertisement-left-container, .advertisement-right-container');
                         const img = anchor.querySelector('img');
                         if (!img) return;
-
                         const isVisible = !croppingContainer || isIntersecting(img.getBoundingClientRect(), croppingContainer.getBoundingClientRect());
-
                         if (isVisible) {
                             button.style.display = 'flex';
                             const visibleRect = calculateImageVisibleRect(img);
@@ -730,52 +1206,22 @@
                 };
 
                 let throttleTimer;
-                const throttledUpdate = () => {
-                    if (throttleTimer) return;
-                    throttleTimer = setTimeout(() => { updateButtonPositions(); throttleTimer = null; }, 150);
-                };
+                const throttledUpdate = () => { if (throttleTimer) return; throttleTimer = setTimeout(() => { updateButtonPositions(); throttleTimer = null; }, 150); };
                 window.addEventListener('resize', throttledUpdate);
                 window.addEventListener('scroll', throttledUpdate, { passive: true });
 
-                // --- GESTIONE EVENTI (OTTIMIZZATA) ---
+                // NUOVA LOGICA: Applica gli eventi interattivi usando la nuova funzione helper
                 targets.forEach(({ button }, anchor) => {
-                    let hideTimer;
-                    const handleHover = (e) => {
-                        clearTimeout(hideTimer);
-                        if (e.type === 'mouseenter') {
-                            if (button.style.display !== 'none') button.style.opacity = '1';
-                        } else {
-                            hideTimer = setTimeout(() => { button.style.opacity = '0'; }, 100); /* qui */
-                        }
-                    };
-
-                    [anchor, button].forEach(el => el.addEventListener('mouseenter', handleHover));
-                    [anchor, button].forEach(el => el.addEventListener('mouseleave', handleHover));
-
-                    button.addEventListener('click', (e) => {
-                        e.preventDefault(); e.stopPropagation();
-                        clearTimeout(hideTimer);
-                        anchor.style.opacity = '0'; /* qui */
-                        anchor.style.pointerEvents = 'none';
-                        button.style.display = 'none';
-                        [anchor, button].forEach(el => {
-                            el.removeEventListener('mouseenter', handleHover);
-                            el.removeEventListener('mouseleave', handleHover);
-                        });
-                    }, { once: true }); // Click listener si auto-rimuove dopo il primo click.
+                    attachInteractiveEvents(anchor, button, pagesContainer);
                 });
 
-                window.addEventListener('load', updateButtonPositions);
+                updateButtonPositions();
             }
 
-            // ===================================================================
-            // FUNZIONE 2: SINCRONIZZAZIONE ALTEZZA ANNUNCI (NON MODIFICATA)
-            // ===================================================================
             function initializeHeightSync() {
                 const sourceDiv = document.querySelector('.smuzn-webpage');
                 const targetDivs = document.querySelectorAll('.advertisement-left-container, .advertisement-right-container');
                 if (!sourceDiv || targetDivs.length === 0) return;
-
                 const observer = new ResizeObserver(entries => {
                     const sourceHeight = entries[0].contentRect.height;
                     targetDivs.forEach(div => div.style.height = `${sourceHeight}px`);
@@ -783,14 +1229,8 @@
                 });
                 observer.observe(sourceDiv);
             }
-
-            // ===================================================================
-            // ESECUZIONE
-            // ===================================================================
-            initializeCloseButtons();
-            initializeHeightSync();
         });
-    </script><!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ + AGGIUNTA "X" PER CHIUDERE ADVERT-->
+    </script><!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ + AGGIUNTA "X" PER CHIUDERE ADVERT + "X" CHE DUPLICA PUBBLICIÀ CHIUSE + PUBBLICITÀ RANDOM DA INIZIO A FINE PAGINA-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 

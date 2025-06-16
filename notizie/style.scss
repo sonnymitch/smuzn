@@ -82,12 +82,16 @@
   .smuzn-webpage {
     width: 80vw;
     z-index: 50;
+    border-color: #f8f8f8;
+    border-style: solid;
+    border-width: 0 0.01vmin 0 0.01vmin;
+  }
+
+  .webpage {
     border-color: white;
     border-style: solid;
     border-width: 0 2vmin 0 2vmin;
   }
-
-
   /* Il placeholder inizia senza dimensioni e invisibile */
   .header-placeholder {
     height: 0;
@@ -101,11 +105,12 @@
   .section1-container {
     /* Nello stato di default, è solo un contenitore statico */
     position: static;
-    width: 78vw;
+    width: 100%;
     justify-self: center/* Occupa tutta la larghezza, come faceva prima il tuo .section1 */
   }
 
   .section1-container.is-fixed {
+    width: 78vw;
     position: fixed;
     top: -15vmin; /* Inizia nascosto, lo script lo controlla */
     left: 0;
@@ -488,7 +493,7 @@
     font-size: 3vmin;
     color: #212121;
     z-index: 1;
-    letter-spacing: -0.05em;
+    //letter-spacing: -0.05em;
     line-height: 95%;
   }
 
@@ -861,7 +866,7 @@
 
   }
 
-  .advertisement-right-container {
+    .advertisement-right-container {
     display: flex;
     flex-direction: column;
     z-index: 1;
@@ -877,12 +882,13 @@
     //cursor: url(/cursors/sketchy-red-1/Normal.cur), pointer !important;
     cursor: pointer !important;
     border-radius: 0;
-    border-color: white;
+    border-color: #f8f8f8;
     border-style: solid;
-    border-width: 0 0 0.5vmin 0;
+    border-width: 0 0 0.01vmin 0;
     width: 10vw;
     aspect-ratio: 9 / 16;
     object-fit: cover;
+    transition: all 0.1s ease-in-out;
   }
 
   //.advertisement:hover {
@@ -890,6 +896,32 @@
   //}
 
   /* FINE PUBBLICITÀ */
+
+  .carica-altre-notizie {
+    background-color: white;
+    //margin-top: 2vmin;
+    height: 25vmin;
+    container-type: inline-size;
+  }
+
+  .carica-altre-notizie-testo-bottone {
+    position: relative;
+    left: 10cqw;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    line-height: 10vmin;
+    font-size: 4vmin;
+    text-transform: uppercase;
+    cursor: pointer !important;
+    color: var(--bgc);
+    transition: color 0.05s ease-in-out;
+  }
+
+  .carica-altre-notizie-testo-bottone:hover {
+    color: var(--viola);
+  }
 
 }
 /* ************************************ FINE VERSIONE DESKTOP ************************************ */
@@ -906,14 +938,14 @@ body {
   font-family: "Aboriginal Serif", serif;
   font-weight: 400;
   font-style: normal;
-  //background-color: var(--bgc);
+  background-color: white;
   //background: var(--bgc);
   //background: radial-gradient(circle, var(--bgc) 55%, white 100%);
 
 
   //background: #5B5B5B;
   //background: radial-gradient(at center, #5B5B5B, #FF0054);
-  background-image: linear-gradient(to right, #ff0054, #e22e74, #bc4786, #955689, #745c7d, #745c7d, #745c7d, #745c7d, #955689, #bc4786, #e22e74, #ff0054);
+  //background-image: linear-gradient(to right, #ff0054, #e22e74, #bc4786, #955689, #745c7d, #745c7d, #745c7d, #745c7d, #955689, #bc4786, #e22e74, #ff0054);
   color: var(--text-color) !important;
   margin: 0;
   padding: 0;

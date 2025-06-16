@@ -2,45 +2,6 @@
 <html lang="en">
 
 <head>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const link = document.getElementById("okcasella2");
-            if (link) {
-                link.addEventListener("click", function() {
-                    this.textContent = "RISPOSTA ESATTA!";
-                });
-            }
-        });
-    </script><!--QUESTIONARIO CAMBIA TESTO CASELLA-->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const openPopupLink = document.getElementById("openPopupLink");
-            const popupOverlay = document.getElementById("PopupOverlay");
-            const pulsanteAccetta = document.getElementById("pulsante-accetta");
-
-            const openPopupLinkGoHome = document.getElementById("openPopupLinkGoHome");
-            const popupOverlay2 = document.getElementById("PopupOverlay2");
-            const pulsanteAccetta2 = document.getElementById("pulsante-accetta2");
-
-            openPopupLink.addEventListener("click", function(event) {
-                event.preventDefault();
-                popupOverlay.style.display = "flex";
-            });
-
-            pulsanteAccetta.addEventListener("click", function() {
-                popupOverlay.style.display = "none";
-            });
-
-            openPopupLinkGoHome.addEventListener("click", function(event) {
-                event.preventDefault();
-                popupOverlay2.style.display = "flex";
-            });
-
-            pulsanteAccetta2.addEventListener("click", function() {
-                window.location.href = "../";
-            });
-        });
-    </script><!--POPUP LINK SCRIPT GO HOME-->
     <script src="/script/bootstrap.bundle.min.js"></script>
     <script src="/script/jquery-3.7.1.slim.min.js"></script>
     <script src="/script/jquery-scripts.js"></script>
@@ -334,10 +295,16 @@
     <div id="reading-progress-bar"></div>
     <!-- ======== FINE BARRA DI PROSEGUIMENTO LETTURA ======== -->
 
-
-
     <div class="webpage">
         <section class="pages">
+
+            <!-- POST CASUALI TWITTER A COMPARSA -->
+            <div class="ri-controls-panel">
+                <button id="startBtn" class="ri-control-button">Start</button>
+                <button id="stopBtn" class="ri-control-button">Stop</button>
+                <button id="clearBtn" class="ri-control-button">Clear All</button>
+            </div>
+
             <div class="section1-container">
                 <div class="section1">
     <!--                        <a href="/notizie" class="text1 text4">Smüzn</a>-->
@@ -367,7 +334,7 @@
 
             <div class="titolo-articolo-box">
                 <h1 class="titolo-articolo">
-                    LOREM IPSUM
+                    Benvenuti nella nuova era della censura digitale globale
                 </h1>
             </div>
 
@@ -380,7 +347,7 @@
 
             <div class="sezione1-articolo sezioni-articolo" id="sezione1-articolo">
                 <div class="immagine-principale-bordo">
-                        <img class="immagine-principale" src="https://www.rai.it/dl/img/2024/12/26/1600x900_1735237515010_logo%20sanremo%202025.jpg">
+                        <img class="immagine-principale" src="https://surfshark.com/wp-content/uploads/2023/01/Internet_censorship_hero.png">
                 </div>
                 <div class="immagine-principale-bordo-sopra">
                     <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
@@ -391,14 +358,16 @@
 
                         <p class="testo-articolo">
                             <span class="spazio-per-testo-fix-foto"></span>
-                            <span class="capital-letter">L</span>orem
-                                ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <span class="capital-letter">C</span>ome
+                                le aziende dei social media stanno cercando di silenziare alcune voci
+                                Non dimentichiamo il ruolo che le aziende tecnologiche hanno avuto nel portarci fin qui.
+                                I sostenitori della libertà di espressione mettono in guardia da una distopia digitale orwelliana dove funzionari governativi dettano cosa possiamo leggere e scrivere sul web. Per coloro che si preoccupano della sicurezza online, le nuove regole costringeranno finalmente le aziende tecnologiche a prendersi la responsabilità di ciò che viene pubblicato sulle loro piattaforme, che hanno più utenti, collettivamente, di quanti cittadini abbiano i paesi.
                             <span class="oggetti-in-fila">
 							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
 							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
 							</span>
-                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                                Qualunque sia la parte dalla quale vi troviate, questi sviluppi offrono uno sguardo al futuro di internet: uno in cui più messaggi online, video e post verranno eliminati a causa di decreti legislativi o, più probabilmente, censura preventiva da parte delle aziende tecnologiche che temono rappresaglie normative.
+                                Chiamiamola la regola dell'autoconservazione. Le aziende dei social media parlano molto di libertà di espressione. Ma se si tratta di scegliere tra irritare i sostenitori della libertà di espressione rimuovendo alcuni post discutibilmente di cattivo gusto o affrontare politici furiosi arrabbiati per i contenuti online, ci sarà un solo risultato possibile.                        </p>
                     </div>
                 </div>
             </div>
@@ -436,13 +405,13 @@
                 <div class="testo-articolo-box">
                     <div class="testo-articolo-sub-box">
                         <p class="testo-articolo">
-                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            <span class="oggetti-in-fila">
+                                Non date la colpa solo ai politici per l'era imminente della censura online. Non dimentichiamo il ruolo che le aziende tecnologiche hanno avuto nel portarci fin qui.
+                                Indipendentemente dal fatto che la censura sia intenzionale o meno, quello che è indiscutibile è che qualsiasi azione che limiti la libertà di informazione potrebbe danneggiare la fiducia del pubblico nei social network. Ancora di più quando sembra seguire un modello di pregiudizio politico. "In un clima politico così polarizzato, anche gli errori involontari diventano accuse di pregiudizio", dice Matt Navarra, un esperto di social media, in un'intervista per la BBC. "Se questi problemi non vengono risolti presto, potrebbero alimentare teorie del complotto e influenzare la reputazione di Meta."                            <span class="oggetti-in-fila">
 							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
 							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
 							</span>
-                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                                Quello che è chiaro è che i social media, più che mai, sembrano essere il nuovo campo di battaglia in cui si sta combattendo una guerra sulla verità, la libertà di espressione e, forse più importante, il controllo su che tipo di informazioni vengono distribuite. E con il secondo mandato di Trump appena iniziato, questo conflitto promette solo di intensificarsi.
+                                Per anni, le aziende dei social media si sono nascoste dietro affermazioni secondo cui erano semplicemente proprietarie di piattaforme "neutrali" la cui tecnologia — e profitti sempre più grandi — non potevano essere ritenuti responsabili per quello che veniva pubblicato lì.                        </p>
                     </div>
                 </div>
             </div>
@@ -480,13 +449,12 @@
                 <div class="testo-articolo-box">
                     <div class="testo-articolo-sub-box" id="reading-progress-container">
                         <p class="testo-articolo">
-                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            <span class="oggetti-in-fila">
+                                Ci sono voluti eventi estremi (come il <a href="https://www.politico.com/story/2017/10/31/facebook-twitter-post-election-russian-meddling-sought-to-undermine-trump-244380" class="link-testuale">coinvolgimento della Russia</a> nelle elezioni presidenziali americane del 2016 e il <a href="https://www.politico.eu/pro/german-court-rules-against-syrian-refugee-in-facebook-fake-news-case/" class="link-testuale">bullismo online</a> di rifugiati appena arrivati in Germania) perché le Big Tech <a href="https://www.politico.eu/article/big-tech-headache-an-unwanted-role-in-politics/" class="link-testuale">ammettessero</a> l'ovvio accecante: sono aziende mediatiche. E che, proprio come le aziende mediatiche tradizionali sono responsabili per quello che pubblicano, le aziende dei social media sono responsabili, alla fine, per quello che viene pubblicato sulle loro piattaforme.
+                                Ad essere onesti, Facebook, Google e Twitter hanno preso misure per combattere i peggiori trasgressori di contenuti, <a href="https://www.axios.com/facebook-turns-to-artificial-intelligence-in-terrorism-fight-1513303039-8cd88d10-1f89-4ce1-8b5a-e4a1906b4302.html" class="link-testuale">usando l'intelligenza artificiale</a> per bloccare automaticamente la propaganda terroristica o <a href="https://www.wsj.com/articles/the-worst-job-in-technology-staring-at-human-depravity-to-keep-it-off-facebook-1514398398" class="link-testuale">assumendo squadre</a> di cosiddetti "moderatori di contenuti" per controllare manualmente materiale illegale online (probabilmente il peggior lavoro nel settore tech). Mark Zuckerberg, amministratore delegato di Facebook, ha persino <a href="https://www.facebook.com/zuck" class="link-testuale">fatto del "riparare" il social network</a> il suo proposito per il nuovo anno per il 2018.                            <span class="oggetti-in-fila">
 							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
 							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
 							</span>
-                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                                E, in una certa misura, ha funzionato: le aziende dei social media hanno rimosso il 59 percento del sospetto hate speech in Europa lo scorso maggio rispetto a solo il 28 percento nel dicembre 2016, secondo un recente <a href="http://ec.europa.eu/newsroom/just/item-detail.cfm?&item_id=71674" class="link-testuale">studio a livello UE</a>. Ma è come dire che i vigili del fuoco di una città sono riusciti a spegnere solo il 59 percento di tutti i sospetti incendi locali — è un buon inizio, ma niente di cui vantarsi.                        </p>
                     </div>
                 </div>
             </div>
@@ -538,6 +506,7 @@
             </footer>
         </section>
     </div>
+
 
     <script>
         // --- KEY CHANGE: Use 'load' to ensure the page height is final ---
@@ -751,7 +720,7 @@
 
                     shuffleArray(newsData);
 
-                    const newsSlots = document.querySelectorAll('.link-news');
+                    const newsSlots = document.querySelectorAll('.link-news, .twitter-post');
 
                     newsSlots.forEach((slot, index) => {
                         if (index >= newsData.length) {
@@ -994,7 +963,11 @@
                 // Trova tutti gli annunci iniziali e li rende interattivi
                 document.querySelectorAll('a img').forEach(img => {
                     const anchor = img.closest('a');
-                    if (!anchor || anchor.classList.contains('link-news')) return;
+                    if (
+                        !anchor ||
+                        anchor.classList.contains('link-news') ||
+                        anchor.classList.contains('twitter-post')
+                    ) return;
                     makeAdInteractive(anchor);
                 });
 
@@ -1451,6 +1424,171 @@
 
         });
     </script><!--SCRIPT PUBBLICITÀ CENTRALE RANDOMIZZATA-->
+    <script>
+        // ==========================================================
+        // === MODIFICA QUI: Aggiungi le tue coppie di URL        ===
+        // ==========================================================
+        const contentList = [
+            // Formato: { imgSrc: 'URL_DELL_IMMAGINE', linkHref: 'URL_DI_DESTINAZIONE' }
+            {
+                imgSrc: '/notizie/IMAGES/twitter-posts/Trump001.png',
+                linkHref: 'https://x.com/realDonaldTrump/status/1923432648103333919'
+            },
+            {
+                imgSrc: '/notizie/IMAGES/twitter-posts/Trump002.png',
+                linkHref: 'https://x.com/realDonaldTrump/status/1923427418913616200'
+            },
+            {
+                imgSrc: '/notizie/IMAGES/twitter-posts/Orban001.png',
+                linkHref: 'https://x.com/PM_ViktorOrban/status/1928054979085971701'
+            },
+            {
+                imgSrc: '/notizie/IMAGES/twitter-posts/Orban002.png',
+                linkHref: 'https://x.com/PM_ViktorOrban/status/1934132093929295880'
+            },
+            {
+                imgSrc: '/notizie/IMAGES/twitter-posts/salvini001.png',
+                linkHref: 'https://x.com/matteosalvinimi/status/1870193699012960574'
+            },
+            {
+                imgSrc: '/notizie/IMAGES/twitter-posts/netan001.png',
+                linkHref: 'https://x.com/netanyahu/status/1933922050319515656'
+            },
+            {
+                imgSrc: '/notizie/IMAGES/twitter-posts/meloni001.png',
+                linkHref: 'https://x.com/GiorgiaMeloni/status/1930956033611927889'
+            },
+            // {
+            //     imgSrc: '',
+            //     linkHref: ''
+            // },
+            // {
+            //     imgSrc: '',
+            //     linkHref: ''
+            // },
+            // {
+            //     imgSrc: '',
+            //     linkHref: ''
+            // },
+            // {
+            //     imgSrc: '',
+            //     linkHref: ''
+            // },
+            // {
+            //     imgSrc: '',
+            //     linkHref: ''
+            // },
+
+            // Aggiungi quante coppie vuoi...
+        ];
+        // ==========================================================
+
+        const MIN_INTERVAL_MS = 500;
+        const MAX_INTERVAL_MS = 2000;
+
+        // --- LOGICA DELLO SCRIPT ---
+        const container = document.querySelector('.smuzn-webpage');
+        const startButton = document.getElementById('startBtn');
+        const stopButton = document.getElementById('stopBtn');
+        const clearButton = document.getElementById('clearBtn');
+
+        let imageTimer = null;
+
+        if (!container) console.error("Errore: Container '.smuzn-webpage' non trovato.");
+
+        function displayRandomImage() {
+            // Controlla se la nuova lista è vuota
+            if (!container || contentList.length === 0) {
+                stopDisplay();
+                return;
+            }
+
+            // Seleziona un oggetto casuale dalla lista
+            const randomItem = contentList[Math.floor(Math.random() * contentList.length)];
+
+            const divWrapper = document.createElement('div');
+            divWrapper.className = 'ri-image-wrapper';
+            divWrapper.style.zIndex = '5100';
+
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'ri-close-btn';
+            closeBtn.innerHTML = '×';
+            closeBtn.setAttribute('aria-label', 'Chiudi immagine');
+
+            closeBtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                divWrapper.remove();
+            });
+
+            // Crea il link e l'immagine usando i dati dall'oggetto 'randomItem'
+            const link = document.createElement('a');
+            link.className = 'twitter-post';
+            link.href = randomItem.linkHref; // Assegna l'URL di destinazione
+            link.target = '_blank';
+
+            const img = document.createElement('img');
+            img.className = 'ri-random-image';
+            img.src = randomItem.imgSrc; // Assegna l'URL dell'immagine
+            img.alt = 'Contenuto visualizzato casualmente';
+
+            link.appendChild(img);
+            divWrapper.appendChild(closeBtn);
+            divWrapper.appendChild(link);
+
+            const viewportWidth = document.documentElement.clientWidth;
+            const viewportHeight = document.documentElement.clientHeight;
+            const wrapperWidth = viewportWidth * 0.27;
+            const wrapperHeight = viewportHeight * 0.33;
+            const scrollY = window.scrollY;
+            const scrollX = window.scrollX;
+            const maxTop = scrollY + viewportHeight - wrapperHeight;
+            const maxLeft = scrollX + viewportWidth - wrapperWidth;
+
+            divWrapper.style.top = `${Math.random() * (maxTop - scrollY) + scrollY}px`;
+            divWrapper.style.left = `${Math.random() * (maxLeft - scrollX) + scrollX}px`;
+
+            container.appendChild(divWrapper);
+        }
+
+        function clearAllImages() {
+            stopDisplay();
+            const allWrappers = container.querySelectorAll('.ri-image-wrapper');
+            allWrappers.forEach(wrapper => wrapper.remove());
+        }
+
+        // Funzioni di controllo
+        function updateButtonStates() {
+            const isRunning = imageTimer !== null;
+            startButton.disabled = isRunning;
+            stopButton.disabled = !isRunning;
+        }
+
+        function scheduleNextImage() {
+            displayRandomImage();
+            const randomInterval = Math.random() * (MAX_INTERVAL_MS - MIN_INTERVAL_MS) + MIN_INTERVAL_MS;
+            imageTimer = setTimeout(scheduleNextImage, randomInterval);
+        }
+
+        function startDisplay() {
+            if (imageTimer || !container) return;
+            scheduleNextImage();
+            updateButtonStates();
+        }
+
+        function stopDisplay() {
+            if (imageTimer) {
+                clearTimeout(imageTimer);
+                imageTimer = null;
+                updateButtonStates();
+            }
+        }
+
+        startButton.addEventListener('click', startDisplay);
+        stopButton.addEventListener('click', stopDisplay);
+        clearButton.addEventListener('click', clearAllImages);
+
+        startDisplay();
+    </script><!--SCRIPT COMPARSA POST TWITTER CASUALI-->
 
 </div>
 </body>

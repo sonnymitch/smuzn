@@ -84,12 +84,16 @@
   .smuzn-webpage {
     width: 80vw;
     z-index: 50;
+    border-color: #f8f8f8;
+    border-style: solid;
+    border-width: 0 0.01vmin 0 0.01vmin;
+  }
+
+  .webpage {
     border-color: white;
     border-style: solid;
     border-width: 0 2vmin 0 2vmin;
-  }
-
-  /* Il placeholder inizia senza dimensioni e invisibile */
+  }  /* Il placeholder inizia senza dimensioni e invisibile */
   .header-placeholder {
     height: 0;
     display: none; /* Inizia completamente nascosto */
@@ -832,7 +836,7 @@
 
   }
 
-  .advertisement-right-container {
+    .advertisement-right-container {
     display: flex;
     flex-direction: column;
     z-index: 1;
@@ -848,9 +852,9 @@
     //cursor: url(/cursors/sketchy-red-1/Normal.cur), pointer !important;
     cursor: pointer !important;
     border-radius: 0;
-    border-color: white;
+    border-color: #f8f8f8;
     border-style: solid;
-    border-width: 0 0 0.5vmin 0;
+    border-width: 0 0 0.01vmin 0;
     width: 10vw;
     aspect-ratio: 9 / 16;
     object-fit: cover;
@@ -1763,6 +1767,108 @@
   }
 
   /* ****************** FINE STILE BARRA PROSEGUIMENTO ****************** */
+
+  /* INIZIO OVERLAY T-REX CONNESSIONE BLOCCATA */
+
+  /* Overlay a schermo intero che appare a metà pagina */
+  #t-rex-overlay {
+    display: none; /* Inizialmente nascosto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f7f7f7; /* Colore di sfondo della pagina di errore Chrome */
+    z-index: 9999;
+    /* L'allineamento è gestito dal CSS interno di Chrome */
+  }
+
+  .testo-t-rex {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 2.5vmin;
+
+  }
+
+  .testo-t-rex-errore {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 2vmin;
+  }
+
+  /* FINE OVERLAY T-REX CONNESSIONE BLOCCATA */
+
+  /* INNIZIO CSS UFFICIALE DELLA PAGINA OFFLINE DI GOOGLE CHROME */
+
+  /* Copyright 2014 The Chromium Authors. All rights reserved.
+  Use of this source code is governed by a BSD-style license that can be
+  found in the LICENSE file. */
+
+  .offline .interstitial-wrapper {
+    color: #2b2b2b;
+    font-size: 1em;
+    line-height: 1.55;
+    margin: 0 auto;
+    max-width: 600px;
+    padding-top: 100px;
+    width: 100%;
+  }
+
+  .offline .runner-container {
+    height: 150px;
+    max-width: 600px;
+    overflow: hidden;
+    position: absolute;
+    top: 35px;
+    width: 44px;
+    justify-self: anchor-center;
+  }
+
+  .offline .runner-canvas {
+    height: 150px;
+    max-width: 600px;
+    opacity: 1;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+
+  .offline .controller {
+    background: rgba(247,247,247, .1);
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  #offline-resources {
+    display: none;
+  }
+
+  /* Stili generali dal codice fornito */
+  h1 {
+    color: #333;
+    font-size: 1.6em;
+    font-weight: normal;
+    line-height: 1.25em;
+    margin-bottom: 16px;
+  }
+
+  .icon-offline {
+    //content: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABIAQMAAABvIyEEAAAABlBMVEUAAABTU1OoaSf/AAAAAXRSTlMAQObYZgAAAGxJREFUeF7tyMEJwkAQRuFf5ipMKxYQiJ3Z2nSwrWwBA0+DQZcdxEOueaePp9+dQZFB7GpUcURSVU66yVNFj6LFICatThZB6r/ko/pbRpUgilY0Cbw5sNmb9txGXUKyuH7eV25x39DtJXUNPQGJtWFV+BT/QAAAAABJRU5ErkJggg==) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQBAMAAAAVaP+LAAAAGFBMVEUAAABTU1NNTU1TU1NPT09SUlJSUlJTU1O8B7DEAAAAB3RSTlMAoArVKvVgBuEdKgAAAJ1JREFUeF7t1TEOwyAMQNG0Q6/UE+RMXD9d/tC6womIFSL9P+MnAYOXeTIzMzMzMzMzaz8J9Ri6HoITmuHXhISE8nEh9yxDh55aCEUoTGbbQwjqHwIkRAEiIaG0+0AA9VBMaE89Rogeoww936MQrWdBr4GN/z0IAdQ6nQ/FIpRXDwHcA+JIJcQowQAlFUA0MfQpXLlVQfkzR4igS6ENjknm/wiaGhsAAAAASUVORK5CYII=) 2x);
+    position: relative;
+  }
+
+  .icon {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 72px;
+    margin: 0 0 40px;
+    width: 72px;
+  }
+
+  /* FINE CSS UFFICIALE DELLA PAGINA OFFLINE DI GOOGLE CHROME */
 
 }
 /* ************************************ FINE VERSIONE DESKTOP ************************************ */

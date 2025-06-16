@@ -74,7 +74,8 @@
     border-color: white;
     border-style: solid;
     border-width: 0 2vmin 0 2vmin;
-  } /* Il placeholder inizia senza dimensioni e invisibile */
+  }
+  /* Il placeholder inizia senza dimensioni e invisibile */
   .header-placeholder {
     height: 0;
     display: none; /* Inizia completamente nascosto */
@@ -201,14 +202,6 @@
     grid-template-rows: repeat(9, 10vmin);
   }
   .sezione2-articolo {
-    grid-template-columns: repeat(17, 1fr);
-    grid-template-rows: repeat(4, 10vmin);
-  }
-  .sezione2-1-articolo {
-    grid-template-columns: repeat(17, 1fr);
-    grid-template-rows: repeat(4, 10vmin);
-  }
-  .sezione2-2-articolo {
     grid-template-columns: repeat(17, 1fr);
     grid-template-rows: repeat(4, 10vmin);
   }
@@ -1390,90 +1383,108 @@
     transition: background-color 0.2s;
   }
   /* ****************** FINE STILE BARRA PROSEGUIMENTO ****************** */
-  /* INIZIO OVERLAY T-REX CONNESSIONE BLOCCATA */
-  /* Overlay a schermo intero che appare a metà pagina */
-  #t-rex-overlay {
-    display: none; /* Inizialmente nascosto */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f7f7f7; /* Colore di sfondo della pagina di errore Chrome */
-    z-index: 9999;
-    /* L'allineamento è gestito dal CSS interno di Chrome */
-  }
-  .testo-t-rex {
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    font-size: 2.5vmin;
-  }
-  .testo-t-rex-errore {
-    font-family: "Segoe UI", Tahoma, sans-serif;
-    font-size: 2vmin;
-  }
-  /* FINE OVERLAY T-REX CONNESSIONE BLOCCATA */
-  /* INNIZIO CSS UFFICIALE DELLA PAGINA OFFLINE DI GOOGLE CHROME */
-  /* Copyright 2014 The Chromium Authors. All rights reserved.
-  Use of this source code is governed by a BSD-style license that can be
-  found in the LICENSE file. */
-  .offline .interstitial-wrapper {
-    color: #2b2b2b;
-    font-size: 1em;
-    line-height: 1.55;
-    margin: 0 auto;
-    max-width: 600px;
-    padding-top: 100px;
-    width: 100%;
-  }
-  .offline .runner-container {
-    height: 150px;
-    max-width: 600px;
-    overflow: hidden;
-    position: absolute;
-    top: 35px;
-    width: 44px;
-    justify-self: anchor-center;
-  }
-  .offline .runner-canvas {
-    height: 150px;
-    max-width: 600px;
-    opacity: 1;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    z-index: 2;
-  }
-  .offline .controller {
-    background: rgba(247, 247, 247, 0.1);
-    height: 100vh;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    z-index: 1;
-  }
-  #offline-resources {
+  /* INIZIO POST RANDOM TWITTER */
+  /* INIZIO PULSANTI PER CONTROLLO TWITTER POST (DISATTIVATI) */
+  /*  .ri-controls-panel {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      display: flex;
+      gap: 10px;
+    }
+
+    .ri-control-button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: 1px solid #666;
+      background-color: #333;
+      color: #fff;
+      transition: background-color 0.2s, opacity 0.2s;
+    }
+
+    .ri-control-button:hover:not(:disabled) {
+      background-color: #555;
+    }
+
+    .ri-control-button:disabled {
+      background-color: #222;
+      color: #777;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }*/
+  /* FINE PULSANTI PER CONTROLLO TWITTER POST (DISATTIVATI) */
+  .ri-controls-panel {
     display: none;
   }
-  /* Stili generali dal codice fornito */
-  h1 {
-    color: #333;
-    font-size: 1.6em;
-    font-weight: normal;
-    line-height: 1.25em;
-    margin-bottom: 16px;
+  .ri-control-button {
+    display: none;
   }
-  .icon-offline {
-    position: relative;
+  .ri-control-button:hover:not(:disabled) {
+    display: none;
   }
-  .icon {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 72px;
-    margin: 0 0 40px;
-    width: 72px;
+  .ri-control-button:disabled {
+    display: none;
   }
-  /* FINE CSS UFFICIALE DELLA PAGINA OFFLINE DI GOOGLE CHROME */
+  /* === NEW: Wrapper for the image and close button === */
+  .ri-image-wrapper {
+    position: absolute; /* This is positioned on the page */
+    width: 27vw;
+    height: auto;
+    transition: scale 0.1s ease-in-out;
+    z-index: 5566;
+  }
+  .ri-image-wrapper:hover {
+    scale: 1.05;
+    z-index: 5567; /* Bring hovered wrapper to the front */
+  }
+  /* The image itself now just fills the wrapper */
+  .ri-random-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2vmin;
+    border: 0.01vmin solid var(--grigio);
+    box-sizing: border-box;
+    object-fit: cover;
+    cursor: pointer !important;
+  }
+  /* === NEW: Style for the close 'x' button === */
+  .ri-close-btn {
+    padding-bottom: 0.2vmin;
+    font-family: Comic Relief, system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.25vmin;
+    position: absolute;
+    top: 1vmin;
+    right: 1vmin;
+    align-items: center;
+    justify-content: center;
+    width: 2vmin;
+    height: 2vmin;
+    background-color: var(--bgc);
+    color: #fff;
+    border-radius: 0.5vmin 0 0.5vmin 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: var(--0op);
+    line-height: 0.01;
+    cursor: pointer !important;
+    z-index: 10; /* Ensures it's above the image */
+    transition: background-color, scale 0.1s;
+  }
+  .ri-close-btn:hover {
+    scale: 1.3;
+  }
+  /* FINE POST RANDOM TWITTER */
 }
 /* ************************************ FINE VERSIONE DESKTOP ************************************ */
 /* FINE variazioni in base a dimensione viewport */
