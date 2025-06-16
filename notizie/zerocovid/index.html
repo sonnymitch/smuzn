@@ -868,7 +868,7 @@
             loadAndDisplayRandomNews();
         });
     </script><!--SCRIPT NOTIZIE RANDOMIZZATE-->
-	    <script>
+    <script>
         /**
          * ===================================================================
          * SCRIPT UNIFICATO PER LA GESTIONE DINAMICA DELLA PAGINA (v5.1 - Hydra Ads)
@@ -1521,6 +1521,48 @@
 
         });
     </script><!--SCRIPT PUBBLICITÀ CENTRALE RANDOMIZZATA-->
+    <script>
+        (function() {
+            'use strict';
+
+            // --- IMPOSTAZIONI ---
+
+            // 1. URL della homepage a cui vuoi essere reindirizzato.
+            const homeUrl = "../";
+
+            // 2. Intervallo di tempo in secondi.
+            // Lo script sceglierà un numero casuale di secondi tra questi due valori.
+            const minSecondi = 5;   // Esempio: 1 minuto
+            const maxSecondi = 15;  // Esempio: 5 minuti
+
+            // --- FINE IMPOSTAZIONI ---
+
+
+            // Funzione che esegue il reindirizzamento
+            function redirectToHome() {
+                console.log(`Tempo scaduto! Reindirizzamento a ${homeUrl}...`);
+                // Usiamo window.location.replace per non salvare questa pagina nella cronologia del browser,
+                // così l'utente non può tornare indietro a una pagina che lo reindirizzerebbe di nuovo.
+                window.location.replace(homeUrl);
+            }
+
+            // Calcola il ritardo casuale in millisecondi
+            const minMs = minSecondi * 1000;
+            const maxMs = maxSecondi * 1000;
+            const randomDelay = Math.random() * (maxMs - minMs) + minMs;
+
+            // Converte il ritardo in secondi per il messaggio in console
+            const delayInSecondsForLog = Math.round(randomDelay / 1000);
+
+            // Stampa un messaggio nella console del browser (visibile con F12)
+            // per sapere quando avverrà il redirect.
+            console.log(`Redirect automatico alla home programmato tra ${delayInSecondsForLog} secondi.`);
+
+            // Imposta il timer che chiamerà la funzione di reindirizzamento dopo il ritardo calcolato
+            setTimeout(redirectToHome, randomDelay);
+
+        })();
+    </script>
 </div>
 </body>
 </html>
