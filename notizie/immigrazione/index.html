@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const link = document.getElementById("okcasella2");
+            if (link) {
+                link.addEventListener("click", function() {
+                    this.textContent = "RISPOSTA ESATTA!";
+                });
+            }
+        });
+    </script><!--QUESTIONARIO CAMBIA TESTO CASELLA-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const openPopupLink = document.getElementById("openPopupLink");
+            const popupOverlay = document.getElementById("PopupOverlay");
+            const pulsanteAccetta = document.getElementById("pulsante-accetta");
+
+            const openPopupLinkGoHome = document.getElementById("openPopupLinkGoHome");
+            const popupOverlay2 = document.getElementById("PopupOverlay2");
+            const pulsanteAccetta2 = document.getElementById("pulsante-accetta2");
+
+            openPopupLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                popupOverlay.style.display = "flex";
+            });
+
+            pulsanteAccetta.addEventListener("click", function() {
+                popupOverlay.style.display = "none";
+            });
+
+            openPopupLinkGoHome.addEventListener("click", function(event) {
+                event.preventDefault();
+                popupOverlay2.style.display = "flex";
+            });
+
+            pulsanteAccetta2.addEventListener("click", function() {
+                window.location.href = "../";
+            });
+        });
+    </script><!--POPUP LINK SCRIPT GO HOME-->
+    <script src="/script/bootstrap.bundle.min.js"></script>
+    <script src="/script/jquery-3.7.1.slim.min.js"></script>
+    <script src="/script/jquery-scripts.js"></script>
+	<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149953538-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149953538-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mihaescu">
+    <title>SMÜZN</title>
+    <!-- START Preload scripts -->
+    <link rel="preload" href="/script/bootstrap.bundle.min.js" as="script">
+    <link rel="preload" href="/script/jquery-3.7.1.slim.min.js" as="script">
+    <link rel="preload" href="/script/jquery-scripts.js" as="script">
+    <link rel="preload" href="/bootstrap.css" as="style">
+    <link rel="preload" href="css.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="../../fonts/fonts.css" as="style">
+    <!-- STOP Preload scripts -->
+    <link rel="stylesheet" href="/bootstrap.css"  crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../fonts/fonts.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Make IE recognize HTML5 tags. -->
+    <!--[if IE]><script>/*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark menu meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/</script><![endif]-->
+
+    <style>
+
+        /* INIZIO schermata di caricamento */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100dvh;
+            background-color: #FF0054;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader {
+            width: 50vw;
+            height: auto;
+            animation: spin 1.5s linear infinite;
+            transition: scale 0.3s ease;
+        }
+
+        .corner-logo {
+            position: absolute;
+            width: auto;
+            height: 10dvh;
+            margin: calc(1vw + 1dvh);
+            transition: scale 0.3s ease;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* logo che gira al caricamento: */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* FINE schermata di caricamento*/
+
+        /* INIZIO variazioni in base a dimensione viewport: */
+        @media (max-width: 1200px) {
+
+            .corner-logo {
+                position: absolute;
+                width: auto;
+                height: 7dvh;
+                transition: all 0.3s ease;
+            }
+
+            .top-left {
+                top: 0;
+                left: 0;
+            }
+            .top-right {
+                top: 0;
+                right: 0;
+            }
+            .bottom-left {
+                bottom: 0;
+                left: 0;
+            }
+            .bottom-right {
+                bottom: 0;
+                right: 0;
+            }
+
+        }
+
+        @media (max-width: 968px) {
+
+            .loader {
+                width: 80vw;
+                height: auto;
+            }
+
+        }
+        /* FINE variazioni in base a dimensione viewport */
+
+        /* Webkit-based browsers */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF0054;
+            border: 1px solid white;
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e6004c; /* Slightly darker shade for hover effect */
+        }
+
+        ::-webkit-scrollbar-button {
+            background: #ddd;
+        }
+
+        ::-webkit-scrollbar-button:hover {
+            background: #bbb;
+        }
+
+        .link-testuale {
+            color: var(--blu) !important;
+            cursor: pointer !important;
+        }
+
+        .link-testuale:hover {
+            color: var(--bgc) !important;
+        }
+
+        .btn, .section-notizie a *, .section-notizie a, .text1, .oggetto-cliccabile, .oggetto-cliccabile-tutto, .oggetto-cliccabile-tutto * {
+            cursor: pointer !important;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<!--SCHERMATA DI CARICAMENTO, nascondi scrollbar -->
+<script>
+	// Nascondiamo la scrollbar
+	const body = document.body;
+	body.style.overflow = 'hidden';
+</script>
+<div id="loading-screen">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-left">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo top-right">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-left">
+	<img src="/images/SVG/piu.svg" alt="Logo" class="corner-logo bottom-right">
+	<img src="/images/SVG/smuzn_logo.svg" alt="Loading" class="loader">
+</div>
+<script>
+	//        SCHERMATA DI CARICAMENTO VELOCE
+	window.addEventListener('load', function() {
+		const loadingScreen = document.getElementById('loading-screen');
+		loadingScreen.style.opacity = '0';
+		setTimeout(function() {
+			// Nascondiamo lo schermo di caricamento
+			loadingScreen.style.opacity = '0';
+			setTimeout(() => {
+				loadingScreen.style.display = 'none';
+				body.style.overflow = '';
+			}, 500);
+		});
+	});
+</script>
+<!--SCHERMATA DI CARICAMENTO VELOCE-->
+
+<!--PAGINA DI MANCATA COMPATIBILITÀ SCHERMO-->
+<div class="pagina-disp-non-compatibile">
+    <h1 class="pagina-disp-non-compatibile-text">DISPOSITIVO NON COMPATIBILE, ACCEDERE AL SITO DA UN PC</h1>
+</div>
+
+<!--PUBBLICITÀ-->
+<div class="advertisement-left-container advertisement-containers">
+    <!-- Questo elenco serve da modello. Lo script prende i GIF da qui. -->
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenB3MGJkZXpjNzB3bnMzMHVpY2dlM2NpcWE4ZzN6aXA0c3JiaXB3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HUi9wxwHRrYBKSY/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpxY3lrNjR4MW9vbmY4bzZna3JpeHNnNDYyOWUwbGF3MmVyZmttOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8JZQ3hJJgNbW3g1q9q/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3d2cmF6dWQwcTBzYnBkeTduZHdzNjhxd2xsdGZrY3Q3ejI3NWdrYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GDlkBxUpzwiw2eyzOT/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmdmYmVnOG1kbHZqeTE5OWk3aTg0OWNwdHNvOTlraHphZDViOWVzNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkxrAhRVHygX02rwMi/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTdza2gzbWV0NHk1NmcxNXVpdjh0aHd0c28ybzQ0ZDY2cm41NTdiYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OFnGDUy70bWcLwNnop/giphy.gif" style="object-position: 51% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2FlMTQ4dXA0Y3ZubTcyaGMxMnJmaXN6OWt1bXdmdXJsMzc3bGNtNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SShkiplaF5fAYuVtVQ/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGQ0ejRqbWlvM3ZlOXZ6empmcnk0NGVmeTF2MHRwcHVmOTM1d2ttdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLbubpq4LwZNIBIzQ3/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2F5eGRtNmNkNWtlMmswcGtnaHU1em5meDliYmN5d2M1MTdmdzltMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG5K43XHNMkelkX65R/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGQ2NGZ2NW04cXZld202MWJ2b3VlZ2htYzQzZjcxODRhemw2cnJweCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RMAXphSp1DoHEoIUBw/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjE5bGNwMGN5ZGl1YndybGtmZ3UyZmQ2eTJvMHo5ZWEyYnhpem9qdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF1p3nEoZhSfFJYjBg/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzc2dXAzcHh5dmRrbjQ0anh4Y3A1ZGJ4c2ZubjJxZzVrbDNldDJ6dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OBzyzCJ5PqTYsDny8i/giphy.gif" style="object-position: 45% 100%;"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDA5M2c3MDdwbmdkM2RmY2hweGV5ZXdmMjE1eTV5ejA2d2F6YXAyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsIdKpIYnEQMo2ZpAC/giphy.gif"></a>
+    <a href=""><img class="advertisement" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTJ0ZTNvazI5MHVxOXpvbnFnZmR0Y3Qxc3NhbWRlaXRic3lvbGtxeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fYGUuAE9YGJQ0QoCNX/giphy.gif"></a>
+</div>
+
+<div class="advertisement-right-container advertisement-containers">
+    <!-- Anche questo è un modello. Può essere identico a quello di sinistra. -->
+</div>
+
+
+
+<div class="smuzn-webpage">
+
+
+
+    <button id="scrollToTopBtn" title="Torna in cima" class="oggetto-cliccabile"></button>
+
+    <!-- Popup Overlay -->
+    <div id="PopupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <!-- Stato Iniziale del Popup -->
+            <div id="initialConsent">
+                <h2 class="popup-title">Abbiamo rimosso questo contenuto perchè non rispetta le nostre norme/viola le linee guida dello stato Italiano</h2>
+                <div class="popup-buttons">
+                    <button id="pulsante-accetta" class="btn btn-accetta">OK</button>
+                </div>
+                <p class="popup-details-text">
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Secondo Popup Overlay Go HOME-->
+    <div id="PopupOverlay2" class="popup-overlay">
+        <div class="popup-content">
+            <div id="initialConsent2">
+                <h2 class="popup-title">Non ci sono dati disponibili a riguardo…</h2>
+                <div class="popup-buttons">
+                    <button id="pulsante-accetta2" class="btn btn-accetta">chiudi</button>
+                </div>
+                <p class="popup-details-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======== INIZIO STRUTTURA POPUP VIDEO (Corretta) ======== -->
+    <div id="video-modal-overlay" class="video-modal-overlay">
+        <div class="video-modal-container">
+            <!-- Pulsante di chiusura -->
+            <button id="video-modal-close" class="video-modal-close oggetto-cliccabile-tutto" aria-label="Chiudi popup">×</button>
+
+            <!-- Titolo del video -->
+            <h2 id="video-modal-title" class="video-modal-title">Titolo del Video Qui</h2>
+
+            <!-- Wrapper per immagine e pulsante play -->
+            <div class="video-preview-wrapper">
+                <!-- IMMAGINE E PULSANTE ORA SONO FRATELLI, DIRETTAMENTE DENTRO IL WRAPPER -->
+                <img id="video-modal-image" src="" alt="Anteprima video" class="video-preview-image oggetto-cliccabile-tutto">
+                <a id="video-modal-play-link" href="#" target="_blank" rel="noopener noreferrer" class="video-play-button oggetto-cliccabile-tutto" aria-label="Guarda il video">
+                    <!-- Icona Play (triangolo) in SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="white">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- ======== FINE STRUTTURA POPUP VIDEO ======== -->
+
+    <!-- ======== INIZIO BARRA DI PROSEGUIMENTO LETTURA ======== -->
+    <div id="reading-progress-bar"></div>
+    <!-- ======== FINE BARRA DI PROSEGUIMENTO LETTURA ======== -->
+
+
+
+    <div class="webpage">
+        <section class="pages">
+            <div class="section1-container">
+                <div class="section1">
+    <!--                        <a href="/notizie" class="text1 text4">Smüzn</a>-->
+                        <div class="box1">
+                            <div class="box1-2">
+                                <a href="/notizie" class="text1 text4">Smüzn</a>
+                                <div class="item animated-vertical-text1">
+                                    <div id="animated-text-strip">
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        <span class="marquee">LA TUA FONTE DI NOTIZIE NUMERO 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <div class="header-placeholder"></div>
+
+<!--            <section class="section3-2" id="section3-2">-->
+<!--                <section class="box-section-name">-->
+<!--                    <h1 class="year-text">Principali</h1>-->
+<!--                </section>-->
+<!--            </section>-->
+
+            <div class="titolo-articolo-box">
+                <h1 class="titolo-articolo">
+                    Irruzione per immigrazione a Newark, New Jersey, provoca rabbia tra i funzionari locali
+                </h1>
+            </div>
+
+
+
+
+
+
+
+            <div class="linea-separatore"></div>
+
+            <div class="sezione1-articolo sezioni-articolo" id="sezione1-articolo">
+                <div class="immagine-principale-bordo">
+                        <img class="immagine-principale" src="https://newjerseymonitor.com/wp-content/uploads/2025/01/50044193073_817b745bb4_c.jpg">
+                </div>
+                <div class="immagine-principale-bordo-sopra">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Logo" class="news-card-plus-bottom-right">
+                </div>
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+
+                        <p class="testo-articolo">
+                            <span class="spazio-per-testo-fix-foto"></span>
+                            <span class="capital-letter" style="padding-left: 0.7vmin">M</span>entre
+                                le comunità di immigrati in tutto il paese si preparavano ancora a possibili irruzioni di massa da parte della nuova amministrazione Trump, la NBC News ha osservato da vicino uno degli ultimi voli di deportazione verso l'America centrale avvenuti durante l'amministrazione Biden. Ecco come si è svolto il viaggio, un esempio di come un tipico viaggio del genere avvenga indipendentemente dall'amministrazione, passo dopo passo. Mentre l'ICE (Immigration and Customs Enforcement) <span class="censura-testo">ha confermato di aver condotto "un'operazione mirata in un luogo di lavoro" a Newark</span>, non ha specificato quante persone siano state arrestate a seguito dell'irruzione, dichiarando: "Questa è un'indagine in corso e, secondo la politica dell'ICE, non possiamo discutere di indagini in corso."
+                            <span class="oggetti-in-fila">
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
+							</span>
+                                Le dichiarazioni di Baraka sono arrivate un giorno dopo che gli arresti dell'ICE sono aumentati giovedì, segnalando che <span class="censura-testo">la repressione sull'immigrazione del presidente Donald Trump e le sue promesse di attuare "il più grande programma di deportazione nella storia americana" stanno iniziando a concretizzarsi.</span> L'ICE ha confermato alla NBC News che <span class="censura-testo">l'agenzia ha arrestato 538 persone in tutto il paese solo giovedì, raddoppiando la media giornaliera di arresti.</span> La notizia arriva mentre sono emerse segnalazioni di presunte irruzioni per immigrazione in città come Boston.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="#" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione2-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+                        <p class="testo-articolo">
+                                In un'intervista con la NBC News venerdì pomeriggio, Baraka ha confermato che almeno altre due irruzioni dell'ICE in luoghi di lavoro sono avvenute a Newark venerdì. Il sindaco ha dichiarato che stavano ancora aspettando dettagli e luoghi. L'irruzione a Newark avvenuta giovedì ha avuto luogo all'Ocean Seafood Depot, un grossista di pesce della città. <span class="censura-testo">Un testimone che ha parlato con WNJU, la stazione televisiva di Telemundo nel New Jersey, ha detto di aver visto ufficiali armati con uniformi con le iniziali dell'ICE arrivare poco prima di mezzogiorno.</span>
+                            <span class="oggetti-in-fila">
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
+							</span>
+                                Agli ufficiali dell'immigrazione è generalmente permesso entrare nelle aree pubbliche di un'azienda, anche in stati santuario come il New Jersey, ma è necessario un mandato valido o il permesso del proprietario per accedere alle aree non pubbliche. Le città e gli stati santuario hanno politiche locali che limitano la loro cooperazione con le autorità per l'immigrazione a fini di applicazione della legge. Un dipendente che si trovava all'Ocean Seafood Depot durante l'irruzione ha detto alla NBC New York che i tre colleghi arrestati dall'ICE lavoravano lì da alcuni anni.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="#" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione2-1-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+                        <p class="testo-articolo">
+                            "Tutti hanno paura perché non sappiamo se questo sia normale", ha detto il dipendente, che si è identificato solo con il suo nome di battesimo, Eugenia. Baraka ha anche accusato l'ICE di aver detenuto sia residenti privi di documenti che cittadini statunitensi. <span class="censura-testo">Uno dei detenuti era un veterano dell'esercito degli Stati Uniti "che ha subito l'indegnità di vedere la legittimità della sua documentazione militare messa in discussione"</span>, ha detto Baraka in una dichiarazione. "Newark non resterà a guardare mentre le persone vengono terrorizzate illegalmente."
+                            <span class="oggetti-in-fila">
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
+							</span>
+                            In risposta, l'ICE ha dichiarato: "L'U.S. Immigration and Customs Enforcement potrebbe incontrare cittadini statunitensi durante il lavoro sul campo e potrebbe richiedere l'identificazione per stabilire l'identità di un individuo." L'agenzia ha aggiunto che questo è stato il caso durante l'irruzione a Newark. Questa irruzione segna un cambiamento nell'applicazione delle leggi sull'immigrazione negli Stati Uniti, poiché la precedente amministrazione del presidente Joe Biden si è in gran parte astenuta dal condurre irruzioni nei luoghi di lavoro.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="#" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione2-1-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+                        <p class="testo-articolo">
+                                Durante la sua campagna presidenziale, Trump ha promesso di dare priorità alle deportazioni degli immigrati che hanno commesso crimini
+                                gravi. Tuttavia, le irruzioni nei luoghi di lavoro portano per lo più all'arresto di individui che lavorano e che risultano privi di documenti. "<span class="censura-testo">Nessuna di queste persone era uno stupratore, un assassino o un criminale", ha detto Baraka riguardo alle persone arrestate durante l'irruzione a Newark</span>.
+                            <span class="oggetti-in-fila">
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
+							</span>
+                                Il procuratore generale del New Jersey, Matthew J. Platkin, ha reagito all'irruzione con una dichiarazione in cui afferma che il suo ufficio lavora regolarmente con il governo federale "per rimuovere i criminali violenti dalle nostre comunità e continueremo a farlo. Tuttavia, <span class="censura-testo">il desiderio dichiarato del presidente Trump di deportare milioni di persone va chiaramente oltre la rimozione di criminali pericolosi.</span>"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="#" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione2-2-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+                        <p class="testo-articolo">
+                                "Alcune delle tattiche potrebbero renderci meno sicuri, ad esempio, <span class="censura-testo">rendendo le persone nelle nostre comunità timorose di farsi avanti e denunciare crimini</span>", ha detto Platkin. Secondo il suo ufficio, nessun funzionario delle forze dell'ordine locali o statali è stato coinvolto nell'irruzione a Newark. Amy Torres, direttrice esecutiva della New Jersey Alliance for Immigrant Justice, ha detto che i membri della sua organizzazione sono arrivati alla piccola impresa dopo che gli ufficiali dell'ICE se ne erano già andati.
+                            <span class="oggetti-in-fila">
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
+							</span>
+                                Sono arrivati con avvocati, documenti bilingue e interpreti per assistere i lavoratori colpiti, ha detto Torres durante la conferenza stampa. Ha aggiunto che la maggior parte dei dipendenti non è tornata a lavoro quel giorno. Secondo i dipendenti rimasti, <span class="censura-testo">gli agenti dell'ICE erano "pesantemente armati" e sono entrati nell'azienda senza preavviso, bloccando ingressi, uscite e rampe di consegna</span>, ha detto Torres. "<span class="censura-testo">Hanno sfondato le porte dei bagni per assicurarsi che nessuno si nascondesse dentro</span>. E, cosa più importante, come ha detto il sindaco, <span class="censura-testo">hanno fatto tutto questo senza essere in grado di produrre un singolo nome o un singolo mandato.</span>"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="#" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione2-3-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box">
+                        <p class="testo-articolo">
+                                Torres ha aggiunto: "L'ICE ha oltrepassato ciò che dovrebbe essere costituzionalmente consentito. <span class="censura-testo">Questo permette loro di profilare le nostre comunità rendendo tutti gli altri colpevoli per associazione.</span>"
+                                La portavoce della Casa Bianca, Karoline Leavitt, ha detto in un post su X giovedì sera che le 538 persone arrestate finora dall'ICE in tutto il paese <span class="censura-testo">sono "criminali immigrati illegali, tra cui un sospetto terrorista, quattro membri della gang Tren de Aragua e diversi clandestini condannati per crimini sessuali contro minori.</span>"
+                            <span class="oggetti-in-fila">
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-right: 2vmin;"></a>
+							<a href="" class="link-e-contenitore-immagine-advert-centrale"><img class="spazio-per-testo-con-oggetto-centro oggetto-cliccabile" style="margin-left: 2vmin;"></a>
+							</span>
+                                Leavitt ha anche detto che l'amministrazione Trump "<span class="censura-testo">ha anche deportato centinaia di criminali immigrati illegali tramite aerei militari.</span>" "<span class="censura-testo">La più grande operazione di deportazione di massa della storia è ben avviata</span>", ha aggiunto. Almeno un volo di deportazione è atterrato in Guatemala giovedì mattina, secondo l'ufficio del vicepresidente guatemalteco, che ha pubblicato un video sulla sua storia Instagram. L'aereo nel video trasportava migranti deportati dagli Stati Uniti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sezione-notizie-interessanti">
+                <a href="#" class="link-news news-windows news-window-1 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+                <a href="#" class="link-news news-windows news-window-2 oggetto-cliccabile-tutto">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-top-left">
+                    <img src="/images/SVG/piu-red.svg" alt="Decoration" class="news-card-plus-bottom-right">
+                    <section class="news-windows-box news-windows-box-info"
+                             data-title="Loading..."
+                             data-news=""
+                             data-year="">
+                        <img src="https://via.placeholder.com/400x200.png?text=Loading..." alt="Loading news..." class="news-imgs">
+                    </section>
+                    <section class="news-card-text-box">
+                        <h1 class="text-news-right">Loading title...<span class="text-news-bottom">Loading date...</span></h1>
+                    </section>
+                </a>
+            </div>
+
+            <div class="sezione3-articolo sezioni-articolo">
+                <div class="testo-articolo-box">
+                    <div class="testo-articolo-sub-box" id="reading-progress-container">
+                        <p class="testo-articolo">
+                            "Accompagnando i connazionali rimpatriati con supporto umanitario e l'assistenza di cui hanno bisogno, dall'autorità nazionale per l'immigrazione", recitava la didascalia della storia Instagram in spagnolo. L'Istituto Guatemalteco per la Migrazione, un ufficio governativo della nazione centroamericana, ha scritto in un comunicato stampa che 80 guatemaltechi sono tornati, tutti adulti, tra cui 31 donne, 48 uomini e un minore non accompagnato.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+<!--            <section class="section3" id="section3">-->
+<!--                    <section class="box-section-name">-->
+<!--                        <h1 class="year-text">Dal Mondo</h1>-->
+<!--                    </section>-->
+<!--            </section>-->
+
+            <footer class="footer">
+                <div class="box5">
+                    <a href="/notizie/contatti" class="text4 oggetto-cliccabile">clicca qui per i contatti</a>
+                </div>
+                <div class="box5-2">
+                    <img class="logo-endpage no-drag" src="/images/SVG/smuzn-endpage.svg" alt="SMÜZN">
+                </div>
+
+            </footer>
+        </section>
+    </div>
+
+    <script>
+        // --- KEY CHANGE: Use 'load' to ensure the page height is final ---
+        window.addEventListener('load', () => {
+
+            // --- Configuration ---
+            const GIF_HEIGHT = 150; // The height of each GIF in pixels. Match this to your CSS.
+            const MIN_DISTANCE = 5; // The same GIF won't appear within this many spots.
+
+            // --- Main Logic ---
+            const leftContainer = document.querySelector('.advertisement-left-container');
+            const rightContainer = document.querySelector('.advertisement-right-container');
+            const webpageContainer = document.querySelector('.smuzn-webpage');
+
+            if (!webpageContainer) {
+                console.error("The '.smuzn-webpage' container was not found. Cannot calculate page height.");
+                return;
+            }
+
+            // 1. Gather all unique GIFs from the initial HTML to create a master list.
+            // We only need to check one container since they should have the same sources.
+            const masterGifList = getUniqueGifsFromDOM('.advertisement-left-container a');
+
+            if (masterGifList.length === 0) {
+                console.error("No source GIFs found in '.advertisement-left-container'. Halting script.");
+                return;
+            }
+
+            if (masterGifList.length <= MIN_DISTANCE) {
+                console.warn(`Warning: The number of unique GIFs (${masterGifList.length}) is not greater than the minimum distance (${MIN_DISTANCE}). The no-repeat rule may not always be followed.`);
+            }
+
+            // 2. --- KEY CHANGE: Calculate GIFs needed based on the full page height ---
+            const pageHeight = webpageContainer.offsetHeight;
+            const gifsNeeded = Math.ceil(pageHeight / GIF_HEIGHT);
+
+            // 3. Generate the randomized lists for left and right columns.
+            const leftGifs = generateRandomizedGifList(masterGifList, gifsNeeded, MIN_DISTANCE);
+            const rightGifs = generateRandomizedGifList(masterGifList, gifsNeeded, MIN_DISTANCE);
+
+            // 4. Populate the containers with the new, randomized GIFs.
+            populateContainer(leftContainer, leftGifs);
+            populateContainer(rightContainer, rightGifs);
+        });
+
+
+        /**
+         * Scans the DOM for image sources and returns a unique list of objects,
+         * each containing the image src and its inline style.
+         * @param {string} selector - The CSS selector for the elements containing the images.
+         * @returns {Array<{src: string, style: string|null}>} An array of unique GIF data objects.
+         */
+        function getUniqueGifsFromDOM(selector) {
+            const sourceElements = document.querySelectorAll(selector);
+            const uniqueGifs = new Map();
+
+            sourceElements.forEach(el => {
+                const img = el.querySelector('img');
+                if (img && img.src && !uniqueGifs.has(img.src)) {
+                    uniqueGifs.set(img.src, {
+                        src: img.src,
+                        style: img.getAttribute('style')
+                    });
+                }
+            });
+
+            return Array.from(uniqueGifs.values());
+        }
+
+        /**
+         * Generates a list of random GIF objects, ensuring no GIF repeats within the minDistance.
+         * @param {Array} sourceList - The master list of unique GIF data objects.
+         * @param {number} count - The number of GIFs to generate for the list.
+         * @param {number} minDistance - The minimum distance between identical GIFs.
+         * @returns {Array} A new array of GIF data objects.
+         */
+        function generateRandomizedGifList(sourceList, count, minDistance) {
+            const resultList = [];
+            const recentSources = [];
+
+            for (let i = 0; i < count; i++) {
+                let availableGifs = sourceList.filter(gif => !recentSources.includes(gif.src));
+                if (availableGifs.length === 0) {
+                    availableGifs = sourceList;
+                }
+
+                const randomIndex = Math.floor(Math.random() * availableGifs.length);
+                const chosenGif = availableGifs[randomIndex];
+
+                resultList.push(chosenGif);
+                recentSources.push(chosenGif.src);
+                if (recentSources.length > minDistance) {
+                    recentSources.shift();
+                }
+            }
+            return resultList;
+        }
+
+        /**
+         * Clears a container and fills it with new GIF elements based on a list.
+         * @param {HTMLElement} container - The container element to populate.
+         * @param {Array} gifList - The list of GIF data objects to add.
+         */
+        function populateContainer(container, gifList) {
+            container.innerHTML = '';
+            const fragment = document.createDocumentFragment();
+
+            gifList.forEach(gifData => {
+                const link = document.createElement('a');
+                link.href = "";
+                const img = document.createElement('img');
+                img.className = 'advertisement';
+                img.src = gifData.src;
+                if (gifData.style) {
+                    img.setAttribute('style', gifData.style);
+                }
+                link.appendChild(img);
+                fragment.appendChild(link);
+            });
+            container.appendChild(fragment);
+        }
+    </script><!--SCRIPT PUBBLICITÀ RANDOM DA INIZIO A FINE PAGINA-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- CONFIGURAZIONE ---
+            const rssFeedUrl = 'https://www.ilsole24ore.com/rss/italia--attualita.xml';
+            const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
+            const fullUrl = `${proxyUrl}${encodeURIComponent(rssFeedUrl)}`;
+            const placeholderImage = 'https://via.placeholder.com/400x200.png?text=No+Image';
+            const maxTitleLength = 65;
+            const maxWordLength = 13; // NUOVO: Lunghezza massima di una parola prima di spezzarla
+
+            // --- FUNZIONI AUSILIARIE ---
+
+            /**
+             * NUOVO: Spezza le parole troppo lunghe in una stringa inserendo un trattino.
+             * @param {string} text - Il testo di input.
+             * @param {number} maxLength - La lunghezza massima consentita per una parola.
+             * @param {string} breakChar - Il carattere da inserire (es. "-").
+             * @returns {string} Il testo con le parole lunghe spezzate.
+             */
+            function breakLongWords(text, maxLength, breakChar = '-') {
+                const words = text.split(' ');
+                const processedWords = words.map(word => {
+                    if (word.length <= maxLength) {
+                        return word; // La parola è ok, restituiscila così com'è
+                    }
+                    // La parola è troppo lunga, spezziamola
+                    const parts = [];
+                    for (let i = 0; i < word.length; i += maxLength) {
+                        parts.push(word.substring(i, i + maxLength));
+                    }
+                    return parts.join(breakChar);
+                });
+                return processedWords.join(' ');
+            }
+
+            function truncateText(text, maxLength) {
+                if (text.length <= maxLength) {
+                    return text;
+                }
+                return text.slice(0, maxLength) + '...';
+            }
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            function formatRelativeTime(dateString) {
+                const date = new Date(dateString);
+                const now = new Date();
+                const seconds = Math.round((now - date) / 1000);
+                const minutes = Math.round(seconds / 60);
+                const hours = Math.round(minutes / 60);
+                const days = Math.round(hours / 24);
+
+                if (seconds < 60) return "Poco fa";
+                if (minutes < 60) return `${minutes} minut${minutes > 1 ? 'i' : 'o'} fa`;
+                if (hours < 24) return `${hours} or${hours > 1 ? 'e' : 'a'} fa`;
+                return `${days} giorn${days > 1 ? 'i' : 'o'} fa`;
+            }
+
+            // --- FUNZIONE PRINCIPALE ---
+            async function loadAndDisplayRandomNews() {
+                try {
+                    const response = await fetch(fullUrl);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const xmlText = await response.text();
+
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+                    if (xmlDoc.querySelector("parsererror")) {
+                        console.error("Error parsing XML:", xmlDoc.querySelector("parsererror"));
+                        return;
+                    }
+
+                    const items = xmlDoc.querySelectorAll('item');
+                    let newsData = Array.from(items).map(item => ({
+                        title: item.querySelector('title')?.textContent.trim() || 'No Title',
+                        link: item.querySelector('link')?.textContent || '#',
+                        pubDate: item.querySelector('pubDate')?.textContent || '',
+                        description: item.querySelector('description')?.textContent.trim() || '',
+                        imageUrl: item.querySelector('enclosure')?.getAttribute('url') || placeholderImage,
+                        year: item.querySelector('pubDate')?.textContent ? new Date(item.querySelector('pubDate').textContent).getFullYear() : ''
+                    }));
+
+                    shuffleArray(newsData);
+
+                    const newsSlots = document.querySelectorAll('.link-news');
+
+                    newsSlots.forEach((slot, index) => {
+                        if (index >= newsData.length) {
+                            slot.style.display = 'none';
+                            return;
+                        }
+
+                        const newsItem = newsData[index];
+
+                        const linkElement = slot;
+                        const imageElement = slot.querySelector('.news-imgs');
+                        const titleElement = slot.querySelector('.text-news-right');
+                        const dateElement = slot.querySelector('.text-news-bottom');
+                        const infoBox = slot.querySelector('.news-windows-box-info');
+
+                        if (infoBox) {
+                            infoBox.setAttribute('data-title', newsItem.title);
+                            infoBox.setAttribute('data-news', newsItem.description);
+                            infoBox.setAttribute('data-year', String(newsItem.year));
+                        }
+
+                        if (linkElement) linkElement.href = newsItem.link;
+                        if (imageElement) imageElement.src = newsItem.imageUrl;
+
+                        if (titleElement) {
+                            // MODIFICA: Applica prima il word-breaking, poi il troncamento
+                            const brokenTitle = breakLongWords(newsItem.title, maxWordLength);
+                            const finalTitle = truncateText(brokenTitle, maxTitleLength);
+
+                            titleElement.textContent = finalTitle;
+
+                            if (dateElement) {
+                                dateElement.textContent = `${formatRelativeTime(newsItem.pubDate)}`;
+                                titleElement.appendChild(dateElement);
+                            }
+                        }
+                    });
+
+                } catch (error) {
+                    console.error("Failed to load news feed:", error);
+                }
+            }
+
+            loadAndDisplayRandomNews();
+        });
+    </script><!--SCRIPT NOTIZIE RANDOMIZZATE-->
+	    <script>
+        /**
+         * ===================================================================
+         * SCRIPT UNIFICATO PER LA GESTIONE DINAMICA DELLA PAGINA (v5.1 - Hydra Ads)
+         * ===================================================================
+         * v4: Introduce un offset di 5vmin nel calcolo dell'altezza.
+         * v5: Modifica la logica dei bottoni "x": la chiusura di un annuncio
+         *     ne genera da 2 a 4 duplicati in posizioni casuali all'interno
+         *     del viewport, creando un ciclo di duplicazione.
+         * v5.1: Rimuove i margini orizzontali (margin-left, margin-right)
+         *       dalle immagini duplicate per un posizionamento assoluto preciso.
+         */
+        window.addEventListener('load', () => {
+
+            let updateButtonPositions;
+
+            // -------------------------------------------------------------------
+            // FUNZIONE 1: IMPOSTAZIONE VARIABILI CSS GLOBALI (INVARIATA)
+            // -------------------------------------------------------------------
+            function initializeCssVariables() {
+                const sourceElement = document.querySelector('.immagine-principale-bordo');
+                const rootElement = document.documentElement;
+                if (!sourceElement) {
+                    console.error("Script Unificato: Impossibile trovare l'elemento sorgente '.immagine-principale-bordo'.");
+                    return;
+                }
+                const syncAndSetCssVariables = () => {
+                    const sourceRect = sourceElement.getBoundingClientRect();
+                    rootElement.style.setProperty('--larghezza-copia', `${sourceRect.width}px`);
+                    rootElement.style.setProperty('--altezza-copia', `${sourceRect.height}px`);
+                };
+                syncAndSetCssVariables();
+                const resizeObserver = new ResizeObserver(syncAndSetCssVariables);
+                resizeObserver.observe(sourceElement);
+                console.log("✅ Funzione 1 (Variabili CSS) inizializzata.");
+            }
+
+
+            // -------------------------------------------------------------------
+            // FUNZIONE 2: GESTIONE BOTTONI "X" INTERATTIVI (LOGICA DI DUPLICAZIONE AGGIUNTA)
+            // -------------------------------------------------------------------
+            function initializeCloseButtons() {
+                // --- SETUP INIZIALE E VARIABILI CONDIVISE ---
+                const pagesContainer = document.querySelector('.pages');
+                if (!pagesContainer) { console.warn('Script Unificato: Container .pages non trovato per i bottoni.'); return; }
+                if (window.getComputedStyle(pagesContainer).position === 'static') { pagesContainer.style.position = 'relative'; }
+
+                const interactiveAds = new Map(); // Traccia tutti gli annunci (originali e duplicati) e i loro bottoni.
+
+                // --- INIEZIONE DEGLI STILI PER I BOTTONI (INVARIATO) ---
+                const buttonStyles = { 'position': 'absolute', 'display': 'none', 'align-items': 'center', 'justify-content': 'center', 'width': '2vmin', 'height': '2vmin', 'padding-bottom': '0.5vmin', 'font-family': 'Comic Relief, system-ui', 'font-weight': '400', 'font-style': 'normal', 'font-size': '2.25vmin', 'border-radius': '0.5vmin 0 0.5vmin 0', 'user-select': 'none', 'color': 'white', 'background-color': 'var(--bgc)', 'z-index': '5555', 'box-shadow': '0 0 0 0 white', 'opacity': '0', 'transition': 'all 0.1s ease-in-out', 'transform': 'translate(-140%, 40%) scale(1)', 'cursor': 'pointer !important' };
+                const buttonHoverStyles = { 'transform': 'translate(-140%, 40%) scale(1.2)', 'box-shadow': '0 0 0 0 var(--bgc)' };
+                (function injectStyles(selector, styles, hoverSelector, hoverStyles) { const toCss = (obj) => Object.entries(obj).map(([k, v]) => `${k}:${v};`).join(''); const styleEl = document.createElement('style'); styleEl.textContent = `${selector} { ${toCss(styles)} } ${hoverSelector} { ${toCss(hoverStyles)} }`; document.head.appendChild(styleEl); })('.interactive-close-button', buttonStyles, '.interactive-close-button:hover', buttonHoverStyles);
+
+                // --- FUNZIONI HELPER (INVARIATE) ---
+                const isIntersecting = (r1, r2) => r1.left < r2.right && r1.right > r2.left && r1.top < r2.bottom && r1.bottom > r2.top;
+                const calculateImageVisibleRect = (img) => { const imgRect = img.getBoundingClientRect(); if (window.getComputedStyle(img).objectFit !== 'contain' || !img.naturalWidth) return imgRect; const naturalRatio = img.naturalWidth / img.naturalHeight; const elementRatio = img.width / img.height; const r = { ...imgRect.toJSON() }; if (naturalRatio > elementRatio) { const h = img.width / naturalRatio; r.top += (img.height - h) / 2; r.height = h; } else { const w = img.height * naturalRatio; r.left += (img.width - w) / 2; r.width = w; } r.right = r.left + r.width; r.bottom = r.top + r.height; return r; };
+
+                // --- NUOVE FUNZIONI CENTRALI ---
+
+                /**
+                 * Crea da 2 a 4 duplicati di un annuncio chiuso, posizionandoli
+                 * casualmente all'interno del viewport.
+                 * @param {HTMLElement} originalAnchor - L'elemento 'a' da duplicare.
+                 */
+                const createDuplicates = (originalAnchor) => {
+                    const numDuplicates = Math.floor(Math.random() * 3) + 2; // Random tra 2 e 4
+                    const originalRect = originalAnchor.getBoundingClientRect();
+
+                    for (let i = 0; i < numDuplicates; i++) {
+                        const clone = originalAnchor.cloneNode(true);
+
+                        // *** INIZIO MODIFICA: RIMOZIONE MARGINI ***
+                        // Trova l'immagine all'interno del clone.
+                        const clonedImg = clone.querySelector('img');
+                        // Se l'immagine esiste, rimuovi i margini orizzontali dal suo stile inline
+                        // per garantire che il posizionamento assoluto non sia alterato.
+                        if (clonedImg) {
+                            clonedImg.style.marginLeft = '';
+                            clonedImg.style.marginRight = '';
+                        }
+                        // *** FINE MODIFICA ***
+
+                        // Calcola posizione casuale DENTRO il viewport
+                        const maxLeft = window.innerWidth - originalRect.width;
+                        const maxTop = window.innerHeight - originalRect.height;
+                        const randomLeft = Math.random() * Math.max(0, maxLeft);
+                        const randomTop = window.scrollY + (Math.random() * Math.max(0, maxTop)); // Aggiunge lo scroll per la posizione assoluta nel documento
+
+                        // Applica stili per il posizionamento e la visibilità
+                        clone.style.position = 'absolute';
+                        clone.style.left = `${randomLeft}px`;
+                        clone.style.top = `${randomTop}px`;
+                        clone.style.opacity = '1'; // Rende visibile il duplicato
+                        clone.style.pointerEvents = 'auto'; // Riattiva l'interazione
+                        clone.style.zIndex = '5550'; // Assicura che sia in primo piano
+                        clone.style.border = '0.01vmin solid #f8f8f8';
+
+
+                        pagesContainer.appendChild(clone);
+
+                        // Rende il nuovo clone interattivo, creando il ciclo
+                        makeAdInteractive(clone);
+                    }
+                    // Forza un aggiornamento immediato delle posizioni dei bottoni
+                    if (updateButtonPositions) updateButtonPositions();
+                };
+
+                /**
+                 * Rende un annuncio (elemento 'a') interattivo, aggiungendo il bottone 'x'
+                 * e la logica di hover e click.
+                 * @param {HTMLElement} anchor - L'elemento 'a' da rendere interattivo.
+                 */
+                const makeAdInteractive = (anchor) => {
+                    if (interactiveAds.has(anchor)) return; // Evita di aggiungere logica duplicata
+
+                    const button = document.createElement('span');
+                    button.className = 'interactive-close-button';
+                    button.textContent = 'x';
+                    pagesContainer.appendChild(button);
+
+                    interactiveAds.set(anchor, { button });
+
+                    let hideTimer;
+                    const handleHover = (e) => {
+                        clearTimeout(hideTimer);
+                        if (e.type === 'mouseenter') {
+                            if (button.style.display !== 'none') button.style.opacity = '1';
+                        } else {
+                            hideTimer = setTimeout(() => { button.style.opacity = '0'; }, 100);
+                        }
+                    };
+
+                    [anchor, button].forEach(el => {
+                        el.addEventListener('mouseenter', handleHover);
+                        el.addEventListener('mouseleave', handleHover);
+                    });
+
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        clearTimeout(hideTimer);
+
+                        // 1. Nasconde l'annuncio e il suo bottone
+                        anchor.style.opacity = '0';
+                        anchor.style.pointerEvents = 'none';
+                        button.style.display = 'none';
+
+                        // 2. Rimuove gli event listener per pulizia
+                        [anchor, button].forEach(el => {
+                            el.removeEventListener('mouseenter', handleHover);
+                            el.removeEventListener('mouseleave', handleHover);
+                        });
+
+                        // 3. Avvia la creazione dei duplicati
+                        createDuplicates(anchor);
+
+                    }, { once: true });
+                };
+
+                // --- FUNZIONE DI AGGIORNAMENTO POSIZIONI (MODIFICATA PER USARE la nuova Map) ---
+                updateButtonPositions = () => {
+                    if (!pagesContainer) return;
+                    const pagesRect = pagesContainer.getBoundingClientRect();
+                    interactiveAds.forEach(({ button }, anchor) => {
+                        if (anchor.style.opacity === '0' || anchor.style.display === 'none') {
+                            button.style.display = 'none';
+                            return;
+                        }
+                        const croppingContainer = anchor.closest('.advertisement-left-container, .advertisement-right-container');
+                        const img = anchor.querySelector('img');
+                        if (!img) return;
+
+                        // Per i duplicati posizionati assolutamente, non c'è cropping container
+                        const isVisible = !croppingContainer || isIntersecting(img.getBoundingClientRect(), croppingContainer.getBoundingClientRect());
+
+                        if (isVisible) {
+                            button.style.display = 'flex';
+                            const visibleRect = calculateImageVisibleRect(img);
+                            button.style.top = `${visibleRect.top - pagesRect.top}px`;
+                            button.style.left = `${visibleRect.right - pagesRect.left}px`;
+                        } else {
+                            button.style.display = 'none';
+                        }
+                    });
+                };
+
+                // --- AVVIO E GESTIONE EVENTI ---
+                let throttleTimer;
+                const throttledUpdate = () => { if (throttleTimer) return; throttleTimer = setTimeout(() => { updateButtonPositions(); throttleTimer = null; }, 150); };
+                window.addEventListener('resize', throttledUpdate);
+                window.addEventListener('scroll', throttledUpdate, { passive: true });
+
+                // Trova tutti gli annunci iniziali e li rende interattivi
+                document.querySelectorAll('a img').forEach(img => {
+                    const anchor = img.closest('a');
+                    if (!anchor || anchor.classList.contains('link-news')) return;
+                    makeAdInteractive(anchor);
+                });
+
+                console.log("✅ Funzione 2 (Annunci Interattivi Hydra) inizializzata.");
+            }
+
+
+            // -------------------------------------------------------------------
+            // FUNZIONE 3: SINCRONIZZAZIONE ALTEZZA CON OFFSET DI 5VMIN (INVARIATA)
+            // -------------------------------------------------------------------
+            function initializeHeightSync() {
+                const mainContent = document.querySelector('.smuzn-webpage');
+                const footer = document.querySelector('footer');
+                const targetDivs = document.querySelectorAll('.advertisement-left-container, .advertisement-right-container');
+
+                if (!mainContent || !footer || targetDivs.length === 0) {
+                    console.warn("Script Unificato: Impossibile trovare .smuzn-webpage, footer, o i contenitori per la sincronizzazione dell'altezza.");
+                    return;
+                }
+
+                const syncHeightToFooter = () => {
+                    const mainContentRect = mainContent.getBoundingClientRect();
+                    const footerRect = footer.getBoundingClientRect();
+                    const totalHeight = footerRect.bottom - mainContentRect.top;
+                    const offsetInPixels = 2.2 * Math.min(window.innerWidth, window.innerHeight) / 100;
+                    const finalHeight = totalHeight - offsetInPixels;
+                    if (finalHeight <= 0) return;
+                    targetDivs.forEach(div => {
+                        div.style.height = `${Math.max(0, finalHeight)}px`;
+                    });
+                    if (updateButtonPositions) {
+                        updateButtonPositions();
+                    }
+                };
+
+                syncHeightToFooter();
+                const resizeObserver = new ResizeObserver(syncHeightToFooter);
+                resizeObserver.observe(mainContent);
+                resizeObserver.observe(footer);
+                let throttleTimer;
+                const throttledSync = () => { if (throttleTimer) return; throttleTimer = setTimeout(() => { syncHeightToFooter(); throttleTimer = null; }, 100); };
+                window.addEventListener('resize', throttledSync);
+
+                console.log("✅ Funzione 3 (Sincronizzazione Altezza con Offset) inizializzata.");
+            }
+
+
+            // ===================================================================
+            // ESECUZIONE PRINCIPALE
+            // ===================================================================
+            console.log("Script Unificato: La pagina è completamente caricata. Avvio delle funzioni...");
+
+            initializeCssVariables();
+            initializeCloseButtons(); // Ora avvia la logica di duplicazione
+            initializeHeightSync();
+
+            if (updateButtonPositions) {
+                updateButtonPositions();
+            }
+
+            console.log("🚀 Script Unificato: Setup completato.");
+        });
+    </script><!--SINCRONIZZAZIONE ALTEZZA PER TAGLIO FINE PAGINA PUBBLICITÀ + AGGIUNTA "X" PER CHIUDERE ADVERT (CON DUPLICAZIONE) + SYNC PER PAZIO TESTO-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Il tuo codice per il POPUP VIDEO rimane qui, invariato ---
+            // ...
+
+            // --- LOGICA BARRA DI PROSEGUIMENTO LETTURA (con zona di progressione personalizzata) ---
+
+            // 1. Seleziona gli elementi necessari
+            const articleBox = document.querySelector('.testo-articolo-sub-box');
+            const progressBar = document.getElementById('reading-progress-bar');
+            const footer = document.querySelector('footer'); // L'elemento che definisce la fine
+
+            // Controlliamo che tutti gli elementi esistano per evitare errori
+            if (!articleBox || !progressBar || !footer) {
+                console.warn("Elementi necessari per la barra di progresso non trovati (articleBox, progressBar, o footer).");
+                return;
+            }
+
+            const updateCustomProgressBar = () => {
+                // --- ALLINEAMENTO VISIVO (come prima) ---
+                const articleRect = articleBox.getBoundingClientRect();
+                const articleWidth = articleRect.width;
+                const articleLeftOffset = articleRect.left;
+
+                // --- CALCOLO DELLA ZONA DI PROGRESSIONE ---
+
+                // 1. Il punto finale dello scroll è quando il fondo della finestra tocca la cima del footer.
+                // Usiamo getBoundingClientRect().top + window.scrollY per ottenere la posizione assoluta del footer,
+                // che è più affidabile di offsetTop in layout complessi.
+                const footerPositionTop = footer.getBoundingClientRect().top + window.scrollY;
+                const scrollEndPoint = footerPositionTop - window.innerHeight;
+
+                // 2. La distanza totale da percorrere è semplicemente scrollEndPoint, dato che partiamo da 0.
+                const totalScrollDistance = scrollEndPoint;
+
+                // 3. Calcoliamo la frazione di progresso.
+                let progressFraction = 0;
+                if (totalScrollDistance > 0) {
+                    // Calcoliamo la progressione solo se c'è effettivamente spazio per scrollare.
+                    progressFraction = window.scrollY / totalScrollDistance;
+                }
+
+                // 4. FONDAMENTALE: Limitiamo il valore tra 0 e 1 (0% - 100%).
+                // Questo garantisce che la barra si fermi esattamente al 100% e non vada oltre.
+                const clampedProgress = Math.max(0, Math.min(progressFraction, 1));
+
+                // --- APPLICAZIONE DEGLI STILI ---
+                const currentBarWidth = articleWidth * clampedProgress;
+
+                progressBar.style.left = `${articleLeftOffset}px`;
+                progressBar.style.width = `${currentBarWidth}px`;
+            };
+
+            // Aggiungiamo gli ascoltatori di eventi
+            window.addEventListener('scroll', updateCustomProgressBar);
+            window.addEventListener('resize', updateCustomProgressBar);
+
+            // Eseguiamo subito per un posizionamento corretto al caricamento
+            updateCustomProgressBar();
+        });
+    </script><!--SCRIPT BARRA DI PROSEGUIMENTO-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- CONFIGURAZIONE POPUP ---
+            const videoData = [
+                {
+                    title: "Mangiamo carne di squalo senza saperlo",
+                    imageUrl: "https://i.ytimg.com/vi/Q2DWcy6skUs/hq720.jpg",
+                    videoUrl: "https://youtu.be/Q2DWcy6skUs?si=iHA6Oy1HzjtMInTB"
+                },
+                {
+                    title: "Computer Quantistici, Spiegazione Animata",
+                    imageUrl: "https://i.ytimg.com/vi/n-i03wnWu9k/hq720.jpg",
+                    videoUrl: "https://youtu.be/n-i03wnWu9k"
+                },
+                {
+                    title: "Perché le buche sulla spiaggia sono così mortali?",
+                    imageUrl: "https://i.ytimg.com/vi/0kQXOTcEB_E/hq720.jpg",
+                    videoUrl: "https://youtu.be/0kQXOTcEB_E"
+                }
+            ];
+            // --------------------
+
+            // Selezione degli elementi del DOM del Popup
+            const overlay = document.getElementById('video-modal-overlay');
+            const modalContainer = document.querySelector('.video-modal-container');
+            const closeButton = document.getElementById('video-modal-close');
+            const modalTitle = document.getElementById('video-modal-title');
+            const modalImage = document.getElementById('video-modal-image');
+            const playLink = document.getElementById('video-modal-play-link');
+
+            let popupTimer;
+
+            // Funzione per generare un ritardo casuale in millisecondi
+            const getRandomDelay = (minSeconds, maxSeconds) => {
+                // PICCOLA CORREZIONE: Moltiplico per 1000 per convertire i secondi in millisecondi
+                return (Math.random() * (maxSeconds - minSeconds) + minSeconds) * 1000;
+            };
+
+            // Funzione per mostrare il popup con un video casuale
+            const showRandomVideoPopup = () => {
+                if (videoData.length === 0) {
+                    console.warn("Nessun video da mostrare nel popup.");
+                    return;
+                }
+                const randomIndex = Math.floor(Math.random() * videoData.length);
+                const video = videoData[randomIndex];
+                modalTitle.textContent = video.title;
+                modalImage.src = video.imageUrl;
+                playLink.href = video.videoUrl;
+                overlay.classList.add('visible');
+            };
+
+            // Funzione per nascondere il popup
+            const hideVideoPopup = () => {
+                overlay.classList.remove('visible');
+                clearTimeout(popupTimer);
+                popupTimer = setTimeout(showRandomVideoPopup, getRandomDelay(10, 20));
+            };
+
+            // --- Event Listeners del Popup ---
+
+            closeButton.addEventListener('click', hideVideoPopup);
+
+            overlay.addEventListener('click', (event) => {
+                if (event.target === overlay) {
+                    hideVideoPopup();
+                }
+            });
+
+            modalContainer.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            // ==========================================================
+            // ===== NUOVA AGGIUNTA: RENDE L'IMMAGINE CLICCABILE ========
+            // ==========================================================
+            // Quando si clicca sull'immagine, simula un click sul link del pulsante play
+            modalImage.addEventListener('click', () => {
+                playLink.click();
+            });
+            // ==========================================================
+
+
+            // Imposta il timer per la prima apparizione del popup
+            popupTimer = setTimeout(showRandomVideoPopup, getRandomDelay(3, 8));
+
+
+            // --- LOGICA BARRA DI PROSEGUIMENTO LETTURA ---
+            // (Il codice per la barra di proseguimento che avevamo fatto prima va qui sotto)
+            const articleBox = document.querySelector('.testo-articolo-sub-box');
+            const progressBar = document.getElementById('reading-progress-bar');
+            const footer = document.querySelector('footer');
+
+            if (!articleBox || !progressBar || !footer) {
+                console.warn("Elementi necessari per la barra di progresso non trovati.");
+                return; // Esce dalla funzione se manca un elemento per evitare errori
+            }
+
+            const updateCustomProgressBar = () => {
+                const articleRect = articleBox.getBoundingClientRect();
+                const articleWidth = articleRect.width;
+                const articleLeftOffset = articleRect.left;
+
+                const footerPositionTop = footer.getBoundingClientRect().top + window.scrollY;
+                const scrollEndPoint = footerPositionTop - window.innerHeight;
+
+                const totalScrollDistance = scrollEndPoint;
+
+                let progressFraction = 0;
+                if (totalScrollDistance > 0) {
+                    progressFraction = window.scrollY / totalScrollDistance;
+                }
+
+                const clampedProgress = Math.max(0, Math.min(progressFraction, 1));
+                const currentBarWidth = articleWidth * clampedProgress;
+
+                progressBar.style.left = `${articleLeftOffset}px`;
+                progressBar.style.width = `${currentBarWidth}px`;
+            };
+
+            window.addEventListener('scroll', updateCustomProgressBar);
+            window.addEventListener('resize', updateCustomProgressBar);
+            updateCustomProgressBar();
+
+        });
+    </script><!--SCRIPT POPUP VIDEO-->
+    <script>
+        // 1. Prendo i riferimenti agli elementi necessari
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        // Selezioniamo il footer in modo generico, senza bisogno di un ID
+        const footer = document.querySelector("footer");
+
+        // 2. Aggiungo l'ascoltatore all'evento di scroll
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        // 3. Definisco la funzione che gestisce tutta la logica
+        function scrollFunction() {
+            // Logica di base per mostrare/nascondere il pulsante
+            const isVisible = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100);
+
+            // Applica l'opacità in base alla visibilità
+            scrollToTopBtn.style.opacity = isVisible ? "1" : "0";
+
+            // --- NUOVA LOGICA PER LA POSIZIONE DINAMICA ---
+
+            // Imposta una posizione di default per il 'bottom'
+            let targetBottom = isVisible ? "3vmin" : "-5vmin";
+
+            // Se il footer esiste sulla pagina, eseguiamo i calcoli
+            if (footer) {
+                // Calcoliamo 5vmin in pixel per poter fare somme corrette
+                const vminInPx = Math.min(window.innerWidth, window.innerHeight) / 100;
+                const gapInPx = 3 * vminInPx;
+
+                // Calcoliamo la distanza tra il fondo della finestra (viewport) e il fondo del documento
+                const distanceToDocBottom = document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
+
+                // La posizione in cui il pulsante deve "fermarsi" (altezza del footer + il gap desiderato)
+                const stopPosition = footer.offsetHeight + gapInPx;
+
+                // Se la finestra è entrata nella "zona del footer"
+                if (distanceToDocBottom < stopPosition) {
+                    // Calcoliamo dinamicamente il nuovo valore di 'bottom'.
+                    // Sarà uguale alla distanza dal fondo del documento, mantenendo il gap.
+                    const newBottomInPx = stopPosition - distanceToDocBottom;
+                    targetBottom = `${newBottomInPx}px`;
+                }
+            }
+
+            // Applica la posizione 'bottom' calcolata
+            scrollToTopBtn.style.bottom = targetBottom;
+        }
+
+        // 4. Logica del click per tornare su (invariata)
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script><!--PULSANTE TORNA IN CIMA-->
+	<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // --- SETUP DEGLI ELEMENTI DI LAYOUT ---
+        const section1Container = document.querySelector('.section1-container');
+        const placeholder = document.querySelector('.header-placeholder');
+        const triggerBox = document.querySelector('.titolo-articolo-box');
+
+        if (!section1Container || !placeholder || !triggerBox) return;
+
+        // --- SETUP DEL TESTO E ANIMAZIONE (La tua logica re-integrata) ---
+        const articleTitleText = document.querySelector('.titolo-articolo').textContent.trim();
+        const marqueeSpans = document.querySelectorAll('.marquee');
+
+        const originalMarqueeHTML = marqueeSpans.length > 0 ? marqueeSpans[0].innerHTML : '';
+        const originalTextContent = marqueeSpans.length > 0 ? marqueeSpans[0].textContent.trim() : '';
+        const textEndIndex = originalMarqueeHTML.indexOf(originalTextContent) + originalTextContent.length;
+        const nbspSuffix = originalMarqueeHTML.substring(textEndIndex);
+        const newMarqueeHTML = articleTitleText + nbspSuffix;
+
+        const speedFactor = 0.18;
+        const minDuration = 8;
+        let newDuration = Math.max(minDuration, articleTitleText.length * speedFactor);
+        newDuration = Math.round(newDuration * 10) / 10;
+        // ---------------------------------------------------------------------
+
+        // --- CALCOLI DI LAYOUT FATTI UNA SOLA VOLTA ---
+        const containerHeight = section1Container.offsetHeight;
+        const activationPoint = triggerBox.offsetTop;
+
+        // --- GESTIONE DELLO STATO E DELLO SCROLL (OTTIMIZZATO) ---
+        let isHeaderFixed = false;
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateHeaderState() {
+            const currentScrollY = window.scrollY;
+            const direction = currentScrollY > lastScrollY ? 'down' : 'up';
+
+            // --- SEZIONE DI ATTIVAZIONE ---
+            if (currentScrollY >= activationPoint) {
+                if (!isHeaderFixed) {
+                    isHeaderFixed = true;
+
+                    placeholder.style.display = 'block';
+                    placeholder.style.height = `${containerHeight}px`;
+                    section1Container.classList.add('is-fixed');
+
+                    // --- AGGIORNA IL CONTENUTO (La tua logica inserita qui) ---
+                    marqueeSpans.forEach(span => {
+                        span.innerHTML = newMarqueeHTML;
+                        span.style.animationDuration = `${newDuration}s`;
+                    });
+                    // -----------------------------------------------------------
+
+                    // Gestisce la transizione di apparizione
+                    setTimeout(() => {
+                        section1Container.style.top = '0';
+                    }, 10);
+                } else {
+                    // Gestisci comparsa/scomparsa se già attivo
+                    if (direction === 'down') {
+                        section1Container.style.top = '0';
+                    } else if (currentScrollY > activationPoint) {
+                        section1Container.style.top = '-15vmin';
+                    }
+                }
+
+                // --- SEZIONE DI DISATTIVAZIONE ---
+            } else {
+                if (isHeaderFixed) {
+                    isHeaderFixed = false;
+
+                    placeholder.style.display = 'none';
+                    placeholder.style.height = '0';
+                    section1Container.classList.remove('is-fixed');
+                    section1Container.style.top = null;
+
+                    // --- RIPRISTINA IL CONTENUTO (La tua logica inserita qui) ---
+                    marqueeSpans.forEach(span => {
+                        span.innerHTML = originalMarqueeHTML;
+                        span.style.animationDuration = null;
+                    });
+                    // -------------------------------------------------------------
+                }
+            }
+
+            lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+            ticking = false;
+        }
+
+        // --- EVENT LISTENER OTTIMIZZATO ---
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeaderState);
+                ticking = true;
+            }
+        }, { passive: true });
+    });
+</script><!--SCRIPT TENDINA-->
+    <script>
+        // Wait for the page content to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // 1. An array containing all your GIF links
+            const gifUrls = [
+                "https://images.squarespace-cdn.com/content/v1/525073c8e4b078f55072373d/1517526768399-J6GWOSF6JUXLKE22U3HV/coke_change.gif",
+                "https://cdn.dribbble.com/userupload/14672696/file/original-2e8d4c9aa547c3d34636dfc94717cbdd.gif",
+                "https://i.pinimg.com/originals/0b/28/8d/0b288dcaa37b56cd603b59ae7e8b4631.gif",
+                "https://www.theispot.com/assets/images/source/ezgif1111111111111111111111111111111111111111111.gif",
+                "https://www.allthingscommunicate.it/assets/media/blog/atc--all-things-communicate-premiata-allo-smart-retail-award-2023-per-il-progetto-issima-pokemon-in-collaborazione-con-levissima/pokemon-card-Influencer.gif",
+                "https://www.quattroruote.it/news/novita/2017/06/29/fiat_500_anniversario_versione_speciale_per_celebrare_i_60_anni_del_cinquino/_jcr_content/content/article_gif/image.img.gif/1498751935460.gif",
+                "https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyM3p0bW4xMzJzajBodmpzNHhoY3FybzdqNThzeThtaDZ1OGE0azVqdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4EHsAtAPcV41vx2B5s/source.gif",
+                "https://i.pinimg.com/originals/d4/7f/5b/d47f5b6df925bf2b264862637f8988fa.gif",
+                "https://m.media-amazon.com/images/G/31/img22/pcacc/logidays/Defy_Boring_Pebble_Keys_and_Pebble_Mouse_2_White_16x9_15s_en_MP4_1_1_1.gif",
+                "https://api.time.com/wp-content/uploads/2023/07/TIME.com-Barbie-Partnership-copy.gif",
+                "https://mir-s3-cdn-cf.behance.net/project_modules/source/bbcefb182626713.6530ea433e155.gif",
+                "https://i.pinimg.com/originals/79/1c/aa/791caae6a49ae8228206006ebd2173e7.gif",
+                "https://cdn.dribbble.com/userupload/21704245/file/original-7c30ea78f4fa32d5d82026b6d9f90b56.gif",
+                "https://i.pinimg.com/originals/f7/df/8d/f7df8df7d039ab276deb048fd0938e72.gif"
+            ];
+
+            // 2. A function to shuffle an array (Fisher-Yates shuffle algorithm)
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+                }
+            }
+
+            // 3. Select all the image elements that need a GIF
+            // We use the class '.spazio-per-testo-con-oggetto-centro' which is on all your images
+            const imageElements = document.querySelectorAll('.spazio-per-testo-con-oggetto-centro');
+
+            // 4. Shuffle the array of GIF URLs
+            shuffleArray(gifUrls);
+
+            // 5. Assign each shuffled GIF to an image element
+            imageElements.forEach((imgElement, index) => {
+                // Check if there is a gifUrl for this image to avoid errors
+                if (gifUrls[index]) {
+                    imgElement.src = gifUrls[index];
+                }
+            });
+
+        });
+    </script><!--SCRIPT PUBBLICITÀ CENTRALE RANDOMIZZATA-->
+</div>
+</body>
+</html>
