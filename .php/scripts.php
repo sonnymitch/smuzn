@@ -133,6 +133,6 @@
     });
 </script><!--TRANSIZIONE OPACITÀ-->
 
-<script src="/script/bootstrap.bundle.min.js"></script>
-<script src="/script/jquery-3.7.1.slim.min.js"></script>
-<script src="/script/jquery-scripts.js"></script>
+<script src="/smuzn/script/bootstrap.bundle.min.js"></script>
+<script src="/smuzn/script/jquery-3.7.1.slim.min.js"></script>
+<script src="/smuzn/script/jquery-scripts.js"></script>
